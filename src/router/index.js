@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import AIServices from './AIServices/Index';
-import Demos from './Demos/Index';
+import AIServices from './AIServices/index';
+import Demos from './Demos/index';
 
 Vue.use(VueRouter);
 
@@ -37,7 +37,7 @@ const routes = [
     {
         path: '/solutions',
         name: 'solutions',
-        component: () => import('../views/pages/solutionsPage/index.vue'),
+        component: () => import('../views/pages/SolutionsPage/Index.vue'),
         meta: {
             keepAlive: false,
             auth: false,
