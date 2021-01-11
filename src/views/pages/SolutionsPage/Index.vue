@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Industry from './Industry.vue';
+import Industry from '@/views/pages/SolutionsPage/Industry.vue';
 
 export default {
     components: {
