@@ -18,7 +18,7 @@ const routes = [
     {
         path: '/solutions',
         name: 'solutions',
-        component: () => import('../views/solutionsPage/index.vue'),
+        component: () => import('../views/pages/solutionsPage/index.vue'),
         meta: {
             keepAlive: false,
             auth: false,
