@@ -35,7 +35,7 @@ const routes = [
         },
     },
     {
-        path: '/solutions',
+        path: '/solutions/:industry?',
         name: 'solutions',
         component: () => import('../views/pages/solutionsPage/Index.vue'),
         meta: {
