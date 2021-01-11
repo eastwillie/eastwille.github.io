@@ -51,3 +51,11 @@ Example: .buttons_button-primary, .base-carousel
 
 5 Do not use `!important`.
 
+##3. Some points for VUE Doc (please keep adding more things if you feel important)
+
+1 Distinguish and use wisely for: 
+``
+Template expressions, Computed property, Methods, Watch property, Filter
+``
+
+2 Read [Reactivity in Depth](https://vuejs.org/v2/guide/reactivity.html) will be very helpful for you to understand and deal some situations.
