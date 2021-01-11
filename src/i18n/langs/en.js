@@ -15,6 +15,8 @@ export default {
         document: 'document',
         'custom support': 'custom support',
         contact: 'contact',
+        NLP: 'NLP',
+        'document recognition': 'document recognition',
     },
     longText: {},
     ...enLocale,

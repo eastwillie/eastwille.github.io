@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import AIServices from './AIServices/Index';
+import Demos from './Demos/Index';
 
 Vue.use(VueRouter);
 
@@ -12,8 +14,7 @@ const routes = [
     },
     {
         path: '/home',
-        name: 'index',
-        component: () => import('@/views/pages/homePage/Index.vue'),
+        component: () => import('@/views/pages/HomePage/Index.vue'),
         meta: {
             keepAlive: false,
             auth: false,
@@ -21,9 +22,10 @@ const routes = [
             canBack: false,
         },
     },
+    AIServices,
+    Demos,
     {
         path: '*',
-        name: 'PageNotFound',
         component: () => import('@/views/pages/PageNotFound/Index.vue'),
         meta: {
             keepAlive: false,
