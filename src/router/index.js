@@ -37,7 +37,7 @@ const routes = [
     {
         path: '/solutions',
         name: 'solutions',
-        component: () => import('../views/pages/SolutionsPage/Index.vue'),
+        component: () => import('../views/pages/solutionsPage/Index.vue'),
         meta: {
             keepAlive: false,
             auth: false,
