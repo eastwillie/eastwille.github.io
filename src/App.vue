@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <app-bar v-if="$route.meta.showNav" />
-    <div class="view-container">
+    <app-navigation v-if="$route.meta.showNav"></app-navigation>
+    <div id="view-container">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
       </keep-alive>
@@ -9,18 +9,15 @@
     </div>
   </div>
 </template>
-
 <script>
-import AppBar from './views/layout/AppBar.vue';
+import AppNavigation from '@/views/components/AppNavigation/Index.vue';
 
 export default {
     components: {
-        'app-bar': AppBar,
+        AppNavigation,
     },
 };
-
 </script>
-
 <style lang="scss">
   @import "assets/css/reset";
   @import "assets/css/public";
