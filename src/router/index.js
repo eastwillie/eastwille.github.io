@@ -23,16 +23,6 @@ const routes = [
     },
     AIServices,
     {
-        path: '*',
-        component: () => import('@/views/pages/PageNotFound/Index.vue'),
-        meta: {
-            keepAlive: false,
-            auth: false,
-            showNav: false,
-            canBack: false,
-        },
-    },
-    {
         path: '/solutions/:industry?',
         name: 'solutions',
         component: () => import('../views/pages/SolutionsPage/Index.vue'),
@@ -40,6 +30,16 @@ const routes = [
             keepAlive: false,
             auth: false,
             showNav: true,
+            canBack: false,
+        },
+    },
+    {
+        path: '*',
+        component: () => import('@/views/pages/PageNotFound/Index.vue'),
+        meta: {
+            keepAlive: false,
+            auth: false,
+            showNav: false,
             canBack: false,
         },
     },
