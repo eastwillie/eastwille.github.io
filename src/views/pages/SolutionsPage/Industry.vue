@@ -1,5 +1,5 @@
 <template>
-    <div class="industry">
+    <div class="industry" @click="onClick">
         <div class="industry-icon"></div>
         <div class="industry-label">{{title}}</div>
     </div>
@@ -10,6 +10,7 @@ export default {
     props: {
         icon: String,
         title: String,
+        onClick: Function,
     },
 };
 </script>
@@ -22,7 +23,7 @@ export default {
         padding: 0.08rem 0.24rem;
 
         .industry-icon {
-            width: 1rem;
+            min-width: 1rem;
             height: 1rem;
             background-color: #D3D3D3;
             border-radius: 1rem;
