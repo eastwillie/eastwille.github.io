@@ -74,8 +74,61 @@ audio, canvas, progress, video {
 html, body {
   box-sizing: border-box;
 }
+
 body {
   -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
   -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
   -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+html {
+  font-size: 100px;
+}
+
+@media(max-width: 640px) {
+  html {
+    font-size: 85.33px;
+  }
+}
+
+@media(max-width: 540px) {
+  html {
+    font-size: 72px;
+  }
+}
+
+@media(max-width: 480px) {
+  html {
+    font-size: 64px;
+  }
+}
+
+@media(max-width: 445px) {
+  html {
+    font-size: 60px;
+  }
+}
+
+@media(max-width: 414px) {
+  html {
+    font-size: 55.2px;
+  }
+}
+
+@media(max-width: 375px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media(max-width: 360px) {
+  html {
+    font-size: 48px;
+  }
+}
+
+@media(max-width: 320px) {
+  html {
+    font-size: 42.67px;
+  }
 }
