@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <nav-bar v-if="$route.meta.showNav" />
     <div class="view-container">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -8,6 +9,17 @@
     </div>
   </div>
 </template>
+
+<script>
+import NavBar from './views/layout/NavBar.vue';
+
+export default {
+    components: {
+        'nav-bar': NavBar,
+    },
+};
+
+</script>
 
 <style lang="scss">
   @import "assets/css/reset";
