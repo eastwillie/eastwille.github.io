@@ -7,5 +7,7 @@
         display: flex;
         justify-content: center;
         height: 1.2rem;
+        padding: 0.16rem;
+        border-top: 1px solid #D3D3D3;
     }
 </style>

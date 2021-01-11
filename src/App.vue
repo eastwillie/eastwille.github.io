@@ -2,12 +2,14 @@
   <div id="app">
     <app-navigation v-if="$route.meta.showNav"></app-navigation>
     <div id="view-container">
-      <keep-alive>
-        <router-view v-if="$route.meta.keepAlive"></router-view>
-      </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive"></router-view>
+      <div id="content">
+        <keep-alive>
+          <router-view v-if="$route.meta.keepAlive"></router-view>
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"></router-view>
+      </div>
+      <app-footer />
     </div>
-    <app-footer />
   </div>
 </template>
 <script>
@@ -36,6 +38,12 @@ export default {
   }
 
   #view-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  #content {
     display: flex;
     flex-grow: 1;
   }
