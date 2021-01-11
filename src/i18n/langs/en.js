@@ -7,7 +7,15 @@ export default {
         'This is i18n Example Text': 'This is i18n Example Text',
     },
     placeholder: {},
-    button: {},
+    button: {
+        home: 'home',
+        solutions: 'solutions',
+        services: 'services',
+        pricing: 'pricing',
+        document: 'document',
+        'custom support': 'custom support',
+        contact: 'contact',
+    },
     longText: {},
     ...enLocale,
 };

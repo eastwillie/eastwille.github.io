@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <div class="view-container">
+    <app-navigation v-if="$route.meta.showNav"></app-navigation>
+    <div id="view-container">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
       </keep-alive>
@@ -8,7 +9,15 @@
     </div>
   </div>
 </template>
+<script>
+import AppNavigation from '@/views/components/AppNavigation/Index.vue';
 
+export default {
+    components: {
+        AppNavigation,
+    },
+};
+</script>
 <style lang="scss">
   @import "assets/css/reset";
   @import "assets/css/public";
