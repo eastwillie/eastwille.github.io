@@ -8,21 +8,43 @@
             <industry title="Healthcare" :onClick="() => navigate(industries.healthcare)" />
         </div>
         <div class="content">
-            <div v-if="industries[industry] === industries.financial">Financial Services</div>
-            <div v-if="industries[industry] === industries.oil">Oil and Gas</div>
-            <div v-if="industries[industry] === industries.education">Education</div>
-            <div v-if="industries[industry] === industries.media">Media and Entertainment</div>
-            <div v-if="industries[industry] === industries.healthcare">Healthcare</div>
+            <industry-content v-if="industries[industry] === industries.financial" title="Financial Services">
+                <template v-slot:problem>Current Issue</template>
+                <template v-slot:solution>Fix</template>
+                <template v-slot:pipeline>Services Diagram</template>
+            </industry-content>
+            <industry-content v-if="industries[industry] === industries.oil" title="Oil and Gas">
+                <template v-slot:problem>Current Issue</template>
+                <template v-slot:solution>Fix</template>
+                <template v-slot:pipeline>Services Diagram</template>
+            </industry-content>
+            <industry-content v-if="industries[industry] === industries.education" title="Education">
+                <template v-slot:problem>Current Issue</template>
+                <template v-slot:solution>Fix</template>
+                <template v-slot:pipeline>Services Diagram</template>
+            </industry-content>
+            <industry-content v-if="industries[industry] === industries.media" title="Media and Entertainment">
+                <template v-slot:problem>Current Issue</template>
+                <template v-slot:solution>Fix</template>
+                <template v-slot:pipeline>Services Diagram</template>
+            </industry-content>
+            <industry-content v-if="industries[industry] === industries.healthcare" title="Healthcare">
+                <template v-slot:problem>Current Issue</template>
+                <template v-slot:solution>Fix</template>
+                <template v-slot:pipeline>Services Diagram</template>
+            </industry-content>
         </div>
     </div>
 </template>
 
 <script>
 import Industry from '@/views/pages/SolutionsPage/Industry.vue';
+import IndustryContent from '@/views/pages/SolutionsPage/IndustryContent.vue';
 
 export default {
     components: {
         Industry,
+        IndustryContent,
     },
     computed: {
         industries() {
