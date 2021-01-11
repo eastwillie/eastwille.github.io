@@ -1,3 +1,5 @@
 <template>
-    <div id="ai-services_nlp_document-classification"></div>
+    <div id="ai-services_nlp_document-classification">
+        Document Classification Page
+    </div>
 </template>

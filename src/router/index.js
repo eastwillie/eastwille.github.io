@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import AIServices from './AIServices/index';
-import Demos from './Demos/index';
 
 Vue.use(VueRouter);
 
@@ -23,7 +22,6 @@ const routes = [
         },
     },
     AIServices,
-    Demos,
     {
         path: '*',
         component: () => import('@/views/pages/PageNotFound/Index.vue'),

@@ -12,7 +12,7 @@
 
             <el-submenu index="/services">
                 <template slot="title">{{$t(`button['services']`)}}</template>
-                <el-menu-item index="/services/nlp">{{$t(`button['NLP']`)}}</el-menu-item>
+                <el-menu-item index="/services/nlp/index">{{$t(`button['NLP']`)}}</el-menu-item>
             </el-submenu>
 
             <el-menu-item index="/pricing" disabled>{{$t(`button['pricing']`)}}</el-menu-item>
