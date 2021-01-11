@@ -1,8 +1,10 @@
 // simple global variables store
-const API = process.env.NODE_ENV === 'development' ? '/dev' : '';
+const isDevelopment = process.env.NODE_ENV === 'development';
+const API = isDevelopment ? '/dev' : '';
 const publicPath = process.env.BASE_URL;
 
 export default {
+    isDevelopment,
     API,
     publicPath,
 };
