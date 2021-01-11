@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav-bar v-if="$route.meta.showNav" />
+    <app-bar v-if="$route.meta.showNav" />
     <div class="view-container">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive"></router-view>
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import NavBar from './views/layout/NavBar.vue';
+import AppBar from './views/layout/AppBar.vue';
 
 export default {
     components: {
-        'nav-bar': NavBar,
+        'app-bar': AppBar,
     },
 };
 
