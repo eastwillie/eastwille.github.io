@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/',
         name: 'index',
-        component: () => import('../views/homePage/index.vue'),
+        component: () => import('../views/pages/homePage/index.vue'),
         meta: {
             keepAlive: false,
             auth: false,

@@ -1,3 +1,5 @@
+import enLocale from 'element-ui/lib/locale/lang/en';
+
 export default {
     title: {},
     status: {},
@@ -7,4 +9,5 @@ export default {
     placeholder: {},
     button: {},
     longText: {},
+    ...enLocale,
 };
