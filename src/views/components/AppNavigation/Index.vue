@@ -71,8 +71,8 @@
         }
     }
     @mixin font-style {
-        font-size: 0.16rem;
-        font-weight: lighter;
+        font-size: 0.18rem;
+        font-weight: 400;
     }
     #app-nav {
         display: flex;
