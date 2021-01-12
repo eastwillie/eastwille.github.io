@@ -43,7 +43,9 @@
             </div>
             <button class="btn-action why-demo">Request Demo</button>
         </div>
-        <div class="what content panel"></div>
+        <div class="what content panel">
+            <span class="what-heading">What Can You Get with Rodin?</span>
+        </div>
     </div>
 </template>
 <script>
@@ -275,6 +277,17 @@ export default {
                     font-size: 0.14rem;
                     font-weight: 700;
                 }
+            }
+        }
+
+        .what {
+            display: flex;
+            flex-direction: column;
+            padding-top: 0.8rem;
+
+            .what-heading {
+                font-size: 0.32rem;
+                font-weight: 800;
             }
         }
     }
