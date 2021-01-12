@@ -1,7 +1,11 @@
 import enLocale from 'element-ui/lib/locale/lang/en';
 
 export default {
-    title: {},
+    title: {
+        'perception & cloud powered': 'perception & cloud powered',
+        'all-stack ai service platform': 'all-stack ai service platform',
+        'empowering intelligent apps with our customizable ai technology': 'empowering intelligent apps with our customizable ai technology',
+    },
     status: {},
     message: {
         'This is i18n Example Text': 'This is i18n Example Text',

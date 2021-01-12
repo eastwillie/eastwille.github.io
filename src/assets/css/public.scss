@@ -1,1 +1,7 @@
 //You can put global CSS variables or classes here
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

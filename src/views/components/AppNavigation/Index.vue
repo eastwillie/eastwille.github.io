@@ -1,5 +1,5 @@
 <template>
-    <div id="the_nav">
+    <div id="app-nav">
         <el-menu
             mode="horizontal"
             router
@@ -15,19 +15,16 @@
                 </template>
                 <el-menu-item
                     index="2-1"
-                    disabled
                 >
                     Item1
                 </el-menu-item>
                 <el-menu-item
                     index="2-2"
-                    disabled
                 >
                     Item2
                 </el-menu-item>
                 <el-menu-item
                     index="2-3"
-                    disabled
                 >
                     Item3
                 </el-menu-item>
@@ -44,25 +41,21 @@
 
             <el-menu-item
                 index="/pricing"
-                disabled
             >
                 {{ $t(`button['pricing']`) }}
             </el-menu-item>
             <el-menu-item
                 index="/document"
-                disabled
             >
                 {{ $t(`button['document']`) }}
             </el-menu-item>
             <el-menu-item
                 index="/custom-support"
-                disabled
             >
                 {{ $t(`button['custom support']`) }}
             </el-menu-item>
             <el-menu-item
                 index="/contact"
-                disabled
             >
                 {{ $t(`button['contact']`) }}
             </el-menu-item>

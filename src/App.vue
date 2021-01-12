@@ -2,14 +2,12 @@
     <div id="app">
         <app-navigation v-if="$route.meta.showNav" />
         <div id="view-container">
-            <div id="content">
-                <keep-alive>
-                    <router-view v-if="$route.meta.keepAlive" />
-                </keep-alive>
-                <router-view v-if="!$route.meta.keepAlive" />
-            </div>
-            <app-footer />
+            <keep-alive>
+                <router-view v-if="$route.meta.keepAlive" />
+            </keep-alive>
+            <router-view v-if="!$route.meta.keepAlive" />
         </div>
+        <app-footer />
     </div>
 </template>
 <script>
@@ -24,27 +22,13 @@ export default {
 };
 </script>
 <style lang="scss">
-  @import "assets/css/reset";
-  @import "assets/css/public";
-  @import "assets/css/overwite";
-  #app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    font-size: 0.2rem;
-    font-family: Lato,Helvetica Neue,Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    -webkit-font-smoothing: antialiased;
-  }
+    @import "assets/css/reset";
+    @import "assets/css/public";
+    @import "assets/css/overwite";
 
-  #view-container {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-  }
-
-  #content {
-    display: flex;
-    flex-grow: 1;
-  }
+    #app {
+        font-family: Lato, Helvetica Neue, Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        font-size: 0.16rem;
+        -webkit-font-smoothing: antialiased;
+    }
 </style>
