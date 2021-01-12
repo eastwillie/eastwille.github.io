@@ -1,16 +1,16 @@
 <template>
-    <div
-        id="home-page"
-    />
+  <div
+    id="home-page"
+  />
 </template>
 <script>
 export default {
-    mounted() {
-        this.$methods.methodsExample();
-    },
+  mounted() {
+    this.$methods.methodsExample();
+  },
 };
 </script>
 <style lang="scss" scoped>
-    #home-page {
-    }
+  #home-page {
+  }
 </style>

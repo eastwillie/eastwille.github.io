@@ -3,5 +3,5 @@ import CONSTS from '../libs/constants';
 const apiExample = `${CONSTS.API}/example`;
 
 export default {
-    apiExample,
+  apiExample,
 };

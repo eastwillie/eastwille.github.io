@@ -22,13 +22,13 @@ Vue.prototype.$consts = consts;
 Vue.prototype.$apis = apis;
 
 ElementUIComponents.forEach((item) => {
-    Vue.use(item);
+  Vue.use(item);
 });
 Vue.use(methods);
 
 new Vue({
-    i18n,
-    router,
-    store,
-    render: (h) => h(App),
+  i18n,
+  router,
+  store,
+  render: (h) => h(App),
 }).$mount('#app');
