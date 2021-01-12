@@ -133,6 +133,7 @@ export default {
                 .empowering {
                     margin-top: 0.12rem;
                     font-size: 0.18rem;
+                    font-weight: 300;
                 }
             }
 
@@ -177,11 +178,12 @@ export default {
 
                 .count {
                     font-size: 0.32rem;
-                    font-weight: 900;
+                    font-weight: 700;
                 }
 
                 .count-description {
                     font-size: 0.20rem;
+                    font-weight: 300;
                 }
             }
         }
@@ -198,6 +200,7 @@ export default {
 
             .introduction-heading {
                 font-size: 0.28rem;
+                font-weight: 700;
             }
 
             .introduction-description {
@@ -230,9 +233,9 @@ export default {
                     &::after {
                         content: '';
                         position: absolute;
-                        top: 0.04rem;
+                        top: 0.08rem;
                         left: 0.1rem;
-                        height: 80%;
+                        height: 60%;
                         width: 2px;
                         background: #2C0784;
                         border-radius: 6px;
@@ -288,7 +291,7 @@ export default {
 
                 .why-description {
                     font-size: 0.14rem;
-                    font-weight: 700;
+                    font-weight: 600;
                 }
             }
         }
