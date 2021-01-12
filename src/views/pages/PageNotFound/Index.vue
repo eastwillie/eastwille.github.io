@@ -1,12 +1,10 @@
 <template>
-    <div id="page-not-found">
-        404 Page not found.
-    </div>
+  <div id="page-not-found">
+    404 Page not found.
+  </div>
 </template>
 <script>
-export default {
-
-};
+export default {};
 </script>
 <style lang="scss" scoped>
 
