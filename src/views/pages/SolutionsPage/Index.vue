@@ -1,11 +1,11 @@
 <template>
     <div id="solutions">
         <div class="industries">
-            <industry title="Financial Services" :onClick="() => navigate(industries.financial)" />
-            <industry title="Oil and Gas" :onClick="() => navigate(industries.oil)" />
-            <industry title="Education" :onClick="() => navigate(industries.education)" />
-            <industry title="Media and Entertainment" :onClick="() => navigate(industries.media)" />
-            <industry title="Healthcare" :onClick="() => navigate(industries.healthcare)" />
+            <industry :isActive="isActive(industries.financial)" title="Financial Services" :onClick="() => navigate(industries.financial)" />
+            <industry :isActive="isActive(industries.oil)" title="Oil and Gas" :onClick="() => navigate(industries.oil)" />
+            <industry :isActive="isActive(industries.education)" title="Education" :onClick="() => navigate(industries.education)" />
+            <industry :isActive="isActive(industries.media)" title="Media and Entertainment" :onClick="() => navigate(industries.media)" />
+            <industry :isActive="isActive(industries.healthcare)" title="Healthcare" :onClick="() => navigate(industries.healthcare)" />
         </div>
         <div class="content">
             <industry-content v-if="industries[industry] === industries.financial" title="Financial Services">
@@ -67,6 +67,9 @@ export default {
             if (!this.industries[industry]) return;
 
             this.$router.push(`/solutions/${industry}`);
+        },
+        isActive(industry) {
+            return this.industries[this.industry] === industry;
         },
     },
     mounted() {

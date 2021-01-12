@@ -1,16 +1,26 @@
 <template>
-    <div class="industry" @click="onClick">
+    <div :class="industry" @click="onClick">
         <div class="industry-icon"></div>
         <div class="industry-label">{{title}}</div>
     </div>
 </template>
 
 <script>
+import clx from 'classnames';
+
 export default {
     props: {
+        isActive: Boolean,
         icon: String,
         title: String,
         onClick: Function,
+    },
+    computed: {
+        industry() {
+            return clx('industry', {
+                active: this.$props.isActive,
+            });
+        },
     },
 };
 </script>
@@ -35,6 +45,15 @@ export default {
             justify-content: center;
             padding-left: 0.16rem;
             text-align: center;
+        }
+
+        &:hover {
+            background-color: #FAFAFA;
+            cursor: pointer;
+        }
+
+        &.active {
+            background-color: #FAFAFA;
         }
     }
 </style>
