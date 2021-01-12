@@ -1,16 +1,16 @@
 <template>
-  <div id="app">
-    <app-navigation v-if="$route.meta.showNav"></app-navigation>
-    <div id="view-container">
-      <div id="content">
-        <keep-alive>
-          <router-view v-if="$route.meta.keepAlive"></router-view>
-        </keep-alive>
-        <router-view v-if="!$route.meta.keepAlive"></router-view>
-      </div>
-      <app-footer />
+    <div id="app">
+        <app-navigation v-if="$route.meta.showNav" />
+        <div id="view-container">
+            <div id="content">
+                <keep-alive>
+                    <router-view v-if="$route.meta.keepAlive" />
+                </keep-alive>
+                <router-view v-if="!$route.meta.keepAlive" />
+            </div>
+            <app-footer />
+        </div>
     </div>
-  </div>
 </template>
 <script>
 import AppNavigation from '@/views/components/AppNavigation/Index.vue';

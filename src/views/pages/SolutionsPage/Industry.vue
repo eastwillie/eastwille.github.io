@@ -1,7 +1,12 @@
 <template>
-    <div :class="industry" @click="onClick">
-        <div class="industry-icon"></div>
-        <div class="industry-label">{{$t(`industries['${title}']`)}}</div>
+    <div
+        :class="industry"
+        @click="onClick"
+    >
+        <div class="industry-icon" />
+        <div class="industry-label">
+            {{ $t(`industries['${title}']`) }}
+        </div>
     </div>
 </template>
 
@@ -11,9 +16,18 @@ import clx from 'classnames';
 export default {
     props: {
         isActive: Boolean,
-        icon: String,
-        title: String,
-        onClick: Function,
+        icon: {
+            type: String,
+            default: '',
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        onClick: {
+            type: Function,
+            default: () => {},
+        },
     },
     computed: {
         industry() {

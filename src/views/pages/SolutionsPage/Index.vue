@@ -1,37 +1,102 @@
 <template>
     <div id="solutions">
         <div class="industries">
-            <industry :isActive="isActive(industries.financial)" title="Financial Services" :onClick="() => navigate(industries.financial)" />
-            <industry :isActive="isActive(industries.oil)" title="Oil and Gas" :onClick="() => navigate(industries.oil)" />
-            <industry :isActive="isActive(industries.education)" title="Education" :onClick="() => navigate(industries.education)" />
-            <industry :isActive="isActive(industries.media)" title="Media and Entertainment" :onClick="() => navigate(industries.media)" />
-            <industry :isActive="isActive(industries.healthcare)" title="Healthcare" :onClick="() => navigate(industries.healthcare)" />
+            <industry
+                :is-active="isActive(industries.financial)"
+                title="Financial Services"
+                :on-click="() => navigate(industries.financial)"
+            />
+            <industry
+                :is-active="isActive(industries.oil)"
+                title="Oil and Gas"
+                :on-click="() => navigate(industries.oil)"
+            />
+            <industry
+                :is-active="isActive(industries.education)"
+                title="Education"
+                :on-click="() => navigate(industries.education)"
+            />
+            <industry
+                :is-active="isActive(industries.media)"
+                title="Media and Entertainment"
+                :on-click="() => navigate(industries.media)"
+            />
+            <industry
+                :is-active="isActive(industries.healthcare)"
+                title="Healthcare"
+                :on-click="() => navigate(industries.healthcare)"
+            />
         </div>
         <div class="content">
-            <industry-content v-if="industries[industry] === industries.financial" title="Financial Services">
-                <template v-slot:problem>Current Issue</template>
-                <template v-slot:solution>Fix</template>
-                <template v-slot:pipeline>Services Diagram</template>
+            <industry-content
+                v-if="industries[industry] === industries.financial"
+                title="Financial Services"
+            >
+                <template v-slot:problem>
+                    Current Issue
+                </template>
+                <template v-slot:solution>
+                    Fix
+                </template>
+                <template v-slot:pipeline>
+                    Services Diagram
+                </template>
             </industry-content>
-            <industry-content v-if="industries[industry] === industries.oil" title="Oil and Gas">
-                <template v-slot:problem>Current Issue</template>
-                <template v-slot:solution>Fix</template>
-                <template v-slot:pipeline>Services Diagram</template>
+            <industry-content
+                v-if="industries[industry] === industries.oil"
+                title="Oil and Gas"
+            >
+                <template v-slot:problem>
+                    Current Issue
+                </template>
+                <template v-slot:solution>
+                    Fix
+                </template>
+                <template v-slot:pipeline>
+                    Services Diagram
+                </template>
             </industry-content>
-            <industry-content v-if="industries[industry] === industries.education" title="Education">
-                <template v-slot:problem>Current Issue</template>
-                <template v-slot:solution>Fix</template>
-                <template v-slot:pipeline>Services Diagram</template>
+            <industry-content
+                v-if="industries[industry] === industries.education"
+                title="Education"
+            >
+                <template v-slot:problem>
+                    Current Issue
+                </template>
+                <template v-slot:solution>
+                    Fix
+                </template>
+                <template v-slot:pipeline>
+                    Services Diagram
+                </template>
             </industry-content>
-            <industry-content v-if="industries[industry] === industries.media" title="Media and Entertainment">
-                <template v-slot:problem>Current Issue</template>
-                <template v-slot:solution>Fix</template>
-                <template v-slot:pipeline>Services Diagram</template>
+            <industry-content
+                v-if="industries[industry] === industries.media"
+                title="Media and Entertainment"
+            >
+                <template v-slot:problem>
+                    Current Issue
+                </template>
+                <template v-slot:solution>
+                    Fix
+                </template>
+                <template v-slot:pipeline>
+                    Services Diagram
+                </template>
             </industry-content>
-            <industry-content v-if="industries[industry] === industries.healthcare" title="Healthcare">
-                <template v-slot:problem>Current Issue</template>
-                <template v-slot:solution>Fix</template>
-                <template v-slot:pipeline>Services Diagram</template>
+            <industry-content
+                v-if="industries[industry] === industries.healthcare"
+                title="Healthcare"
+            >
+                <template v-slot:problem>
+                    Current Issue
+                </template>
+                <template v-slot:solution>
+                    Fix
+                </template>
+                <template v-slot:pipeline>
+                    Services Diagram
+                </template>
             </industry-content>
         </div>
     </div>
@@ -60,6 +125,9 @@ export default {
             return this.$route.params.industry;
         },
     },
+    mounted() {
+        if (!this.industry) this.navigate(this.industries.financial);
+    },
     methods: {
         navigate(industry) {
             if (this.industry === industry) return;
@@ -71,9 +139,6 @@ export default {
         isActive(industry) {
             return this.industries[this.industry] === industry;
         },
-    },
-    mounted() {
-        if (!this.industry) this.navigate(this.industries.financial);
     },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div id="home-page">
-        {{$t(`message['This is i18n Example Text']`)}}
+        {{ $t(`message['This is i18n Example Text']`) }}
         <el-button>Element UI Button</el-button>
     </div>
 </template>
