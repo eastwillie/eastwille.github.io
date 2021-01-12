@@ -8,6 +8,7 @@ export default {
     },
     placeholder: {},
     button: {
+        // Nav
         home: 'home',
         solutions: 'solutions',
         services: 'services',
@@ -17,6 +18,7 @@ export default {
         contact: 'contact',
         NLP: 'NLP',
         'document recognition': 'document recognition',
+        console: 'console',
     },
     industries: {
         'Financial Services': 'Financial Services',
