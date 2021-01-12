@@ -23,11 +23,23 @@
                 </div>
             </div>
         </div>
-        <div class="vision"></div>
+        <div class="vision content">
+            <div class="introduction">
+                <div class="introduction-heading"><img :src="quote" alt=""> Introduction to Rodin</div>
+                <div class="introduction-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorum quo autem blanditiis quasi nobis a cumque necessitatibus, vel eaque libero molestiae quidem sint aspernatur beatae explicabo qui, vero corporis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi necessitatibus reiciendis ex deleniti quibusdam labore quo praesentium architecto minus error vitae voluptas, saepe aliquid quas, ad veritatis perferendis at laborum.</div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
+import quote from '@/assets/images/quote.svg';
+
 export default {
+    computed: {
+        quote() {
+            return quote;
+        },
+    },
     mounted() {
         this.$methods.methodsExample();
     },
@@ -43,8 +55,7 @@ export default {
         .content {
             display: flex;
             flex-direction: column;
-            padding-top: 2.4rem;
-            padding-left: .85rem;
+            padding: 0 0.85rem;
         }
 
         .rodin {
@@ -53,6 +64,7 @@ export default {
             flex-direction: row;
             width: 100vw;
             height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
+            padding-top: 2.4rem;
             background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
             color: white;
 
@@ -136,6 +148,25 @@ export default {
                 .count-description {
                     font-size: 0.20rem;
                 }
+            }
+        }
+
+        .introduction {
+            width: 100%;
+            height: 2.22rem;
+            margin-top: -0.6rem;
+            background-color: white;
+            border-radius: 0.06rem;
+            padding: 0.4rem;
+            padding-top: 0.30rem;
+
+            .introduction-heading {
+                font-size: 0.28rem;
+            }
+
+            .introduction-description {
+                margin-top: 0.24rem;
+                font-size: 0.16rem;
             }
         }
 
