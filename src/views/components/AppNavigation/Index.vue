@@ -59,6 +59,16 @@
       >
         {{ $t(`button['contact']`) }}
       </el-menu-item>
+      <el-menu-item
+        index="/console"
+      >
+        <el-button
+          size="small"
+          class="console-button"
+        >
+          {{ $t(`button['console']`) }}
+        </el-button>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -82,7 +92,7 @@
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
-    background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
+    background: #1A124B;
 
     .console-button {
       text-transform: capitalize;
