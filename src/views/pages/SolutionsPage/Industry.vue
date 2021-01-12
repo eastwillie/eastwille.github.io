@@ -1,7 +1,7 @@
 <template>
     <div :class="industry" @click="onClick">
         <div class="industry-icon"></div>
-        <div class="industry-label">{{title}}</div>
+        <div class="industry-label">{{$t(`industries['${title}']`)}}</div>
     </div>
 </template>
 
