@@ -64,11 +64,13 @@ export default {
         navigate(industry) {
             if (this.industry === industry) return;
 
+            if (!this.industries[industry]) return;
+
             this.$router.push(`/solutions/${industry}`);
         },
     },
     mounted() {
-        if (!this.industry) this.$router.push('/solutions/financial');
+        if (!this.industry) this.navigate(this.industries.financial);
     },
 };
 </script>
