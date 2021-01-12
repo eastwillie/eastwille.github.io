@@ -1,26 +1,17 @@
 <template>
-    <div :class="industry" @click="onClick">
+    <div class="industry" :class="{active: isActive}" @click="onClick">
         <div class="industry-icon"></div>
         <div class="industry-label">{{$t(`industries['${title}']`)}}</div>
     </div>
 </template>
 
 <script>
-import clx from 'classnames';
-
 export default {
     props: {
         isActive: Boolean,
         icon: String,
         title: String,
         onClick: Function,
-    },
-    computed: {
-        industry() {
-            return clx('industry', {
-                active: this.$props.isActive,
-            });
-        },
     },
 };
 </script>
