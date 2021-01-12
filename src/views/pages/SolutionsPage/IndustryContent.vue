@@ -1,6 +1,6 @@
 <template>
     <div class="industry-content">
-        <div class="title">{{title}}</div>
+        <div class="title">{{$t(`industries['${title}']`)}}</div>
         <el-row>
             <el-col :span="6">Problem Statement:</el-col>
             <el-col :span="18"><slot name="problem" /></el-col>
