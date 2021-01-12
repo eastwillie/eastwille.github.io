@@ -1,6 +1,6 @@
 <template>
     <div
-        :class="industry"
+        :class="{active: isActive}"
         @click="onClick"
     >
         <div class="industry-icon" />
@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import clx from 'classnames';
-
 export default {
     props: {
         isActive: Boolean,
@@ -27,13 +25,6 @@ export default {
         onClick: {
             type: Function,
             default: () => {},
-        },
-    },
-    computed: {
-        industry() {
-            return clx('industry', {
-                active: this.$props.isActive,
-            });
         },
     },
 };

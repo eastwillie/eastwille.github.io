@@ -3,7 +3,7 @@
         <el-menu
             mode="horizontal"
             router
-            :default-active="$route.matched[0].path"
+            :default-active="$route.path"
         >
             <el-menu-item index="/home">
                 {{ $t(`button['home']`) }}
@@ -41,7 +41,7 @@
                     {{ $t(`button['NLP']`) }}
                 </el-menu-item>
             </el-submenu>
-
+            
             <el-menu-item
                 index="/pricing"
                 disabled
@@ -69,3 +69,70 @@
         </el-menu>
     </div>
 </template>
+<style lang="scss" scoped>
+    $app-nav_font-color: #FFF;
+    @mixin active {
+        font-weight: 600;
+        i {
+            font-weight: 600;
+        }
+    }
+    #app-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: capitalize;
+        background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
+
+        .console-button {
+            text-transform: capitalize;
+            color: #FFF;
+            background: rgba(255,255,255,0.2);
+            border: none;
+        }
+
+        /deep/ .el-menu--horizontal {
+            border: none;
+            background: none;
+            .el-menu-item {
+                color: $app-nav_font-color;
+                border: none;
+                &.is-active {
+                    color: $app-nav_font-color;
+                    @include active;
+                    border: none;
+                    background: none;
+                }
+            }
+            .el-submenu {
+                .el-submenu__title {
+                    color: $app-nav_font-color;
+                    i {
+                        color: $app-nav_font-color;
+                    }
+                    &:hover {
+                        background: none;
+                    }
+                }
+                &.is-active {
+                    .el-submenu__title {
+                        @include active;
+                        border: none;
+                    }
+                }
+            }
+            .el-menu-item:not(.is-disabled):hover {
+                background: none;
+            }
+            .el-icon-arrow-down {
+                margin-left: 0;
+                &:before {
+                    content: 'arrow_drop_down';
+                    font-family: 'Material Icons', sans-serif;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+</style>
