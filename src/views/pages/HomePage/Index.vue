@@ -28,6 +28,13 @@
                 <div class="introduction-heading"><img :src="quote" alt=""> Introduction to Rodin</div>
                 <div class="introduction-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
             </div>
+            <div class="our-vision">
+                <span class="tagline">World’s First All-Stake One-Stop AI Service Platform</span>
+                <span class="our-vision-heading">Our Vision</span>
+                <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
+                <span class="our-vision-description">Elit ut aliquam purus sit amet luctus venenatis. Amet porttitor eget dolor morbi non arcu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Pellentesque elit eget gravida cum sociis. Tellus mauris a diam maecenas sed enim ut sem viverra.</span>
+            </div>
         </div>
         <div class="why content">
             <div class="why-information">
@@ -169,9 +176,10 @@ export default {
             height: 2.22rem;
             margin-top: -0.6rem;
             background-color: white;
-            border-radius: 0.06rem;
+            border-radius: 0.06rem 0.06rem 0 0;
             padding: 0.4rem;
             padding-top: 0.30rem;
+            border-bottom: 1px solid #3B72FF;
 
             .introduction-heading {
                 font-size: 0.28rem;
@@ -188,6 +196,51 @@ export default {
             position: relative;
             width: 100vw;
             height: 100vh;
+
+            .our-vision {
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+                margin-top: 0.8rem;
+
+                .tagline {
+                    position: relative;
+                    margin-right: auto;
+                    padding: 0.08rem 0.48rem 0.08rem 0.2rem;
+                    border-radius: 0.32rem 1rem 1rem 0.32rem;
+                    font-size: 0.16rem;
+                    font-weight: 600;
+                    background: rgba(44, 7, 132, 0.1);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0.04rem;
+                        left: 0.1rem;
+                        height: 80%;
+                        width: 2px;
+                        background: #2C0784;
+                        border-radius: 6px;
+                    }
+                }
+
+                .our-vision-heading {
+                    margin-top: 0.20rem;
+                    font-size: 0.32rem;
+                    font-weight: 800;
+                }
+
+                .our-vision-sub-heading {
+                    margin-top: 0.20rem;
+                    font-size: 0.14rem;
+                    font-weight: 700;
+                }
+
+                .our-vision-description {
+                    margin-top: 0.20rem;
+                    font-size: 0.14rem;
+                }
+            }
         }
 
         .why {
