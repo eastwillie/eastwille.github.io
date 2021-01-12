@@ -1,16 +1,14 @@
 <template>
-  <div id="app">
-    <app-navigation v-if="$route.meta.showNav"></app-navigation>
-    <div id="view-container">
-      <div id="content">
-        <keep-alive>
-          <router-view v-if="$route.meta.keepAlive"></router-view>
-        </keep-alive>
-        <router-view v-if="!$route.meta.keepAlive"></router-view>
-      </div>
-      <app-footer />
+    <div id="app">
+        <app-navigation v-if="$route.meta.showNav" />
+        <div id="view-container">
+            <keep-alive>
+                <router-view v-if="$route.meta.keepAlive" />
+            </keep-alive>
+            <router-view v-if="!$route.meta.keepAlive" />
+        </div>
+        <app-footer />
     </div>
-  </div>
 </template>
 <script>
 import AppNavigation from '@/views/components/AppNavigation/Index.vue';
@@ -24,28 +22,15 @@ export default {
 };
 </script>
 <style lang="scss">
-  @import "assets/css/reset";
-  @import "assets/css/public";
-  @import "assets/css/overwite";
-  #app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    font-size: 0.2rem;
-    font-family: Lato,Helvetica Neue,Helvetica,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,'Montserrat',sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+    @import "assets/css/reset";
+    @import "assets/css/public";
+    @import "assets/css/overwite";
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  #view-container {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-  }
-
-  #content {
-    display: flex;
-    flex-grow: 1;
-  }
+    #app {
+        font-family: Montserrat, Helvetica Neue, Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        font-size: 0.16rem;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+    }
 </style>

@@ -8,8 +8,12 @@
                     <span class="empowering">Empowering Intelligent Apps with Our Customizable AI Technology</span>
                 </div>
                 <div class="rodin-actions">
-                    <button class="btn-action demo">Request Demo</button>
-                    <button class="btn-action check">Check our services</button>
+                    <button class="btn-action demo">
+                        Request Demo
+                    </button>
+                    <button class="btn-action check">
+                        Check our services
+                    </button>
                 </div>
                 <div class="rodin-stats">
                     <div class="stat">
@@ -25,8 +29,15 @@
         </div>
         <div class="vision content panel">
             <div class="introduction">
-                <div class="introduction-heading"><img :src="quote" alt=""> Introduction to Rodin</div>
-                <div class="introduction-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+                <div class="introduction-heading">
+                    <img
+                        :src="quote"
+                        alt=""
+                    > Introduction to Rodin
+                </div>
+                <div class="introduction-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </div>
             </div>
             <div class="our-vision">
                 <span class="tagline">World’s First All-Stake One-Stop AI Service Platform</span>
@@ -41,7 +52,9 @@
                 <span class="why-heading">Why choose us?</span>
                 <span class="why-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
             </div>
-            <button class="btn-action why-demo">Request Demo</button>
+            <button class="btn-action why-demo">
+                Request Demo
+            </button>
         </div>
         <div class="what content panel">
             <span class="what-heading">What Can You Get with Rodin?</span>

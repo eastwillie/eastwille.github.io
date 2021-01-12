@@ -4,7 +4,7 @@ module.exports = {
         node: true,
     },
     extends: [
-        'plugin:vue/essential',
+        'plugin:vue/recommended',
         '@vue/airbnb',
     ],
     parserOptions: {
@@ -15,7 +15,8 @@ module.exports = {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-alert': 'off',
-        indent: [2, 4],
+        indent: ['error', 4],
+        'vue/html-indent': ['error', 4],
         'prefer-destructuring': ['error', { object: true, array: false }],
     },
 };

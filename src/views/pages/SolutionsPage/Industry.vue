@@ -1,7 +1,12 @@
 <template>
-    <div class="industry" :class="{active: isActive}" @click="onClick">
-        <div class="industry-icon"></div>
-        <div class="industry-label">{{$t(`industries['${title}']`)}}</div>
+    <div
+        :class="{active: isActive}"
+        @click="onClick"
+    >
+        <div class="industry-icon" />
+        <div class="industry-label">
+            {{ $t(`industries['${title}']`) }}
+        </div>
     </div>
 </template>
 
@@ -9,9 +14,18 @@
 export default {
     props: {
         isActive: Boolean,
-        icon: String,
-        title: String,
-        onClick: Function,
+        icon: {
+            type: String,
+            default: '',
+        },
+        title: {
+            type: String,
+            required: true,
+        },
+        onClick: {
+            type: Function,
+            default: () => {},
+        },
     },
 };
 </script>

@@ -1,13 +1,18 @@
 import enLocale from 'element-ui/lib/locale/lang/en';
 
 export default {
-    title: {},
+    title: {
+        'perception & cloud powered': 'perception & cloud powered',
+        'all-stack ai service platform': 'all-stack ai service platform',
+        'empowering intelligent apps with our customizable AI technology': 'empowering intelligent apps with our customizable AI technology',
+    },
     status: {},
     message: {
         'This is i18n Example Text': 'This is i18n Example Text',
     },
     placeholder: {},
     button: {
+        // Nav
         home: 'home',
         solutions: 'solutions',
         services: 'services',
@@ -17,6 +22,10 @@ export default {
         contact: 'contact',
         NLP: 'NLP',
         'document recognition': 'document recognition',
+        console: 'console',
+        // Home
+        'request demo': 'request demo',
+        'check our services': 'check our services',
     },
     industries: {
         'Financial Services': 'Financial Services',
