@@ -41,7 +41,7 @@
                     {{ $t(`button['NLP']`) }}
                 </el-menu-item>
             </el-submenu>
-            
+
             <el-menu-item
                 index="/pricing"
                 disabled
@@ -77,6 +77,10 @@
             font-weight: 600;
         }
     }
+    @mixin font-style {
+        font-size: 0.16rem;
+        font-weight: lighter;
+    }
     #app-nav {
         display: flex;
         justify-content: flex-end;
@@ -87,6 +91,7 @@
 
         .console-button {
             text-transform: capitalize;
+            @include font-style;
             color: #FFF;
             background: rgba(255,255,255,0.2);
             border: none;
@@ -96,6 +101,7 @@
             border: none;
             background: none;
             .el-menu-item {
+                @include font-style;
                 color: $app-nav_font-color;
                 border: none;
                 &.is-active {
@@ -107,6 +113,7 @@
             }
             .el-submenu {
                 .el-submenu__title {
+                    @include font-style;
                     color: $app-nav_font-color;
                     i {
                         color: $app-nav_font-color;
