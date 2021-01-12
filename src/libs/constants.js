@@ -4,7 +4,7 @@ const API = isDevelopment ? '/dev' : '';
 const publicPath = process.env.BASE_URL;
 
 export default {
-    isDevelopment,
-    API,
-    publicPath,
+  isDevelopment,
+  API,
+  publicPath,
 };

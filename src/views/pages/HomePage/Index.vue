@@ -1,78 +1,78 @@
 <template>
-    <div id="home-page">
-        <div class="panel rodin">
-            <div class="content">
-                <div class="labels-container">
-                    <span class="perception">Perception & Cloud Powered</span>
-                    <span class="all-stack">All-Stack AI Service Platform</span>
-                    <span class="empowering">Empowering Intelligent Apps with Our Customizable AI Technology</span>
-                </div>
-                <div class="rodin-actions">
-                    <button class="btn-action demo">
-                        Request Demo
-                    </button>
-                    <button class="btn-action check">
-                        Check our services
-                    </button>
-                </div>
-                <div class="rodin-stats">
-                    <div class="stat">
-                        <span class="count">50+</span>
-                        <span class="count-description">AI Services Covering</span>
-                    </div>
-                    <div class="stat">
-                        <span class="count">5</span>
-                        <span class="count-description">Major AI Domains</span>
-                    </div>
-                </div>
-            </div>
+  <div id="home-page">
+    <div class="panel rodin">
+      <div class="content">
+        <div class="labels-container">
+          <span class="perception">Perception & Cloud Powered</span>
+          <span class="all-stack">All-Stack AI Service Platform</span>
+          <span class="empowering">Empowering Intelligent Apps with Our Customizable AI Technology</span>
         </div>
-        <div class="vision content panel">
-            <div class="introduction">
-                <div class="introduction-heading">
-                    <img
-                        :src="quote"
-                        alt=""
-                    > Introduction to Rodin
-                </div>
-                <div class="introduction-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </div>
-            </div>
-            <div class="our-vision">
-                <span class="tagline">World’s First All-Stake One-Stop AI Service Platform</span>
-                <span class="our-vision-heading">Our Vision</span>
-                <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-                <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
-                <span class="our-vision-description">Elit ut aliquam purus sit amet luctus venenatis. Amet porttitor eget dolor morbi non arcu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Pellentesque elit eget gravida cum sociis. Tellus mauris a diam maecenas sed enim ut sem viverra.</span>
-            </div>
+        <div class="rodin-actions">
+          <button class="btn-action demo">
+            Request Demo
+          </button>
+          <button class="btn-action check">
+            Check our services
+          </button>
         </div>
-        <div class="why content">
-            <div class="why-information">
-                <span class="why-heading">Why choose us?</span>
-                <span class="why-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-            </div>
-            <button class="btn-action why-demo">
-                Request Demo
-            </button>
+        <div class="rodin-stats">
+          <div class="stat">
+            <span class="count">50+</span>
+            <span class="count-description">AI Services Covering</span>
+          </div>
+          <div class="stat">
+            <span class="count">5</span>
+            <span class="count-description">Major AI Domains</span>
+          </div>
         </div>
-        <div class="what content panel">
-            <span class="what-heading">What Can You Get with Rodin?</span>
-        </div>
+      </div>
     </div>
+    <div class="vision content panel">
+      <div class="introduction">
+        <div class="introduction-heading">
+          <img
+            :src="quote"
+            alt=""
+          > Introduction to Rodin
+        </div>
+        <div class="introduction-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </div>
+      </div>
+      <div class="our-vision">
+        <span class="tagline">World’s First All-Stake One-Stop AI Service Platform</span>
+        <span class="our-vision-heading">Our Vision</span>
+        <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
+        <span class="our-vision-description">Elit ut aliquam purus sit amet luctus venenatis. Amet porttitor eget dolor morbi non arcu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Pellentesque elit eget gravida cum sociis. Tellus mauris a diam maecenas sed enim ut sem viverra.</span>
+      </div>
+    </div>
+    <div class="why content">
+      <div class="why-information">
+        <span class="why-heading">Why choose us?</span>
+        <span class="why-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+      </div>
+      <button class="btn-action why-demo">
+        Request Demo
+      </button>
+    </div>
+    <div class="what content panel">
+      <span class="what-heading">What Can You Get with Rodin?</span>
+    </div>
+  </div>
 </template>
 <script>
 import quote from '@/assets/images/quote.svg';
 
 export default {
-    computed: {
-        quote() {
-            return quote;
-        },
+  computed: {
+    quote() {
+      return quote;
     },
-    mounted() {
-        this.$methods.methodsExample();
-    },
+  },
+  mounted() {
+    this.$methods.methodsExample();
+  },
 };
 </script>
 <style lang="scss" scoped>
