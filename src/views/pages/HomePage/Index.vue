@@ -1,6 +1,6 @@
 <template>
     <div id="home-page">
-        <div class="rodin">
+        <div class="panel rodin">
             <div class="content">
                 <div class="labels-container">
                     <span class="perception">Perception & Cloud Powered</span>
@@ -23,12 +23,20 @@
                 </div>
             </div>
         </div>
-        <div class="vision content">
+        <div class="vision content panel">
             <div class="introduction">
                 <div class="introduction-heading"><img :src="quote" alt=""> Introduction to Rodin</div>
-                <div class="introduction-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolorum quo autem blanditiis quasi nobis a cumque necessitatibus, vel eaque libero molestiae quidem sint aspernatur beatae explicabo qui, vero corporis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi necessitatibus reiciendis ex deleniti quibusdam labore quo praesentium architecto minus error vitae voluptas, saepe aliquid quas, ad veritatis perferendis at laborum.</div>
+                <div class="introduction-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
             </div>
         </div>
+        <div class="why content">
+            <div class="why-information">
+                <span class="why-heading">Why choose us?</span>
+                <span class="why-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+            </div>
+            <button class="btn-action why-demo">Request Demo</button>
+        </div>
+        <div class="what content panel"></div>
     </div>
 </template>
 <script>
@@ -52,18 +60,32 @@ export default {
         font-family: 'Montserrat';
         background: #F7F8FF;
 
+        .panel {
+            display: flex;
+            position: relative;
+            width: 100vw;
+            min-height: 100vh;
+        }
+
         .content {
             display: flex;
             flex-direction: column;
             padding: 0 0.85rem;
         }
 
+        .btn-action {
+            height: 0.6rem;
+            font-family: 'Montserrat';
+            font-size: 0.18rem;
+            color: white;
+            border-radius: 6px;
+            border: none;
+        }
+
         .rodin {
-            display: flex;
-            position: relative;
             flex-direction: row;
-            width: 100vw;
             height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
+            min-height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
             padding-top: 2.4rem;
             background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
             color: white;
@@ -96,15 +118,6 @@ export default {
                 margin-top: 0.4rem;
                 display: flex;
                 gap: 0.1rem;
-
-                .btn-action {
-                    height: 0.6rem;
-                    font-family: 'Montserrat';
-                    font-size: 0.18rem;
-                    color: white;
-                    border-radius: 6px;
-                    border: none;
-                }
 
                 .demo {
                     width: 2rem;
@@ -175,6 +188,41 @@ export default {
             position: relative;
             width: 100vw;
             height: 100vh;
+        }
+
+        .why {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 1.64rem;
+            width: 100vw;
+            padding-top: 0.3rem;
+            color: white;
+            background: linear-gradient(276.75deg, #33029B 1.11%, #1A124B 85.2%);
+
+            .why-demo {
+                width: 2rem;
+                background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+            }
+
+            .why-information {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 0.12rem;
+                width: 40%;
+
+                .why-heading {
+                    font-size: 0.36rem;
+                    font-weight: 800;
+                }
+
+                .why-description {
+                    font-size: 0.14rem;
+                    font-weight: 700;
+                }
+            }
         }
     }
 </style>
