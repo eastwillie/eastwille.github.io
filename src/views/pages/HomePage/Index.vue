@@ -11,6 +11,16 @@
                     <button class="btn-action demo">Request Demo</button>
                     <button class="btn-action check">Check our services</button>
                 </div>
+                <div class="rodin-stats">
+                    <div class="stat">
+                        <span class="count">50+</span>
+                        <span class="count-description">AI Services Covering</span>
+                    </div>
+                    <div class="stat">
+                        <span class="count">5</span>
+                        <span class="count-description">Major AI Domains</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -102,6 +112,28 @@ export default {
                 left: 907px;
                 top: 94px;
                 background: linear-gradient(0deg, rgba(156, 124, 249, 0.44) -13.55%, rgba(36, 12, 106, 0) 100%);
+            }
+
+            .rodin-stats {
+                display: flex;
+                margin-top: 0.4rem;
+
+                .stat {
+                    display: flex;
+                    flex-direction: column;
+                    border-left: 1px solid white;
+                    padding-left: 0.2rem;
+                    margin-right: 0.24rem;
+
+                    .count {
+                        font-size: 0.32rem;
+                        font-weight: 900;
+                    }
+
+                    .count-description {
+                        font-size: 0.20rem;
+                    }
+                }
             }
         }
     }
