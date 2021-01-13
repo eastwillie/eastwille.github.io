@@ -85,8 +85,8 @@
             alt="API"
           >
           <span class="service-heading">{{ $t(`title['AI Services APIs']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
         </div>
         <div class="service pipeline">
           <img
@@ -94,8 +94,8 @@
             alt="Pipeline Builder"
           >
           <span class="service-heading">{{ $t(`title['AI Customized Pipeline Builder']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
         </div>
         <div class="service deployment">
           <img
@@ -103,8 +103,8 @@
             alt="Deployment"
           >
           <span class="service-heading">{{ $t(`title['Customized Deployment']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
         </div>
         <div class="service marketplace">
           <img
@@ -112,8 +112,8 @@
             alt="Marketplace"
           >
           <span class="service-heading">{{ $t(`title['Marketplace']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
         </div>
       </div>
       <div class="ai-services">
