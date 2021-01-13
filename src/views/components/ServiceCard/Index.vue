@@ -63,6 +63,7 @@ export default {
   .ai-services-description {
     margin-top: 0.16rem;
     font-size: 0.14rem;
+    color: #605F74;
   }
 
   .defined-services {
