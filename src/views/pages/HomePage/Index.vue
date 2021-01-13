@@ -96,6 +96,72 @@
           <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
         </div>
       </div>
+      <div class="ai-services">
+        <span class="ai-services-heading">Our AI Services</span>
+        <span class="ai-services-description">All in One AI Platform-as-a-Service for Vast Businesses and Developers</span>
+        <div class="defined-services">
+          <div class="ai-service">
+            <div class="ai-service-icon-container nlp">
+              <img
+                :src="svg.NLP"
+                alt="Natural Language Processing"
+              >
+            </div>
+            <div class="ai-service-content">
+              <span class="ai-service-title">Natural Language Processing</span>
+              <span class="ai-service-sub-title">Empowering your advanced NLP based applications with simple API calls.</span>
+              <button class="read-more">
+                Read more ->
+              </button>
+            </div>
+          </div>
+          <div class="ai-service">
+            <div class="ai-service-icon-container vca">
+              <img
+                :src="svg.VCA"
+                alt="Video Content Analysis"
+              >
+            </div>
+            <div class="ai-service-content">
+              <span class="ai-service-title">Video Content Analysis</span>
+              <span class="ai-service-sub-title">Unlocking video content analysis capabilities based on cutting-edge deep learning models.</span>
+              <button class="read-more">
+                Read more ->
+              </button>
+            </div>
+          </div>
+          <div class="ai-service">
+            <div class="ai-service-icon-container aiu">
+              <img
+                :src="svg.AIU"
+                alt="Automatic Image Understanding"
+              >
+            </div>
+            <div class="ai-service-content">
+              <span class="ai-service-title">Automatic Image Understanding</span>
+              <span class="ai-service-sub-title">Giving the ability of processing massive images into your able hands.</span>
+              <button class="read-more">
+                Read more ->
+              </button>
+            </div>
+          </div>
+          <div class="ai-service">
+            <div class="ai-service-icon-container asa">
+              <img
+                :src="svg.ASA"
+                alt="Audio and Speech Analysis;"
+              >
+            </div>
+            <div class="ai-service-content">
+              <span class="ai-service-title">Audio and Speech Analysis;</span>
+              <span class="ai-service-sub-title">Enabling your application both can hear and speak, as smart as it should be.</span>
+              <button class="read-more">
+                Read more ->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -105,6 +171,10 @@ import brain from '@/assets/images/icons/brain-api.svg';
 import deployment from '@/assets/images/icons/deployment.svg';
 import marketplace from '@/assets/images/icons/marketplace.svg';
 import pipeline from '@/assets/images/icons/pipeline.svg';
+import AIU from '@/assets/images/icons/AIU.svg';
+import ASA from '@/assets/images/icons/ASA.svg';
+import NLP from '@/assets/images/icons/NLP.svg';
+import VCA from '@/assets/images/icons/VCA.svg';
 
 export default {
   computed: {
@@ -115,6 +185,10 @@ export default {
         deployment,
         marketplace,
         pipeline,
+        AIU,
+        ASA,
+        NLP,
+        VCA,
       };
     },
   },
@@ -390,6 +464,104 @@ export default {
           &.api {
             &::after {
               width: 0;
+            }
+          }
+        }
+      }
+
+      .ai-services {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.6rem;
+
+        .ai-services-heading {
+          margin-top: 0.32rem;
+          font-size: 0.32rem;
+          font-weight: 800;
+        }
+
+        .ai-services-description {
+          margin-top: 0.16rem;
+          font-size: 0.14rem;
+        }
+
+        .defined-services {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.2rem;
+          margin-top: 0.16rem;
+
+          .ai-service {
+            position: relative;
+            z-index: 0;
+            display: flex;
+            flex-direction: row;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0px 10px 18px rgba(235, 237, 244, 0.76);
+
+            .ai-service-icon-container {
+              position: relative;
+              margin-bottom: 0.2rem;
+              padding: 0.2rem 0 0 0.2rem;
+
+              &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                width: 93%;
+                height: 96.5%;
+                border-top-left-radius: 8px;
+                background-color: black;
+              }
+
+              img {
+                min-width: 96px;
+                min-height: 96px;
+              }
+
+              &.aiu::before {
+                background-color: #DCEEFF;
+              }
+
+              &.asa::before {
+                background-color: #D8F8F2;
+              }
+
+              &.nlp::before {
+                background-color: #FC9C0D20;
+              }
+
+              &.vca::before {
+                background-color: #D9CAFF53;
+              }
+            }
+
+            .ai-service-content {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.08rem;
+              padding: 0.2rem;
+              padding-bottom: 0.08rem;
+
+              .ai-service-title {
+                font-size: 0.2rem;
+                font-weight: 800;
+              }
+
+              .ai-service-sub-title {
+                font-size: 0.14rem;
+              }
+
+              .read-more {
+                background: none;
+                border: none;
+                font-family: Montserrat;
+                color: #3A71FF;
+              }
             }
           }
         }
