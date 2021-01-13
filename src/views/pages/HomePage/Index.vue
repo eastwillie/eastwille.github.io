@@ -270,7 +270,7 @@ export default {
     .rodin-actions {
       z-index: 1;
       display: flex;
-      gap: 0.1rem;
+      gap: 0.16rem;
       margin-top: 0.4rem;
 
       .demo {
