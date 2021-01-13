@@ -615,6 +615,11 @@ export default {
               border: none;
               font-family: Montserrat;
               color: #3A71FF;
+
+              &::after {
+                content: 'arrow_forward';
+                font-family: 'Material Icons', sans-serif;
+              }
             }
           }
         }
