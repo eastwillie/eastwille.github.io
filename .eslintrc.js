@@ -18,6 +18,6 @@ module.exports = {
     indent: ['error', 2],
     'vue/html-indent': ['error', 2],
     'prefer-destructuring': ['error', { object: true, array: false }],
-    'linebreak-style': 0
+    'linebreak-style': 0,
   },
 };

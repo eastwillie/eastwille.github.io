@@ -227,6 +227,10 @@ export default {
         border: none;
         text-transform: capitalize;
 
+        &:hover {
+          background: none;
+        }
+
         &.is-active {
           color: $app-nav_font-color;
           @include active;
