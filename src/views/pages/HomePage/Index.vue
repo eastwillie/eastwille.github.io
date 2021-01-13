@@ -338,6 +338,7 @@ export default {
     .introduction-description {
       margin-top: 0.24rem;
       font-size: 0.16rem;
+      color: #605F74;
     }
   }
 
