@@ -26,6 +26,11 @@
           </div>
         </div>
       </div>
+      <img
+        class="illustration"
+        :src="svg.illustration"
+        alt="AI Service Illustration"
+      >
     </div>
     <div class="vision content panel">
       <div class="introduction">
@@ -175,6 +180,7 @@ import AIU from '@/assets/images/icons/AIU.svg';
 import ASA from '@/assets/images/icons/ASA.svg';
 import NLP from '@/assets/images/icons/NLP.svg';
 import VCA from '@/assets/images/icons/VCA.svg';
+import illustration from '@/assets/images/background/illustration.svg';
 
 export default {
   computed: {
@@ -189,6 +195,7 @@ export default {
         ASA,
         NLP,
         VCA,
+        illustration,
       };
     },
   },
@@ -224,12 +231,20 @@ export default {
   }
 
   .rodin {
+    position: relative;
     flex-direction: row;
     height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
     min-height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
     padding-top: 2.4rem;
     background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
     color: white;
+
+    .illustration {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 95%;
+    }
 
     .labels-container {
       display: flex;
