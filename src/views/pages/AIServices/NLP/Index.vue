@@ -1,8 +1,8 @@
 <template>
   <div id="ai-services_nlp">
-    NLP Services List:
-    <router-link to="/services/nlp/document-classification">
-      Document Classification
-    </router-link>
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive" />
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" />
   </div>
 </template>

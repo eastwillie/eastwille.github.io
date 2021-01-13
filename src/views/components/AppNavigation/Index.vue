@@ -13,20 +13,14 @@
         <template slot="title">
           {{ $t(`button['solutions']`) }}
         </template>
-        <el-menu-item
-          index="2-1"
-        >
-          Item1
+        <el-menu-item index="/solutions/media">
+          {{ $t(`button['media and entertainment']`) }}
         </el-menu-item>
-        <el-menu-item
-          index="2-2"
-        >
-          Item2
+        <el-menu-item index="/solutions/healthcare">
+          {{ $t(`button['healthcare']`) }}
         </el-menu-item>
-        <el-menu-item
-          index="2-3"
-        >
-          Item3
+        <el-menu-item index="/solutions/education">
+          {{ $t(`button['education']`) }}
         </el-menu-item>
       </el-submenu>
 
@@ -34,34 +28,37 @@
         <template slot="title">
           {{ $t(`button['services']`) }}
         </template>
-        <el-menu-item index="/services/nlp/index">
-          {{ $t(`button['NLP']`) }}
-        </el-menu-item>
+        <el-submenu
+          v-for="(mainRoute, mainIndex) in AIServices.children"
+          :key="`${mainRoute.name}${mainIndex}`"
+          :index="`/services/${mainRoute.path}`"
+        >
+          <template slot="title">
+            {{ $t(`button['${mainRoute.name}']`) }}
+          </template>
+          <el-menu-item
+            v-for="(subRoute, subIndex) in mainRoute.children"
+            :key="`${subRoute}${subIndex}`"
+            :index="`/services/${mainRoute.path}/${subRoute.path}`"
+          >
+            {{ $t(`button['${subRoute.name}']`) }}
+          </el-menu-item>
+        </el-submenu>
       </el-submenu>
 
-      <el-menu-item
-        index="/pricing"
-      >
+      <el-menu-item index="/pricing">
         {{ $t(`button['pricing']`) }}
       </el-menu-item>
-      <el-menu-item
-        index="/document"
-      >
+      <el-menu-item index="/document">
         {{ $t(`button['document']`) }}
       </el-menu-item>
-      <el-menu-item
-        index="/custom-support"
-      >
+      <el-menu-item index="/custom-support">
         {{ $t(`button['custom support']`) }}
       </el-menu-item>
-      <el-menu-item
-        index="/contact"
-      >
+      <el-menu-item index="/contact">
         {{ $t(`button['contact']`) }}
       </el-menu-item>
-      <el-menu-item
-        index="/console"
-      >
+      <el-menu-item index="/console">
         <el-button
           size="small"
           class="console-button"
@@ -72,6 +69,17 @@
     </el-menu>
   </div>
 </template>
+<script>
+import AIServices from '@/router/AIServices/index';
+
+export default {
+  data() {
+    return {
+      AIServices,
+    };
+  },
+};
+</script>
 <style lang="scss" scoped>
   $app-nav_font-color: #FFF;
   @mixin active {

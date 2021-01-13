@@ -10,6 +10,6 @@ export default {
     canBack: false,
   },
   children: [
-    ...NLP,
+    NLP,
   ],
 };
