@@ -494,6 +494,7 @@ export default {
           margin-top: 0.2rem;
           font-size: 0.14rem;
           font-weight: 400;
+          color: #605F74;
         }
 
         &::after {
