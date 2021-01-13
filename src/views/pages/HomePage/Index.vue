@@ -31,7 +31,7 @@
       <div class="introduction">
         <div class="introduction-heading">
           <img
-            :src="quote"
+            :src="svg.quote"
             alt=""
           > Introduction to Rodin
         </div>
@@ -58,24 +58,69 @@
     </div>
     <div class="what content panel">
       <span class="what-heading">What Can You Get with Rodin?</span>
+      <div class="grid services">
+        <div class="service api">
+          <img
+            :src="svg.brain"
+            alt="API"
+          >
+          <span class="service-heading">AI Services APIs</span>
+          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
+          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+        </div>
+        <div class="service pipeline">
+          <img
+            :src="svg.pipeline"
+            alt="Pipeline Builder"
+          >
+          <span class="service-heading">AI Customized Pipeline Builder</span>
+          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
+          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+        </div>
+        <div class="service deployment">
+          <img
+            :src="svg.deployment"
+            alt="Deployment"
+          >
+          <span class="service-heading">Customized Deployment</span>
+          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
+          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+        </div>
+        <div class="service marketplace">
+          <img
+            :src="svg.marketplace"
+            alt="Marketplace"
+          >
+          <span class="service-heading">Marketplace</span>
+          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
+          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import quote from '@/assets/images/quote.svg';
+import brain from '@/assets/images/icons/brain-api.svg';
+import deployment from '@/assets/images/icons/deployment.svg';
+import marketplace from '@/assets/images/icons/marketplace.svg';
+import pipeline from '@/assets/images/icons/pipeline.svg';
 
 export default {
   computed: {
-    quote() {
-      return quote;
+    svg() {
+      return {
+        quote,
+        brain,
+        deployment,
+        marketplace,
+        pipeline,
+      };
     },
-  },
-  mounted() {
-    this.$methods.methodsExample();
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
   #home-page {
     display: flex;
     flex-direction: column;
@@ -304,6 +349,50 @@ export default {
       .what-heading {
         font-size: 0.32rem;
         font-weight: 800;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 0.6rem;
+
+        .service {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          position: relative;
+          padding: 0.2rem;
+          padding-top: 0;
+          min-height: 2rem;
+
+          .service-heading {
+            margin-top: 0.2rem;
+            font-size: 0.16rem;
+            font-weight: 700;
+          }
+
+          .service-description {
+            margin-top: 0.2rem;
+            font-size: 0.14rem;
+            font-weight: 400;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0.16rem;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: #D9CAFF;
+          }
+
+          &.api {
+            &::after {
+              width: 0;
+            }
+          }
+        }
       }
     }
   }
