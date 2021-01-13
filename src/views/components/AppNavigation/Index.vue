@@ -3,7 +3,7 @@
     <img
       src="../../../assets/images/icon/nav/Logo.png"
       alt="logo"
-    />
+    >
     <el-menu
       mode="horizontal"
       router
@@ -82,7 +82,7 @@
             {{ $t(`button['${subRoute.name}']`) }}
           </el-menu-item>
           <el-menu-item :index="`/services/${mainRoute.path}/introduction`">
-            <span class="check-all-services">{{$t(`button['Check All Services']`)}}</span>
+            <span class="check-all-services">{{ $t(`button['Check All Services']`) }}</span>
           </el-menu-item>
         </el-submenu>
       </el-submenu>
