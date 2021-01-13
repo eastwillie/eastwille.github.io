@@ -51,6 +51,11 @@
         <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
         <span class="our-vision-description">Elit ut aliquam purus sit amet luctus venenatis. Amet porttitor eget dolor morbi non arcu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Pellentesque elit eget gravida cum sociis. Tellus mauris a diam maecenas sed enim ut sem viverra.</span>
       </div>
+      <img
+        class="our-vision-banner"
+        :src="svg.vision"
+        alt="Our Vision Globe"
+      >
     </div>
     <div class="why content">
       <div class="why-information">
@@ -181,6 +186,7 @@ import ASA from '@/assets/images/icons/ASA.svg';
 import NLP from '@/assets/images/icons/NLP.svg';
 import VCA from '@/assets/images/icons/VCA.svg';
 import illustration from '@/assets/images/background/illustration.svg';
+import vision from '@/assets/images/background/our-vision.svg';
 
 export default {
   computed: {
@@ -196,6 +202,7 @@ export default {
         NLP,
         VCA,
         illustration,
+        vision,
       };
     },
   },
@@ -350,6 +357,7 @@ export default {
     height: 100vh;
 
     .our-vision {
+      position: relative;
       display: flex;
       flex-direction: column;
       width: 60%;
@@ -392,6 +400,13 @@ export default {
         margin-top: 0.20rem;
         font-size: 0.14rem;
       }
+    }
+
+    .our-vision-banner {
+      position: absolute;
+      top: 2rem;
+      right: 0.4rem;
+      height: 60%;
     }
   }
 
