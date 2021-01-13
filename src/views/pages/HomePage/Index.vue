@@ -126,7 +126,7 @@
               <span class="ai-service-title">{{ $t(`title['Natural Language Processing']`) }}</span>
               <span class="ai-service-sub-title">{{ $t(`description['Empowering your advanced NLP based applications with simple API calls.']`) }}</span>
               <button class="read-more">
-                {{ $t(`button['Read more']`) }}
+                {{ $t(`button['Read more']`) }} <i class="el-icon-right" />
               </button>
             </div>
           </div>
@@ -141,7 +141,7 @@
               <span class="ai-service-title">{{ $t(`title['Video Content Analysis']`) }}</span>
               <span class="ai-service-sub-title">{{ $t(`description['Unlocking video content analysis capabilities based on cutting-edge deep learning models.']`) }}</span>
               <button class="read-more">
-                {{ $t(`button['Read more']`) }}
+                {{ $t(`button['Read more']`) }} <i class="el-icon-right" />
               </button>
             </div>
           </div>
@@ -156,7 +156,7 @@
               <span class="ai-service-title">{{ $t(`title['Automatic Image Understanding']`) }}</span>
               <span class="ai-service-sub-title">{{ $t(`description['Giving the ability of processing massive images into your able hands.']`) }}</span>
               <button class="read-more">
-                {{ $t(`button['Read more']`) }}
+                {{ $t(`button['Read more']`) }} <i class="el-icon-right" />
               </button>
             </div>
           </div>
@@ -171,7 +171,7 @@
               <span class="ai-service-title">{{ $t(`title['Audio and Speech Analysis']`) }}</span>
               <span class="ai-service-sub-title">{{ $t(`description['Enabling your application both can hear and speak, as smart as it should be.']`) }}</span>
               <button class="read-more">
-                {{ $t(`button['Read more']`) }}
+                {{ $t(`button['Read more']`) }} <i class="el-icon-right" />
               </button>
             </div>
           </div>
