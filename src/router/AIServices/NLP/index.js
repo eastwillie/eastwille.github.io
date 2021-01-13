@@ -24,7 +24,7 @@ export default {
     },
     {
       path: 'introduction',
-      name: 'see more services',
+      name: 'introduction',
       component: () => import('@/views/pages/AIServices/NLP/Introduction/Index.vue'),
       meta: {
         keepAlive: false,

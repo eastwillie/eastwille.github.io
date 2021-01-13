@@ -31,7 +31,7 @@ export default {
     'document classification': 'document classification',
     'automatic image understanding': 'automatic image understanding',
     console: 'console',
-    'see more services': 'see more services',
+    'Check All Services': 'Check All Services',
     // Home
     'request demo': 'request demo',
     'check our services': 'check our services',

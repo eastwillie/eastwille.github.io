@@ -14,7 +14,7 @@ export default {
   children: [
     {
       path: 'introduction',
-      name: 'see more services',
+      name: 'introduction',
       component: () => import('@/views/pages/AIServices/AIU/Introduction/Index.vue'),
       meta: {
         keepAlive: false,

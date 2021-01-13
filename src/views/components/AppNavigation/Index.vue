@@ -75,11 +75,14 @@
             </div>
           </template>
           <el-menu-item
-            v-for="(subRoute, subIndex) in mainRoute.children"
+            v-for="(subRoute, subIndex) in mainRoute.children.slice(0, -1)"
             :key="`${subRoute}${subIndex}`"
             :index="`/services/${mainRoute.path}/${subRoute.path}`"
           >
             {{ $t(`button['${subRoute.name}']`) }}
+          </el-menu-item>
+          <el-menu-item :index="`/services/${mainRoute.path}/introduction`">
+            <span class="check-all-services">{{$t(`button['Check All Services']`)}}</span>
           </el-menu-item>
         </el-submenu>
       </el-submenu>
@@ -176,6 +179,25 @@ export default {
                 white-space: normal;
               }
             }
+          }
+          .el-menu-item {
+            border-bottom: 1px solid #D9CAFF;
+            &:last-child {
+              border-bottom: none;
+            }
+            &:hover {
+              background: #F8F5FF;
+            }
+          }
+        }
+        .check-all-services {
+          font-size: 0.14rem;
+          color: #3A71FF;
+          &:after {
+            content: 'east';
+            margin-left: 0.5em;
+            vertical-align: -10%;
+            font-family: 'Material Icons', sans-serif;
           }
         }
       }
