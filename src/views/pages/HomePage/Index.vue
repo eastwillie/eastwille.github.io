@@ -201,6 +201,7 @@ export default {
   flex-direction: column;
   font-family: 'Montserrat';
   background: #F7F8FF;
+  color: #3A3955;
 
   .panel {
     display: flex;
