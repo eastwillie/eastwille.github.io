@@ -322,11 +322,11 @@ export default {
 
   .introduction {
     width: 100%;
-    height: 2.22rem;
     margin-top: -0.6rem;
     background-color: white;
     border-radius: 0.06rem 0.06rem 0 0;
-    padding: 0.4rem;
+    padding: 0.36rem;
+    padding-bottom: 0.45rem;
     padding-top: 0.30rem;
     border-bottom: 1px solid #3B72FF;
 
