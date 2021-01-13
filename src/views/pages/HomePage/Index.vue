@@ -254,6 +254,7 @@ export default {
     color: white;
 
     .illustration {
+      z-index: 0;
       position: absolute;
       bottom: 0;
       right: 0;
@@ -261,6 +262,7 @@ export default {
     }
 
     .labels-container {
+      z-index: 1;
       display: flex;
       flex-direction: column;
 
@@ -286,9 +288,10 @@ export default {
     }
 
     .rodin-actions {
-      margin-top: 0.4rem;
+      z-index: 1;
       display: flex;
       gap: 0.1rem;
+      margin-top: 0.4rem;
 
       .demo {
         width: 2rem;
@@ -364,6 +367,7 @@ export default {
     height: 100vh;
 
     .our-vision {
+      z-index: 1;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -410,6 +414,7 @@ export default {
     }
 
     .our-vision-banner {
+      z-index: 0;
       position: absolute;
       top: 2rem;
       right: 0.4rem;
