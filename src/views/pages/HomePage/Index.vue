@@ -393,6 +393,7 @@ export default {
       .our-vision-description {
         margin-top: 0.20rem;
         font-size: 0.14rem;
+        color: #605F74;
       }
     }
 
