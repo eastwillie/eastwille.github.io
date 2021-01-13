@@ -23,6 +23,7 @@ export default {
     document: 'document',
     'custom support': 'custom support',
     contact: 'contact',
+    'financial services': 'financial services',
     'media and entertainment': 'media and entertainment',
     healthcare: 'healthcare',
     education: 'education',

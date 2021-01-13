@@ -17,13 +17,32 @@
         <template slot="title">
           {{ $t(`button['solutions']`) }}
         </template>
+        <el-menu-item index="/solutions/financial">
+          <img
+            src="../../../assets/images/icon/nav/Financial.svg"
+            alt="financial"
+          >
+          {{ $t(`button['financial services']`) }}
+        </el-menu-item>
         <el-menu-item index="/solutions/media">
+          <img
+            src="../../../assets/images/icon/nav/Media.svg"
+            alt="financial"
+          >
           {{ $t(`button['media and entertainment']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/healthcare">
+          <img
+            src="../../../assets/images/icon/nav/Healthcare.svg"
+            alt="healthcare"
+          >
           {{ $t(`button['healthcare']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/education">
+          <img
+            src="../../../assets/images/icon/nav/Education.svg"
+            alt="education"
+          >
           {{ $t(`button['education']`) }}
         </el-menu-item>
       </el-submenu>
@@ -131,7 +150,7 @@ export default {
             align-items: center;
             justify-content: center;
             margin: 1em 0.5em;
-            font-size: 0.16rem;
+            font-size: 0.15rem;
             color: #000;
             background: transparent;
             img {
@@ -153,6 +172,30 @@ export default {
                 white-space: normal;
               }
             }
+          }
+        }
+      }
+      .el-menu-item {
+        color: #000;
+      }
+      .el-submenu {
+        .el-submenu__title {
+          color: #000;
+        }
+      }
+    }
+
+    /deep/ .solutions {
+      & > .el-menu {
+        & > .el-menu-item {
+          margin: 0.5em 0;
+          padding: 0 1em;
+          font-size: 0.15rem;
+          &:hover {
+            background: #F8F5FF;
+          }
+          img {
+            margin-right: 0.5em;
           }
         }
       }
@@ -212,10 +255,6 @@ export default {
             border: none;
           }
         }
-      }
-
-      .el-menu-item:not(.is-disabled):hover {
-        background: none;
       }
 
       .el-icon-arrow-down {
