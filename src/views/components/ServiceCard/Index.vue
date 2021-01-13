@@ -119,6 +119,7 @@ export default {
 
         .ai-service-sub-title {
           font-size: 0.14rem;
+          color: #605F74;
         }
 
         .read-more {
