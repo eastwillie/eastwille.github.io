@@ -72,6 +72,11 @@
       >
     </div>
     <div class="what content panel">
+      <img
+        class="diagonal-box"
+        :src="svg.diagonal"
+        alt="Diagonal Box"
+      >
       <span class="what-heading">{{ $t(`title['What Can You Get with Rodin?']`) }}</span>
       <div class="grid services">
         <div class="service api">
@@ -193,6 +198,7 @@ import VCA from '@/assets/images/icons/VCA.svg';
 import illustration from '@/assets/images/background/illustration.svg';
 import vision from '@/assets/images/background/our-vision.svg';
 import datalines from '@/assets/images/background/data-lines.svg';
+import diagonal from '@/assets/images/background/diagonal-box.svg';
 
 export default {
   computed: {
@@ -210,6 +216,7 @@ export default {
         illustration,
         vision,
         datalines,
+        diagonal,
       };
     },
   },
@@ -470,6 +477,7 @@ export default {
   }
 
   .what {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding-top: 0.8rem;
@@ -477,6 +485,12 @@ export default {
     .what-heading {
       font-size: 0.32rem;
       font-weight: 800;
+    }
+
+    .diagonal-box {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
 
     .services {
