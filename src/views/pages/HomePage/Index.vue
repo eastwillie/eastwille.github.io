@@ -428,9 +428,10 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 1.64rem;
+    min-height: 1.64rem;
     width: 100vw;
     padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
     color: white;
     background: linear-gradient(276.75deg, #33029B 1.11%, #1A124B 85.2%);
 
