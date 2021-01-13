@@ -1,5 +1,9 @@
 <template>
   <div id="app-nav">
+    <img
+      src="../../../assets/images/icon/nav/Logo.png"
+      alt="logo"
+    />
     <el-menu
       mode="horizontal"
       router
@@ -131,7 +135,7 @@ export default {
 
   #app-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
