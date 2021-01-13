@@ -9,7 +9,11 @@
         {{ $t(`button['home']`) }}
       </el-menu-item>
 
-      <el-submenu index="/solution">
+      <el-submenu
+        index="/solution"
+        popper-class="solutions"
+        :popper-append-to-body="false"
+      >
         <template slot="title">
           {{ $t(`button['solutions']`) }}
         </template>
@@ -24,7 +28,11 @@
         </el-menu-item>
       </el-submenu>
 
-      <el-submenu index="/services">
+      <el-submenu
+        index="/services"
+        popper-class="services"
+        :popper-append-to-body="false"
+      >
         <template slot="title">
           {{ $t(`button['services']`) }}
         </template>
@@ -34,7 +42,14 @@
           :index="`/services/${mainRoute.path}`"
         >
           <template slot="title">
-            {{ $t(`button['${mainRoute.name}']`) }}
+            <img
+              :src="mainRoute.meta.icon"
+              :alt="mainRoute.name"
+            >
+            <div class="introduction">
+              <h4>{{ $t(`button['${mainRoute.name}']`) }}</h4>
+              <p>{{ $t(`title['${mainRoute.meta.intro}']`) }}</p>
+            </div>
           </template>
           <el-menu-item
             v-for="(subRoute, subIndex) in mainRoute.children"
@@ -92,6 +107,7 @@ export default {
   @mixin font-style {
     font-size: 0.18rem;
     font-weight: 400;
+    text-transform: capitalize;
   }
 
   #app-nav {
@@ -101,6 +117,54 @@ export default {
     font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
     background: #1A124B;
+
+    /deep/ .services {
+      & > .el-menu {
+        padding: 0;
+        & > .el-submenu {
+          padding: 0.5em 0;
+          &:hover {
+            background: #F8F5FF;
+          }
+          & > .el-submenu__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1em 0.5em;
+            font-size: 0.16rem;
+            color: #000;
+            background: transparent;
+            img {
+              width: 3em;
+              height: 3em;
+            }
+            .introduction {
+              flex: 2;
+              margin-left: 0.5em;
+              max-width: 20em;
+              h4 {
+                line-height: 1.4;
+                font-weight: 600;
+              }
+              p {
+                line-height: 1.4;
+                font-size: 0.12rem;
+                color: #3A3955;
+                white-space: normal;
+              }
+            }
+          }
+        }
+      }
+      .el-menu-item {
+        color: #000;
+      }
+      .el-submenu {
+        .el-submenu__title {
+          color: #000;
+        }
+      }
+    }
 
     .console-button {
       text-transform: capitalize;
@@ -114,10 +178,11 @@ export default {
       border: none;
       background: none;
 
-      .el-menu-item {
+      & > .el-menu-item {
         @include font-style;
         color: $app-nav_font-color;
         border: none;
+        text-transform: capitalize;
 
         &.is-active {
           color: $app-nav_font-color;
@@ -164,4 +229,5 @@ export default {
       }
     }
   }
+
 </style>

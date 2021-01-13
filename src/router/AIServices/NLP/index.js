@@ -1,14 +1,15 @@
+import NLPIcon from '@/assets/images/icon/nav/NLP.png';
+
 export default {
   path: 'nlp',
   name: 'natural language processing',
   component: () => import('@/views/pages/AIServices/NLP/Index.vue'),
   meta: {
     keepAlive: false,
-    auth: false,
     showNav: true,
-    canBack: false,
     showSlideMenu: false,
-
+    icon: NLPIcon,
+    intro: 'Empowering your advanced NLP based applications with simple API calls.',
   },
   children: [
     {
@@ -17,9 +18,7 @@ export default {
       component: () => import('@/views/pages/AIServices/NLP/DocumentClassification/Index.vue'),
       meta: {
         keepAlive: false,
-        auth: false,
         showNav: true,
-        canBack: false,
         showSlideMenu: true,
       },
     },
@@ -29,9 +28,7 @@ export default {
       component: () => import('@/views/pages/AIServices/NLP/Introduction/Index.vue'),
       meta: {
         keepAlive: false,
-        auth: false,
         showNav: true,
-        canBack: false,
         showSlideMenu: false,
       },
     },
