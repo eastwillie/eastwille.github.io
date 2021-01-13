@@ -8,8 +8,6 @@ export default {
     // NAV
     'Empowering your advanced NLP based applications with simple API calls.': 'Empowering your advanced NLP based applications with simple API calls.',
     'Giving the ability of processing massive images into your able hands.': 'Giving the ability of processing massive images into your able hands.',
-    '50+': '50+',
-    5: '5',
     'Introduction to Rodin': 'Introduction to Rodin',
     "World's First All-Stake One-Stop AI Service Platform": "World's First All-Stake One-Stop AI Service Platform",
     'Our Vision': 'Our Vision',

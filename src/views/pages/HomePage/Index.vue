@@ -17,11 +17,11 @@
         </div>
         <div class="rodin-stats">
           <div class="stat">
-            <span class="count">{{ $t(`title['50+']`) }}</span>
+            <span class="count">50+</span>
             <span class="count-description">{{ $t(`description['AI Services Covering']`) }}</span>
           </div>
           <div class="stat">
-            <span class="count">{{ $t(`title['5']`) }}</span>
+            <span class="count">5</span>
             <span class="count-description">{{ $t(`description['Major AI Domains']`) }}</span>
           </div>
         </div>
