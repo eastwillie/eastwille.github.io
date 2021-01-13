@@ -1,5 +1,5 @@
 <template>
-  <div id="ai-services_nlp">
+  <div id="ai-services_aiu">
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>

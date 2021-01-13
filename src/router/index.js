@@ -16,9 +16,7 @@ const routes = [
     component: () => import('@/views/pages/HomePage/Index.vue'),
     meta: {
       keepAlive: false,
-      auth: false,
       showNav: true,
-      canBack: false,
     },
   },
   AIServices,
@@ -28,9 +26,7 @@ const routes = [
     component: () => import('../views/pages/SolutionsPage/Index.vue'),
     meta: {
       keepAlive: false,
-      auth: false,
       showNav: true,
-      canBack: false,
     },
   },
   {
@@ -38,9 +34,7 @@ const routes = [
     component: () => import('@/views/pages/PageNotFound/Index.vue'),
     meta: {
       keepAlive: false,
-      auth: false,
       showNav: false,
-      canBack: false,
     },
   },
 ];
