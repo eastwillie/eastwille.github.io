@@ -387,6 +387,7 @@ export default {
         margin-top: 0.20rem;
         font-size: 0.14rem;
         font-weight: 700;
+        color: #605F74;
       }
 
       .our-vision-description {
