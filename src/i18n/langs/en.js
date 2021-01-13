@@ -5,6 +5,9 @@ export default {
     'perception & cloud powered': 'perception & cloud powered',
     'all-stack ai service platform': 'all-stack ai service platform',
     'empowering intelligent apps with our customizable AI technology': 'empowering intelligent apps with our customizable AI technology',
+    // NAV
+    'Empowering your advanced NLP based applications with simple API calls.': 'Empowering your advanced NLP based applications with simple API calls.',
+    'Giving the ability of processing massive images into your able hands.': 'Giving the ability of processing massive images into your able hands.',
   },
   status: {},
   message: {
@@ -20,9 +23,15 @@ export default {
     document: 'document',
     'custom support': 'custom support',
     contact: 'contact',
-    NLP: 'NLP',
-    'document recognition': 'document recognition',
+    'financial services': 'financial services',
+    'media and entertainment': 'media and entertainment',
+    healthcare: 'healthcare',
+    education: 'education',
+    'natural language processing': 'natural language processing',
+    'document classification': 'document classification',
+    'automatic image understanding': 'automatic image understanding',
     console: 'console',
+    'see more services': 'see more services',
     // Home
     'request demo': 'request demo',
     'check our services': 'check our services',
@@ -34,6 +43,8 @@ export default {
     'Media and Entertainment': 'Media and Entertainment',
     Healthcare: 'Healthcare',
   },
-  longText: {},
+  longText: {
+
+  },
   ...enLocale,
 };
