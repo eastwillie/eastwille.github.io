@@ -3,26 +3,26 @@
     <div class="panel rodin">
       <div class="content">
         <div class="labels-container">
-          <span class="perception">Perception & Cloud Powered</span>
-          <span class="all-stack">All-Stack AI Service Platform</span>
-          <span class="empowering">Empowering Intelligent Apps with Our Customizable AI Technology</span>
+          <span class="perception">{{ $t(`title['perception & cloud powered']`) }}</span>
+          <span class="all-stack">{{ $t(`title['all-stack ai service platform']`) }}</span>
+          <span class="empowering">{{ $t(`title['empowering intelligent apps with our customizable AI technology']`) }}</span>
         </div>
         <div class="rodin-actions">
           <button class="btn-action demo">
-            Request Demo
+            {{ $t(`button['request demo']`) }}
           </button>
           <button class="btn-action check">
-            Check our services
+            {{ $t(`button['check our services']`) }}
           </button>
         </div>
         <div class="rodin-stats">
           <div class="stat">
-            <span class="count">50+</span>
-            <span class="count-description">AI Services Covering</span>
+            <span class="count">{{ $t(`title['50+']`) }}</span>
+            <span class="count-description">{{ $t(`description['AI Services Covering']`) }}</span>
           </div>
           <div class="stat">
-            <span class="count">5</span>
-            <span class="count-description">Major AI Domains</span>
+            <span class="count">{{ $t(`title['5']`) }}</span>
+            <span class="count-description">{{ $t(`description['Major AI Domains']`) }}</span>
           </div>
         </div>
       </div>
@@ -38,15 +38,15 @@
           <img
             :src="svg.quote"
             alt=""
-          > Introduction to Rodin
+          > {{ $t(`title['Introduction to Rodin']`) }}
         </div>
         <div class="introduction-description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </div>
       </div>
       <div class="our-vision">
-        <span class="tagline">World’s First All-Stake One-Stop AI Service Platform</span>
-        <span class="our-vision-heading">Our Vision</span>
+        <span class="tagline">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
+        <span class="our-vision-heading">{{ $t(`title['Our Vision']`) }}</span>
         <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
         <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
         <span class="our-vision-description">Elit ut aliquam purus sit amet luctus venenatis. Amet porttitor eget dolor morbi non arcu. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Pellentesque elit eget gravida cum sociis. Tellus mauris a diam maecenas sed enim ut sem viverra.</span>
@@ -59,11 +59,11 @@
     </div>
     <div class="why content">
       <div class="why-information">
-        <span class="why-heading">Why choose us?</span>
+        <span class="why-heading">{{ $t(`title['Why choose us?']`) }}</span>
         <span class="why-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
       </div>
       <button class="btn-action why-demo">
-        Request Demo
+        {{ $t(`button['request demo']`) }}
       </button>
       <img
         class="data-lines"
@@ -72,48 +72,48 @@
       >
     </div>
     <div class="what content panel">
-      <span class="what-heading">What Can You Get with Rodin?</span>
+      <span class="what-heading">{{ $t(`title['What Can You Get with Rodin?']`) }}</span>
       <div class="grid services">
         <div class="service api">
           <img
             :src="svg.brain"
             alt="API"
           >
-          <span class="service-heading">AI Services APIs</span>
-          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
-          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+          <span class="service-heading">{{ $t(`title['AI Services APIs']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
         </div>
         <div class="service pipeline">
           <img
             :src="svg.pipeline"
             alt="Pipeline Builder"
           >
-          <span class="service-heading">AI Customized Pipeline Builder</span>
-          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
-          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+          <span class="service-heading">{{ $t(`title['AI Customized Pipeline Builder']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
         </div>
         <div class="service deployment">
           <img
             :src="svg.deployment"
             alt="Deployment"
           >
-          <span class="service-heading">Customized Deployment</span>
-          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
-          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+          <span class="service-heading">{{ $t(`title['Customized Deployment']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
         </div>
         <div class="service marketplace">
           <img
             :src="svg.marketplace"
             alt="Marketplace"
           >
-          <span class="service-heading">Marketplace</span>
-          <span class="service-description">It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.</span>
-          <span class="service-description">The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.</span>
+          <span class="service-heading">{{ $t(`title['Marketplace']`) }}</span>
+          <span class="service-description">{{ $t(`longText['It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.']`) }}</span>
+          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.']`) }}</span>
         </div>
       </div>
       <div class="ai-services">
-        <span class="ai-services-heading">Our AI Services</span>
-        <span class="ai-services-description">All in One AI Platform-as-a-Service for Vast Businesses and Developers</span>
+        <span class="ai-services-heading">{{ $t(`title['Our AI Services']`) }}</span>
+        <span class="ai-services-description">{{ $t(`description['All in One AI Platform-as-a-Service for Vast Businesses and Developers']`) }}</span>
         <div class="defined-services">
           <div class="ai-service">
             <div class="ai-service-icon-container nlp">
@@ -123,10 +123,10 @@
               >
             </div>
             <div class="ai-service-content">
-              <span class="ai-service-title">Natural Language Processing</span>
-              <span class="ai-service-sub-title">Empowering your advanced NLP based applications with simple API calls.</span>
+              <span class="ai-service-title">{{ $t(`title['Natural Language Processing']`) }}</span>
+              <span class="ai-service-sub-title">{{ $t(`description['Empowering your advanced NLP based applications with simple API calls.']`) }}</span>
               <button class="read-more">
-                Read more ->
+                {{ $t(`button['Read more']`) }}
               </button>
             </div>
           </div>
@@ -138,10 +138,10 @@
               >
             </div>
             <div class="ai-service-content">
-              <span class="ai-service-title">Video Content Analysis</span>
-              <span class="ai-service-sub-title">Unlocking video content analysis capabilities based on cutting-edge deep learning models.</span>
+              <span class="ai-service-title">{{ $t(`title['Video Content Analysis']`) }}</span>
+              <span class="ai-service-sub-title">{{ $t(`description['Unlocking video content analysis capabilities based on cutting-edge deep learning models.']`) }}</span>
               <button class="read-more">
-                Read more ->
+                {{ $t(`button['Read more']`) }}
               </button>
             </div>
           </div>
@@ -153,10 +153,10 @@
               >
             </div>
             <div class="ai-service-content">
-              <span class="ai-service-title">Automatic Image Understanding</span>
-              <span class="ai-service-sub-title">Giving the ability of processing massive images into your able hands.</span>
+              <span class="ai-service-title">{{ $t(`title['Automatic Image Understanding']`) }}</span>
+              <span class="ai-service-sub-title">{{ $t(`description['Giving the ability of processing massive images into your able hands.']`) }}</span>
               <button class="read-more">
-                Read more ->
+                {{ $t(`button['Read more']`) }}
               </button>
             </div>
           </div>
@@ -168,10 +168,10 @@
               >
             </div>
             <div class="ai-service-content">
-              <span class="ai-service-title">Audio and Speech Analysis;</span>
-              <span class="ai-service-sub-title">Enabling your application both can hear and speak, as smart as it should be.</span>
+              <span class="ai-service-title">{{ $t(`title['Audio and Speech Analysis']`) }}</span>
+              <span class="ai-service-sub-title">{{ $t(`description['Enabling your application both can hear and speak, as smart as it should be.']`) }}</span>
               <button class="read-more">
-                Read more ->
+                {{ $t(`button['Read more']`) }}
               </button>
             </div>
           </div>
