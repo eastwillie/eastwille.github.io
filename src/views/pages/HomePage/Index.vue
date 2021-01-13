@@ -195,84 +195,84 @@ export default {
 };
 </script>
 <style lang="scss">
-  #home-page {
+#home-page {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat';
+  background: #F7F8FF;
+
+  .panel {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .content {
     display: flex;
     flex-direction: column;
+    padding: 0 0.85rem;
+  }
+
+  .btn-action {
+    height: 0.6rem;
     font-family: 'Montserrat';
-    background: #F7F8FF;
+    font-size: 0.18rem;
+    color: white;
+    border-radius: 6px;
+    border: none;
+  }
 
-    .panel {
-      display: flex;
-      position: relative;
-      width: 100vw;
-      min-height: 100vh;
-    }
+  .rodin {
+    flex-direction: row;
+    height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
+    min-height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
+    padding-top: 2.4rem;
+    background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
+    color: white;
 
-    .content {
+    .labels-container {
       display: flex;
       flex-direction: column;
-      padding: 0 0.85rem;
-    }
 
-    .btn-action {
-      height: 0.6rem;
-      font-family: 'Montserrat';
-      font-size: 0.18rem;
-      color: white;
-      border-radius: 6px;
-      border: none;
-    }
-
-    .rodin {
-      flex-direction: row;
-      height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
-      min-height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
-      padding-top: 2.4rem;
-      background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
-      color: white;
-
-      .labels-container {
-        display: flex;
-        flex-direction: column;
-
-        .perception {
-          text-transform: uppercase;
-          font-weight: 400;
-          font-size: 0.24rem;
-          line-height: 0.30rem;
-        }
-
-        .all-stack {
-          margin-top: 0.12rem;
-          text-transform: uppercase;
-          font-weight: 700;
-          font-size: 0.36rem;
-        }
-
-        .empowering {
-          margin-top: 0.12rem;
-          font-size: 0.18rem;
-          font-weight: 300;
-        }
+      .perception {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.24rem;
+        line-height: 0.30rem;
       }
 
-      .rodin-actions {
-        margin-top: 0.4rem;
-        display: flex;
-        gap: 0.1rem;
-
-        .demo {
-          width: 2rem;
-          background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
-        }
-
-        .check {
-          width: 2.46rem;
-          background: transparent;
-          border: 0.5px solid #FFFFFF;
-          box-sizing: border-box;
-        }
+      .all-stack {
+        margin-top: 0.12rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.36rem;
       }
+
+      .empowering {
+        margin-top: 0.12rem;
+        font-size: 0.18rem;
+        font-weight: 300;
+      }
+    }
+
+    .rodin-actions {
+      margin-top: 0.4rem;
+      display: flex;
+      gap: 0.1rem;
+
+      .demo {
+        width: 2rem;
+        background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+      }
+
+      .check {
+        width: 2.46rem;
+        background: transparent;
+        border: 0.5px solid #FFFFFF;
+        box-sizing: border-box;
+      }
+    }
   }
 
   .brain {
@@ -415,157 +415,157 @@ export default {
     }
   }
 
-    .what {
+  .what {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.8rem;
+
+    .what-heading {
+      font-size: 0.32rem;
+      font-weight: 800;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 0.6rem;
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        padding: 0.2rem;
+        padding-top: 0;
+        min-height: 2rem;
+
+        .service-heading {
+          margin-top: 0.2rem;
+          font-size: 0.16rem;
+          font-weight: 700;
+        }
+
+        .service-description {
+          margin-top: 0.2rem;
+          font-size: 0.14rem;
+          font-weight: 400;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0.16rem;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background: #D9CAFF;
+        }
+
+        &.api {
+          &::after {
+            width: 0;
+          }
+        }
+      }
+    }
+
+    .ai-services {
       display: flex;
       flex-direction: column;
-      padding-top: 0.8rem;
+      margin-bottom: 0.6rem;
 
-      .what-heading {
+      .ai-services-heading {
+        margin-top: 0.32rem;
         font-size: 0.32rem;
         font-weight: 800;
       }
 
-      .services {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin-top: 0.6rem;
-
-        .service {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          position: relative;
-          padding: 0.2rem;
-          padding-top: 0;
-          min-height: 2rem;
-
-          .service-heading {
-            margin-top: 0.2rem;
-            font-size: 0.16rem;
-            font-weight: 700;
-          }
-
-          .service-description {
-            margin-top: 0.2rem;
-            font-size: 0.14rem;
-            font-weight: 400;
-          }
-
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0.16rem;
-            left: 0;
-            width: 1px;
-            height: 100%;
-            background: #D9CAFF;
-          }
-
-          &.api {
-            &::after {
-              width: 0;
-            }
-          }
-        }
+      .ai-services-description {
+        margin-top: 0.16rem;
+        font-size: 0.14rem;
       }
 
-      .ai-services {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0.6rem;
+      .defined-services {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.2rem;
+        margin-top: 0.16rem;
 
-        .ai-services-heading {
-          margin-top: 0.32rem;
-          font-size: 0.32rem;
-          font-weight: 800;
-        }
+        .ai-service {
+          position: relative;
+          z-index: 0;
+          display: flex;
+          flex-direction: row;
+          border-radius: 8px;
+          background-color: white;
+          box-shadow: 0px 10px 18px rgba(235, 237, 244, 0.76);
 
-        .ai-services-description {
-          margin-top: 0.16rem;
-          font-size: 0.14rem;
-        }
-
-        .defined-services {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.2rem;
-          margin-top: 0.16rem;
-
-          .ai-service {
+          .ai-service-icon-container {
             position: relative;
-            z-index: 0;
-            display: flex;
-            flex-direction: row;
-            border-radius: 8px;
-            background-color: white;
-            box-shadow: 0px 10px 18px rgba(235, 237, 244, 0.76);
+            margin-bottom: 0.2rem;
+            padding: 0.2rem 0 0 0.2rem;
 
-            .ai-service-icon-container {
-              position: relative;
-              margin-bottom: 0.2rem;
-              padding: 0.2rem 0 0 0.2rem;
-
-              &::before {
-                content: '';
-                position: absolute;
-                z-index: -1;
-                top: 0;
-                left: 0;
-                width: 93%;
-                height: 96.5%;
-                border-top-left-radius: 8px;
-                background-color: black;
-              }
-
-              img {
-                min-width: 96px;
-                min-height: 96px;
-              }
-
-              &.aiu::before {
-                background-color: #DCEEFF;
-              }
-
-              &.asa::before {
-                background-color: #D8F8F2;
-              }
-
-              &.nlp::before {
-                background-color: #FC9C0D20;
-              }
-
-              &.vca::before {
-                background-color: #D9CAFF53;
-              }
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              width: 93%;
+              height: 96.5%;
+              border-top-left-radius: 8px;
+              background-color: black;
             }
 
-            .ai-service-content {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              gap: 0.08rem;
-              padding: 0.2rem;
-              padding-bottom: 0.08rem;
+            img {
+              min-width: 96px;
+              min-height: 96px;
+            }
 
-              .ai-service-title {
-                font-size: 0.2rem;
-                font-weight: 800;
-              }
+            &.aiu::before {
+              background-color: #DCEEFF;
+            }
 
-              .ai-service-sub-title {
-                font-size: 0.14rem;
-              }
+            &.asa::before {
+              background-color: #D8F8F2;
+            }
 
-              .read-more {
-                background: none;
-                border: none;
-                font-family: Montserrat;
-                color: #3A71FF;
-              }
+            &.nlp::before {
+              background-color: #FC9C0D20;
+            }
+
+            &.vca::before {
+              background-color: #D9CAFF53;
+            }
+          }
+
+          .ai-service-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.08rem;
+            padding: 0.2rem;
+            padding-bottom: 0.08rem;
+
+            .ai-service-title {
+              font-size: 0.2rem;
+              font-weight: 800;
+            }
+
+            .ai-service-sub-title {
+              font-size: 0.14rem;
+            }
+
+            .read-more {
+              background: none;
+              border: none;
+              font-family: Montserrat;
+              color: #3A71FF;
             }
           }
         }
       }
     }
   }
+}
 </style>
