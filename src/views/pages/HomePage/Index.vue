@@ -65,6 +65,11 @@
       <button class="btn-action why-demo">
         Request Demo
       </button>
+      <img
+        class="data-lines"
+        :src="svg.datalines"
+        alt="Data Lines"
+      >
     </div>
     <div class="what content panel">
       <span class="what-heading">What Can You Get with Rodin?</span>
@@ -187,6 +192,7 @@ import NLP from '@/assets/images/icons/NLP.svg';
 import VCA from '@/assets/images/icons/VCA.svg';
 import illustration from '@/assets/images/background/illustration.svg';
 import vision from '@/assets/images/background/our-vision.svg';
+import datalines from '@/assets/images/background/data-lines.svg';
 
 export default {
   computed: {
@@ -203,6 +209,7 @@ export default {
         VCA,
         illustration,
         vision,
+        datalines,
       };
     },
   },
@@ -411,6 +418,7 @@ export default {
   }
 
   .why {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -422,6 +430,7 @@ export default {
     background: linear-gradient(276.75deg, #33029B 1.11%, #1A124B 85.2%);
 
     .why-demo {
+      z-index: 1;
       width: 2rem;
       background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
     }
@@ -442,6 +451,15 @@ export default {
         font-size: 0.14rem;
         font-weight: 600;
       }
+    }
+
+    .data-lines {
+      z-index: 0;
+      position: absolute;
+      right: 0;
+      top: 0.64rem;
+      height: 40%;
+      width: 70%;
     }
   }
 
