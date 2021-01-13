@@ -276,7 +276,7 @@ export default {
 
       .demo {
         width: 2rem;
-        background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+        background: var(--background-primary);
       }
 
       .check {
