@@ -31,5 +31,6 @@ export default {
     font-family: Montserrat, Helvetica Neue, Helvetica, -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 0.16rem;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 </style>
