@@ -42,7 +42,6 @@ export default {
 
 <style lang="scss" scoped>
 .request-demo-container {
-  padding: 0.2rem;
   background-color: linear-gradient(99.89deg, #3B72FF 42.58%, #6C23F5 109.64%);
 }
 

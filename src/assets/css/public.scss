@@ -48,3 +48,25 @@
 .font-900 {
   font-weight: 900;
 }
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.form-input {
+  width: 100%;
+  height: 0.48rem;
+  border-radius: 4px;
+  padding: 0.06rem 0.2rem;
+  font-family: Montserrat;
+  font-size: 0.14rem;
+  background: rgba(255, 255, 255, 0.1);
+}
