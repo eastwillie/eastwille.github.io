@@ -14,7 +14,7 @@ const routes = [
   },
   {
     path: '/home',
-    component: () => import('@/views/pages/HomePage/Index.vue'),
+    component: () => import('@/views/pages/Home/Index.vue'),
     meta: {
       keepAlive: false,
       showNav: true,
