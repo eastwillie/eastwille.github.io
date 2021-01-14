@@ -1,6 +1,18 @@
 //You can put global CSS variables or classes here
 
-$background-primary: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+.container {
+  padding: 0 0.85rem;
+}
+
+.btn-action {
+  padding: 0.19rem 0.34rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.18rem;
+  font-weight: 600;
+  color: white;
+  border-radius: 0.06rem;
+  border: none;
+}
 
 .flex-column {
   display: flex;
