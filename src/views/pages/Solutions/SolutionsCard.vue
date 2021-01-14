@@ -57,8 +57,8 @@ export default {
   }
 
   .solution-card-icon-background {
-    width: 60px;
-    height: 60px;
+    width: 0.6rem;
+    height: .6rem;
     margin-bottom: 0.37rem;
     box-shadow: 4px 7px 17px rgba(82, 31, 209, 0.32);
     border-radius: 20px;
@@ -79,7 +79,6 @@ export default {
     font-weight: 500;
     font-size: 14px;
     color: #8c8b9f;
-    width: 2.59rem;
     height: 1.21rem;
     margin-bottom: 0.04rem;
   }
