@@ -1,5 +1,9 @@
 <template>
   <div id="app-nav">
+    <img
+      src="../../../assets/images/icon/nav/Logo.png"
+      alt="logo"
+    >
     <el-menu
       mode="horizontal"
       router
@@ -57,25 +61,28 @@
         </template>
         <el-submenu
           v-for="(mainRoute, mainIndex) in AIServices.children"
-          :key="`${mainRoute.name}${mainIndex}`"
+          :key="`${mainRoute.meta.navName}${mainIndex}`"
           :index="`/services/${mainRoute.path}`"
         >
           <template slot="title">
             <img
               :src="mainRoute.meta.icon"
-              :alt="mainRoute.name"
+              :alt="mainRoute.meta.navName"
             >
             <div class="introduction">
-              <h4>{{ $t(`button['${mainRoute.name}']`) }}</h4>
+              <h4>{{ $t(`button['${mainRoute.meta.navName}']`) }}</h4>
               <p>{{ $t(`title['${mainRoute.meta.intro}']`) }}</p>
             </div>
           </template>
           <el-menu-item
-            v-for="(subRoute, subIndex) in mainRoute.children"
+            v-for="(subRoute, subIndex) in mainRoute.children.slice(0, -1)"
             :key="`${subRoute}${subIndex}`"
             :index="`/services/${mainRoute.path}/${subRoute.path}`"
           >
-            {{ $t(`button['${subRoute.name}']`) }}
+            {{ $t(`button['${subRoute.meta.navName}']`) }}
+          </el-menu-item>
+          <el-menu-item :index="`/services/${mainRoute.path}/introduction`">
+            <span class="check-all-services">{{ $t(`button['Check All Services']`) }}</span>
           </el-menu-item>
         </el-submenu>
       </el-submenu>
@@ -131,7 +138,7 @@ export default {
 
   #app-nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
@@ -172,6 +179,25 @@ export default {
                 white-space: normal;
               }
             }
+          }
+          .el-menu-item {
+            border-bottom: 1px solid #D9CAFF;
+            &:last-child {
+              border-bottom: none;
+            }
+            &:hover {
+              background: #F8F5FF;
+            }
+          }
+        }
+        .check-all-services {
+          font-size: 0.14rem;
+          color: #3A71FF;
+          &:after {
+            content: 'east';
+            margin-left: 0.5em;
+            vertical-align: -10%;
+            font-family: 'Material Icons', sans-serif;
           }
         }
       }
