@@ -86,6 +86,14 @@
         </div>
       </div>
     </div>
+    <div class="copyright">
+      <img
+        :src="svg.brain"
+        alt="Copyright Brain G42 Rodin"
+      >
+      <span class="copyright-g42 font-200">Copyright © 2021 Group 42, Inc.</span>
+      <span class="all-rights">All rights reserved.</span>
+    </div>
   </footer>
 </template>
 
@@ -95,6 +103,7 @@ import phone from '@/assets/images/icons/phone-call.svg';
 import envelope from '@/assets/images/icons/envelope.svg';
 import pin from '@/assets/images/icons/pin.svg';
 import send from '@/assets/images/icons/send.svg';
+import brain from '@/assets/images/icons/brain-g42-rodin.svg';
 
 export default {
   components: {
@@ -102,7 +111,10 @@ export default {
   },
   computed: {
     svg() {
-      return { send };
+      return {
+        send,
+        brain,
+      };
     },
     solutions() {
       return [
@@ -220,6 +232,22 @@ export default {
           right: 0.2rem;
         }
       }
+    }
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.15rem 0;
+
+    img {
+      margin-right: 1rem;
+    }
+
+    span {
+      margin-top: 0.16rem;
     }
   }
 }
