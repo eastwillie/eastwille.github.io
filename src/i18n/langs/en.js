@@ -68,6 +68,8 @@ export default {
     'media and entertainment': 'Media and Entertainment',
     healthcare: 'Healthcare',
     education: 'Education',
+    title: 'Industry Solutions',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
   },
   longText: {
     'It is long established fact': 'It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.',

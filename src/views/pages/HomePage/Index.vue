@@ -216,15 +216,6 @@ export default {
     padding: 0 0.85rem;
   }
 
-  .btn-action {
-    height: 0.6rem;
-    font-family: 'Montserrat';
-    font-size: 0.18rem;
-    color: white;
-    border-radius: 6px;
-    border: none;
-  }
-
   .rodin {
     position: relative;
     flex-direction: row;
@@ -275,12 +266,10 @@ export default {
       margin-top: 0.4rem;
 
       .demo {
-        width: 2rem;
-        background: var(--background-primary);
+        background: $background-primary;
       }
 
       .check {
-        width: 2.46rem;
         background: transparent;
         border: 0.5px solid #FFFFFF;
         box-sizing: border-box;
@@ -421,7 +410,6 @@ export default {
 
     .why-demo {
       z-index: 1;
-      width: 2rem;
       background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
     }
 
