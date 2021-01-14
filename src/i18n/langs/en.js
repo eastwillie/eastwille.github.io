@@ -23,10 +23,6 @@ export default {
     document: 'document',
     'custom support': 'custom support',
     contact: 'contact',
-    'financial services': 'financial services',
-    'media and entertainment': 'media and entertainment',
-    healthcare: 'healthcare',
-    education: 'education',
     'natural language processing': 'natural language processing',
     'document classification': 'document classification',
     'automatic image understanding': 'automatic image understanding',
@@ -42,6 +38,12 @@ export default {
     Education: 'Education',
     'Media and Entertainment': 'Media and Entertainment',
     Healthcare: 'Healthcare',
+  },
+  solutions: {
+    'financial services': 'Financial Services',
+    'media and entertainment': 'Media and Entertainment',
+    healthcare: 'Healthcare',
+    education: 'Education',
   },
   longText: {
 

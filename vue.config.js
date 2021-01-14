@@ -3,6 +3,7 @@ const path = require('path');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+
 module.exports = {
   publicPath: './',
   devServer: {
@@ -22,5 +23,12 @@ module.exports = {
   ],
   chainWebpack: (config) => {
     config.resolve.alias.set('@', resolve('src'));
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: '@import "@/assets/css/variables.scss";',
+      },
+    },
   },
 };
