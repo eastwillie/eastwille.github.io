@@ -8,6 +8,29 @@ export default {
     // NAV
     'Empowering your advanced NLP based applications with simple API calls.': 'Empowering your advanced NLP based applications with simple API calls.',
     'Giving the ability of processing massive images into your able hands.': 'Giving the ability of processing massive images into your able hands.',
+    'Introduction to Rodin': 'Introduction to Rodin',
+    "World's First All-Stake One-Stop AI Service Platform": "World's First All-Stake One-Stop AI Service Platform",
+    'Our Vision': 'Our Vision',
+    'Why choose us?': 'Why choose us?',
+    'What Can You Get with Rodin?': 'What Can You Get with Rodin?',
+    'AI Services APIs': 'AI Services APIs',
+    'AI Customized Pipeline Builder': 'AI Customized Pipeline Builder',
+    'Customized Deployment': 'Customized Deployment',
+    Marketplace: 'Marketplace',
+    'Our AI Services': 'Our AI Services',
+    'Natural Language Processing': 'Natural Language Processing',
+    'Video Content Analysis': 'Video Content Analysis',
+    'Automatic Image Understanding': 'Automatic Image Understanding',
+    'Audio and Speech Analysis': 'Audio and Speech Analysis',
+  },
+  description: {
+    'AI Services Covering': 'AI Services Covering',
+    'Major AI Domains': 'Major AI Domains',
+    'All in One AI Platform-as-a-Service for Vast Businesses and Developers': 'All in One AI Platform-as-a-Service for Vast Businesses and Developers',
+    'Empowering your advanced NLP based applications with simple API calls.': 'Empowering your advanced NLP based applications with simple API calls.',
+    'Unlocking video content analysis capabilities based on cutting-edge deep learning models.': 'Unlocking video content analysis capabilities based on cutting-edge deep learning models.',
+    'Giving the ability of processing massive images into your able hands.': 'Giving the ability of processing massive images into your able hands.',
+    'Enabling your application both can hear and speak, as smart as it should be.': 'Enabling your application both can hear and speak, as smart as it should be.',
   },
   status: {},
   message: {
@@ -33,8 +56,9 @@ export default {
     console: 'console',
     'Check All Services': 'Check All Services',
     // Home
-    'request demo': 'request demo',
-    'check our services': 'check our services',
+    'request demo': 'Request Demo',
+    'check our services': 'Check our services',
+    'Read more': 'Read more',
   },
   industries: {
     'Financial Services': 'Financial Services',
@@ -44,7 +68,8 @@ export default {
     Healthcare: 'Healthcare',
   },
   longText: {
-
+    'It is long established fact': 'It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.',
+    'The point of using lorem ipsum': 'The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.',
   },
   ...enLocale,
 };
