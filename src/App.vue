@@ -32,5 +32,6 @@ export default {
     font-size: 0.16rem;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    color: $text-primary;
   }
 </style>
