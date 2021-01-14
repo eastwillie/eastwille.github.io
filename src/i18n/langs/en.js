@@ -5,9 +5,6 @@ export default {
     'perception & cloud powered': 'perception & cloud powered',
     'all-stack ai service platform': 'all-stack ai service platform',
     'empowering intelligent apps with our customizable AI technology': 'empowering intelligent apps with our customizable AI technology',
-    // NAV
-    'Empowering your advanced NLP based applications with simple API calls.': 'Empowering your advanced NLP based applications with simple API calls.',
-    'Giving the ability of processing massive images into your able hands.': 'Giving the ability of processing massive images into your able hands.',
     'Introduction to Rodin': 'Introduction to Rodin',
     "World's First All-Stake One-Stop AI Service Platform": "World's First All-Stake One-Stop AI Service Platform",
     'Our Vision': 'Our Vision',
@@ -46,9 +43,15 @@ export default {
     document: 'document',
     'custom support': 'custom support',
     contact: 'contact',
+    // NLP
     'natural language processing': 'natural language processing',
     'document classification': 'document classification',
+    // AIU
     'automatic image understanding': 'automatic image understanding',
+    // VCA
+    'video content analysis': 'video content analysis',
+    // ASA
+    'audio and speech analysis': 'audio and speech analysis',
     console: 'console',
     'Check All Services': 'Check All Services',
     // Home

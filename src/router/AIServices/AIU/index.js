@@ -1,4 +1,4 @@
-import AIUIcon from '@/assets/images/icon/nav/AIU.png';
+import AIUIcon from '@/assets/images/icons/nav/AIU.svg';
 
 export default {
   path: 'aiu',

@@ -1,4 +1,4 @@
-import NLPIcon from '@/assets/images/icon/nav/NLP.png';
+import NLPIcon from '@/assets/images/icons/nav/NLP.svg';
 
 export default {
   path: 'nlp',
