@@ -1,0 +1,16 @@
+@mixin typography-title {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.46rem;
+  line-height: 0.56rem;
+}
+
+@mixin typography-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.16rem;
+  line-height: 0.24rem;
+}
