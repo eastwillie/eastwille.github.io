@@ -61,16 +61,16 @@
         </template>
         <el-submenu
           v-for="(mainRoute, mainIndex) in AIServices.children"
-          :key="`${mainRoute.name}${mainIndex}`"
+          :key="`${mainRoute.meta.navName}${mainIndex}`"
           :index="`/services/${mainRoute.path}`"
         >
           <template slot="title">
             <img
               :src="mainRoute.meta.icon"
-              :alt="mainRoute.name"
+              :alt="mainRoute.meta.navName"
             >
             <div class="introduction">
-              <h4>{{ $t(`button['${mainRoute.name}']`) }}</h4>
+              <h4>{{ $t(`button['${mainRoute.meta.navName}']`) }}</h4>
               <p>{{ $t(`title['${mainRoute.meta.intro}']`) }}</p>
             </div>
           </template>
@@ -79,7 +79,7 @@
             :key="`${subRoute}${subIndex}`"
             :index="`/services/${mainRoute.path}/${subRoute.path}`"
           >
-            {{ $t(`button['${subRoute.name}']`) }}
+            {{ $t(`button['${subRoute.meta.navName}']`) }}
           </el-menu-item>
           <el-menu-item :index="`/services/${mainRoute.path}/introduction`">
             <span class="check-all-services">{{ $t(`button['Check All Services']`) }}</span>
