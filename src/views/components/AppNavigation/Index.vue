@@ -21,33 +21,36 @@
         <template slot="title">
           {{ $t(`button['solutions']`) }}
         </template>
+        <el-menu-item index="/solutions">
+          {{ $t(`button['solutions']`) }}
+        </el-menu-item>
         <el-menu-item index="/solutions/financial">
           <img
             src="../../../assets/images/icon/nav/Financial.svg"
             alt="financial"
           >
-          {{ $t(`button['financial services']`) }}
+          {{ $t(`solutions['financial services']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/media">
           <img
             src="../../../assets/images/icon/nav/Media.svg"
             alt="financial"
           >
-          {{ $t(`button['media and entertainment']`) }}
+          {{ $t(`solutions['media and entertainment']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/healthcare">
           <img
             src="../../../assets/images/icon/nav/Healthcare.svg"
             alt="healthcare"
           >
-          {{ $t(`button['healthcare']`) }}
+          {{ $t(`solutions['healthcare']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/education">
           <img
             src="../../../assets/images/icon/nav/Education.svg"
             alt="education"
           >
-          {{ $t(`button['education']`) }}
+          {{ $t(`solutions['education']`) }}
         </el-menu-item>
       </el-submenu>
 

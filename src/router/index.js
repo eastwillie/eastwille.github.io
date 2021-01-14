@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import AIServices from './AIServices/index';
+import AIServices from './AIServices';
+import Solutions from './Solutions';
 
 Vue.use(VueRouter);
 
@@ -20,15 +21,7 @@ const routes = [
     },
   },
   AIServices,
-  {
-    path: '/solutions/:industry?',
-    name: 'solutions',
-    component: () => import('../views/pages/SolutionsPage/Index.vue'),
-    meta: {
-      keepAlive: false,
-      showNav: true,
-    },
-  },
+  ...Solutions,
   {
     path: '*',
     component: () => import('@/views/pages/PageNotFound/Index.vue'),

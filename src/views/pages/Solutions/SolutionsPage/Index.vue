@@ -103,13 +103,19 @@
 </template>
 
 <script>
-import Industry from '@/views/pages/SolutionsPage/Industry.vue';
-import IndustryContent from '@/views/pages/SolutionsPage/IndustryContent.vue';
+import Industry from '@/views/pages/Solutions/SolutionsPage/Industry.vue';
+import IndustryContent from '@/views/pages/Solutions/SolutionsPage/IndustryContent.vue';
 
 export default {
   components: {
     Industry,
     IndustryContent,
+  },
+  props: {
+    industry: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     industries() {
@@ -121,12 +127,6 @@ export default {
         healthcare: 'healthcare',
       };
     },
-    industry() {
-      return this.$route.params.industry;
-    },
-  },
-  mounted() {
-    if (!this.industry) this.navigate(this.industries.financial);
   },
   methods: {
     navigate(industry) {
