@@ -183,7 +183,7 @@ export default {
   .footer-content {
     gap: 0.12rem;
     padding: 0.6rem 0;
-    border-bottom: $border-white-faded;
+    border-bottom: 1px solid #FFFFFF20;
 
     .footer-block {
       display: flex;
