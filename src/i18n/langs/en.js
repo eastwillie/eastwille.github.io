@@ -61,6 +61,9 @@ export default {
     'Smart Nation, Group 42': 'Smart Nation, Group 42',
   },
   footer: {
+    copyright: 'Copyright © 2021 Group 42, Inc.',
+    'All rights reserved.': 'All rights reserved.',
+    'try rodin': 'Try Rodin',
     'help center': 'Help Center',
     'contact us': 'Contact us',
     'user guide': 'User Guide',

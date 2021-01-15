@@ -6,7 +6,7 @@
     <div class="try-rodin">
       <div class="try-rodin-content">
         <h2 class="font-800">
-          Try Rodin
+          {{ $t(`footer['try rodin']`) }}
         </h2>
         <br>
         <p class="font-500">
@@ -91,8 +91,8 @@
         :src="svg.brain"
         alt="Copyright Brain G42 Rodin"
       >
-      <span class="copyright-g42 font-200">Copyright © 2021 Group 42, Inc.</span>
-      <span class="all-rights">All rights reserved.</span>
+      <span class="copyright-g42 font-200">{{ $t(`footer['copyright']`) }}</span>
+      <span class="all-rights">{{ $t(`footer['All rights reserved.']`) }}</span>
     </div>
   </footer>
 </template>
