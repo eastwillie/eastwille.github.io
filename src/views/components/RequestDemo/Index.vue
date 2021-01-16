@@ -34,7 +34,7 @@ export default {
       if (!borderGradient || borderGradient === 'none') return { border };
 
       return {
-        backgroundImage: borderGradient && `linear-gradient(${backgroundColor}, ${backgroundColor}), ${borderGradient}`,
+        backgroundImage: borderGradient && `linear-gradient(${backgroundColor}, ${backgroundColor}), radial-gradient(circle at top left, ${borderGradient})`,
       };
     },
     style() {

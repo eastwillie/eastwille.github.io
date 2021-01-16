@@ -15,7 +15,7 @@
       </div>
       <request-demo
         background-color="#1B134C"
-        border-gradient="radial-gradient(circle at top left, #3B72FF 42.58%, #6C23F5 109.64%)"
+        border-gradient="#3B72FF 42.58%, #6C23F5 109.64%"
       />
     </div>
     <div class="footer-content grid grid-cols-4">
