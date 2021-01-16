@@ -156,10 +156,9 @@ export default {
 #app-footer {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #D3D3D3;
   padding-top: 0.3rem;
   padding-bottom: 0.12rem;
-  background: #1B134C;
+  background: $background-footer;
   color: white;
   font-family: Montserrat;
 
