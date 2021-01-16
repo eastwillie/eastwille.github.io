@@ -14,7 +14,6 @@
         </p>
       </div>
       <request-demo
-        class="request-demo"
         background-color="#1B134C"
         border-gradient="radial-gradient(circle at top left, #3B72FF 42.58%, #6C23F5 109.64%)"
       />
@@ -173,10 +172,6 @@ export default {
 
     .try-rodin-content {
       width: 42%;
-    }
-
-    .request-demo {
-      padding-top: 0.2rem;
     }
   }
 

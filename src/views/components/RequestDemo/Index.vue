@@ -1,13 +1,11 @@
 <template>
-  <div class="request-demo-container">
-    <button
-      class="request-demo"
-      :class="{'border-gradient': $props.borderGradient}"
-      :style="style"
-    >
-      {{ $t(`button['request demo']`) }}
-    </button>
-  </div>
+  <button
+    class="btn-action request-demo"
+    :class="classes"
+    :style="style"
+  >
+    {{ $t(`button['request demo']`) }}
+  </button>
 </template>
 
 <script>
@@ -27,13 +25,24 @@ export default {
     },
   },
   computed: {
-    style() {
+    classes() {
+      return { 'border-gradient': this.$props.borderGradient !== 'none' };
+    },
+    actualBorder() {
       const { border, backgroundColor, borderGradient } = this.$props;
 
+      if (!borderGradient || borderGradient === 'none') return { border };
+
       return {
-        border: borderGradient ? '' : border,
-        backgroundColor,
         backgroundImage: borderGradient && `linear-gradient(${backgroundColor}, ${backgroundColor}), ${borderGradient}`,
+      };
+    },
+    style() {
+      const { backgroundColor } = this.$props;
+
+      return {
+        backgroundColor,
+        ...this.actualBorder,
       };
     },
   },
@@ -41,17 +50,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.request-demo-container {
-  background-color: linear-gradient(99.89deg, #3B72FF 42.58%, #6C23F5 109.64%);
-}
-
 .request-demo {
-  height: 0.6rem;
+  padding: 0;
   width: 2rem;
-  border-radius: 6px !important;
-  font-family: 'Montserrat';
-  font-size: 0.18rem;
-  color: white;
-  text-transform: capitalize;
 }
 </style>
