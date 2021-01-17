@@ -10,7 +10,7 @@
 <script>
 /*
 
-  variant: "header" | "panel-dark-bg" | "footer"
+  variant: "header" | "footer"
 
 */
 
@@ -28,8 +28,6 @@ export default {
       if (variant === 'header') return { header: true };
 
       if (variant === 'footer') return { footer: true };
-
-      if (variant === 'panel-dark-bg') return { 'panel-dark-bg': true };
 
       return { default: true };
     },
@@ -51,7 +49,7 @@ export default {
   }
 
   &.header {
-    background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+    background: $background-primary;
   }
 
   &.footer {
@@ -61,10 +59,6 @@ export default {
     // .border-gradient doesn't seem to work - hence, explicitly defining properties
     background-origin: border-box;
     background-clip: content-box, border-box;
-  }
-
-  &.panel-dark-bg {
-    background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
   }
 }
 </style>
