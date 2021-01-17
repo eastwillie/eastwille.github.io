@@ -63,11 +63,12 @@
         </span>
         <div class="email-use">
           <label
-            for="email"
+            for="app-footer_email-input"
             class="block-info"
           >{{ $t(`footer['Leave your email to set up a call.']`) }}</label>
           <div class="input-container">
             <input
+              id="app-footer_email-input"
               type="text"
               name="email"
               class="form-input"
