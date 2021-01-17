@@ -1,7 +1,7 @@
 <template>
   <button
     class="btn-action request-demo"
-    :class="classes"
+    :class="$props.variant"
   >
     {{ $t(`button['request demo']`) }}
   </button>
@@ -19,16 +19,6 @@ export default {
     variant: {
       type: String,
       default: 'default',
-    },
-  },
-  computed: {
-    actualVariant() {
-      const { variant } = this.$props;
-
-      return { [variant]: variant };
-    },
-    classes() {
-      return { ...this.actualVariant };
     },
   },
 };
