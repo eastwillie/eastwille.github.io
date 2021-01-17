@@ -80,7 +80,7 @@ export default {
   .solution-card-titile {
     font-weight: 800;
     font-size: 0.18rem;
-    color: $text-dark-blue;
+    color: $text-primary;
     margin-bottom: 0.12rem;
   }
 
