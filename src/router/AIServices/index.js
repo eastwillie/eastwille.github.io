@@ -5,10 +5,12 @@ import ASA from './ASA/index';
 
 export default {
   path: '/services',
+  name: 'services',
   component: () => import('@/views/pages/AIServices/Index.vue'),
   meta: {
     keepAlive: false,
     showNav: true,
+    showSlideMenu: true,
   },
   children: [
     NLP,
