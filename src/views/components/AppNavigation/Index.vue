@@ -1,7 +1,7 @@
 <template>
   <div id="app-nav">
     <img
-      src="../../../assets/images/icon/nav/Logo.png"
+      src="../../../assets/images/icons/Logo.svg"
       alt="logo"
     >
     <el-menu
@@ -21,33 +21,30 @@
         <template slot="title">
           {{ $t(`button['solutions']`) }}
         </template>
-        <el-menu-item index="/solutions">
-          {{ $t(`button['solutions']`) }}
-        </el-menu-item>
         <el-menu-item index="/solutions/financial">
           <img
-            src="../../../assets/images/icon/nav/Financial.svg"
+            src="../../../assets/images/icons/nav/Financial.svg"
             alt="financial"
           >
           {{ $t(`solutions['financial services']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/media">
           <img
-            src="../../../assets/images/icon/nav/Media.svg"
+            src="../../../assets/images/icons/nav/Media.svg"
             alt="financial"
           >
           {{ $t(`solutions['media and entertainment']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/healthcare">
           <img
-            src="../../../assets/images/icon/nav/Healthcare.svg"
+            src="../../../assets/images/icons/nav/Healthcare.svg"
             alt="healthcare"
           >
           {{ $t(`solutions['healthcare']`) }}
         </el-menu-item>
         <el-menu-item index="/solutions/education">
           <img
-            src="../../../assets/images/icon/nav/Education.svg"
+            src="../../../assets/images/icons/nav/Education.svg"
             alt="education"
           >
           {{ $t(`solutions['education']`) }}
@@ -74,7 +71,7 @@
             >
             <div class="introduction">
               <h4>{{ $t(`button['${mainRoute.meta.navName}']`) }}</h4>
-              <p>{{ $t(`title['${mainRoute.meta.intro}']`) }}</p>
+              <p>{{ $t(`description['${mainRoute.meta.intro}']`) }}</p>
             </div>
           </template>
           <el-menu-item
@@ -173,6 +170,7 @@ export default {
               max-width: 20em;
               h4 {
                 line-height: 1.4;
+                font-size: 0.16rem;
                 font-weight: 600;
               }
               p {
@@ -180,6 +178,7 @@ export default {
                 font-size: 0.12rem;
                 color: #3A3955;
                 white-space: normal;
+                text-transform: none;
               }
             }
           }

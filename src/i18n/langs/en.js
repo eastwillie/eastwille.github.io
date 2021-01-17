@@ -5,9 +5,6 @@ export default {
     'perception & cloud powered': 'perception & cloud powered',
     'all-stack ai service platform': 'all-stack ai service platform',
     'empowering intelligent apps with our customizable AI technology': 'empowering intelligent apps with our customizable AI technology',
-    // NAV
-    'Empowering your advanced NLP based applications with simple API calls.': 'Empowering your advanced NLP based applications with simple API calls.',
-    'Giving the ability of processing massive images into your able hands.': 'Giving the ability of processing massive images into your able hands.',
     'Introduction to Rodin': 'Introduction to Rodin',
     "World's First All-Stake One-Stop AI Service Platform": "World's First All-Stake One-Stop AI Service Platform",
     'Our Vision': 'Our Vision',
@@ -22,6 +19,7 @@ export default {
     'Video Content Analysis': 'Video Content Analysis',
     'Automatic Image Understanding': 'Automatic Image Understanding',
     'Audio and Speech Analysis': 'Audio and Speech Analysis',
+    'Machine Translation': 'Machine Translation',
   },
   description: {
     'AI Services Covering': 'AI Services Covering',
@@ -46,15 +44,36 @@ export default {
     document: 'document',
     'custom support': 'custom support',
     contact: 'contact',
+    // NLP
     'natural language processing': 'natural language processing',
     'document classification': 'document classification',
+    // AIU
     'automatic image understanding': 'automatic image understanding',
+    // VCA
+    'video content analysis': 'video content analysis',
+    // ASA
+    'audio and speech analysis': 'audio and speech analysis',
     console: 'console',
     'Check All Services': 'Check All Services',
     // Home
     'request demo': 'Request Demo',
     'check our services': 'Check our services',
     'Read more': 'Read more',
+    // Footer
+    'help center': 'help center',
+    'Smart Nation, Group 42': 'Smart Nation, Group 42',
+  },
+  footer: {
+    copyright: 'Copyright © 2021 Group 42, Inc.',
+    'All rights reserved.': 'All rights reserved.',
+    'try rodin': 'Try Rodin',
+    'help center': 'Help Center',
+    'contact us': 'Contact us',
+    'user guide': 'User Guide',
+    pricing: 'Pricing',
+    'terms of use': 'Terms of Use',
+    'privacy policy': 'Privacy Policy',
+    'Leave your email to set up a call.': 'Leave your email to set up a call.',
   },
   industries: {
     'Financial Services': 'Financial Services',
