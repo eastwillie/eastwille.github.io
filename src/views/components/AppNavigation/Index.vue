@@ -8,7 +8,6 @@
       mode="horizontal"
       router
       :default-active="$route.path"
-      menu-trigger="click"
     >
       <el-menu-item index="/home">
         {{ $t(`button['home']`) }}
