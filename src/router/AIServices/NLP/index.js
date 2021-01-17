@@ -28,7 +28,7 @@ export default {
       meta: {
         keepAlive: false,
         showNav: false,
-        showSlideMenu: true,
+        showSlideMenu: false,
         navName: 'machine translation',
       },
     },
