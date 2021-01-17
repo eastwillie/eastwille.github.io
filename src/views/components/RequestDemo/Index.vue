@@ -25,11 +25,7 @@ export default {
     actualVariant() {
       const { variant } = this.$props;
 
-      if (variant === 'header') return { header: true };
-
-      if (variant === 'footer') return { footer: true };
-
-      return { default: true };
+      return { [variant]: variant };
     },
     classes() {
       return { ...this.actualVariant };
