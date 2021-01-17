@@ -8,17 +8,12 @@
 </template>
 
 <script>
-/*
-
-  variant: "header" | "footer"
-
-*/
-
 export default {
   props: {
     variant: {
       type: String,
       default: 'default',
+      validator: (value) => ['default', 'header', 'footer'].indexOf(value) !== -1,
     },
   },
 };

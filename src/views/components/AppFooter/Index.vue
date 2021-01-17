@@ -68,6 +68,7 @@
           >{{ $t(`footer['Leave your email to set up a call.']`) }}</label>
           <div class="input-container">
             <input
+              id="email"
               type="text"
               name="email"
               class="form-input"
