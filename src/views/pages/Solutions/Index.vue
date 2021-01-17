@@ -136,7 +136,7 @@ export default {
     }
     .cards {
       display: grid;
-      background: $background-gray;
+      background: $background-secondary;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       padding: 0.6rem .84rem 1.26rem .84rem;
       column-gap: .24rem;

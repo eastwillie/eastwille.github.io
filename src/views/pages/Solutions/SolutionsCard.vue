@@ -87,7 +87,7 @@ export default {
   .solution-card-description {
     font-weight: 500;
     font-size: 0.14rem;
-    color: $text-light-gray;
+    color: $text-secondary;
     height: 1.21rem;
     margin-bottom: 0.04rem;
   }
