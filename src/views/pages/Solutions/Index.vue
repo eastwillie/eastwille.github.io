@@ -16,34 +16,16 @@
         </div>
       </div>
     </div>
-    <div class="container cards">
+    <div class="container cards" >
       <solutions-card
-        :src="svg.finanacel"
-        icon-background-color="#521FD1"
-        title="Financial Services"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.."
-        read-more-link="#"
-      />
-      <solutions-card
-        :src="svg.media"
-        icon-background-color="#64DDEC"
-        title="Media and Entertainment"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.."
-        read-more-link="#"
-      />
-      <solutions-card
-        :src="svg.health"
-        icon-background-color="#3A71FF"
-        title="Healthcare"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.."
-        read-more-link="#"
-      />
-      <solutions-card
-        :src="svg.education"
-        icon-background-color="#AC46FF"
-        title="Education"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.."
-        read-more-link="#"
+        v-for="(solutionsCard, index) in solutionsCards"
+        v-bind:key="index"
+        :src="solutionsCard.src"
+        :icon-background-color="solutionsCard.iconBackgroundColor"
+        :iconShadowColor="solutionsCard.iconShadowColor"
+        :title="solutionsCard.title"
+        :description="solutionsCard.description"
+        :read-more-link="solutionsCard.readMoreLink"
       />
     </div>
   </div>
@@ -64,13 +46,41 @@ export default {
     SolutionsCard,
   },
   computed: {
-    svg() {
-      return {
-        finanacel,
-        education,
-        health,
-        media,
-      };
+    solutionsCards() {
+      return [
+        {
+          src: finanacel,
+          iconBackgroundColor: '#521FD1',
+          iconShadowColor: '4px 7px 17px rgba(82, 31, 209, 0.32)',
+          title: this.$t("solutions['financial services']"),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
+        },
+        {
+          src: media,
+          iconBackgroundColor: '#64DDEC',
+          iconShadowColor: '4px 7px 17px rgba(100, 221, 236, 0.42)',
+          title: this.$t("solutions['media and entertainment']"),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
+        },
+        {
+          src: health,
+          iconBackgroundColor: '#3A71FF',
+          iconShadowColor: '4px 7px 17px rgba(58, 113, 255, 0.42)',
+          title: this.$t('solutions.healthcare'),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
+        },
+        {
+          src: education,
+          iconBackgroundColor: '#AC46FF',
+          iconShadowColor: '4px 7px 17px rgba(172, 70, 255, 0.42)',
+          title: this.$t('solutions.education'),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
+        },
+      ];
     },
   },
 };

@@ -3,9 +3,12 @@
     <div
       class="solution-card-icon-background"
       :style="{
-        background: `url(${src}) ${iconBackgroundColor} no-repeat center`,
+        background: iconBackgroundColor,
+        boxShadow: iconShadowColor,
       }"
-    />
+    >
+      <img :src="src" :alt="title" />
+    </div>
     <h2 class="solution-card-titile">{{ title }}</h2>
     <span class="solution-card-description">{{ description }}</span>
     <button class="read-more">
@@ -22,6 +25,10 @@ export default {
       type: String,
       required: true,
     },
+    iconShadowColor: {
+      type: String,
+      required: true,
+    },
     src: {
       type: String,
       required: true,
@@ -30,13 +37,14 @@ export default {
       type: String,
       required: true,
     },
-    isActive: {
-      type: Boolean,
-      required: false,
-    },
     description: {
       type: String,
       required: true,
+    },
+    isActive: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 };
@@ -47,7 +55,6 @@ export default {
   display: flex;
   align-items: baseline;
   flex-direction: column;
-  height: 3.4rem;
   padding: 0.32rem 0.2rem;
   border-radius: 8px;
 
@@ -58,9 +65,11 @@ export default {
 
   .solution-card-icon-background {
     width: 0.6rem;
-    height: .6rem;
+    height: 0.6rem;
     margin-bottom: 0.37rem;
-    box-shadow: 4px 7px 17px rgba(82, 31, 209, 0.32);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     img {
       max-width: 60px;
@@ -70,15 +79,15 @@ export default {
 
   .solution-card-titile {
     font-weight: 800;
-    font-size: 18px;
-    color: #3a3955;
+    font-size: 0.18rem;
+    color: $text-dark-blue;
     margin-bottom: 0.12rem;
   }
 
   .solution-card-description {
     font-weight: 500;
-    font-size: 14px;
-    color: #8c8b9f;
+    font-size: 0.14rem;
+    color: $text-light-gray;
     height: 1.21rem;
     margin-bottom: 0.04rem;
   }
@@ -91,7 +100,7 @@ export default {
     font-family: Montserrat;
     color: $text-blue;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.14rem;
 
     &::after {
       content: "arrow_forward";
