@@ -167,7 +167,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     padding-bottom: 0.24rem;
-    border-bottom: 1px solid #FFFFFF20;
+    border-bottom: 1px solid rgba($text-dark-bg, .2);
 
     .try-rodin-content {
       width: 42%;
@@ -177,7 +177,7 @@ export default {
   .footer-content {
     gap: 0.12rem;
     padding: 0.6rem 0;
-    border-bottom: 1px solid #FFFFFF20;
+    border-bottom: 1px solid rgba($text-dark-bg, .2);
 
     .footer-block {
       display: flex;
@@ -187,16 +187,16 @@ export default {
 
     .block-title {
       margin-bottom: 0.16rem;
-      color: #FFFFFF60
+      color: rgba($text-dark-bg, .6);
     }
 
     .block-info {
       @include typography-description;
-      color: #FFFFFF80;
+      color: rgba($text-dark-bg, .8);
     }
 
     .smart-nations {
-      color: #FFFFFF
+      color: $text-dark-bg
     }
 
     .contact-us-icon {
@@ -218,7 +218,7 @@ export default {
 
         input {
           padding-right: 0.6rem;
-          color: #FFFFFF50
+          color: rgba($text-dark-bg, .5)
         }
 
         .input-icon {
