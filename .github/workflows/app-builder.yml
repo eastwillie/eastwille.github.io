@@ -25,6 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Runs package installer command
+      - name: Install Packages
+        run: yarn install
+
       # Runs test command
       # - name: Run all test suites
       #   run: yarn run test
