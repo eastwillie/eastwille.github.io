@@ -2,48 +2,39 @@
   <button
     class="btn-action request-demo"
     :class="classes"
-    :style="style"
   >
     {{ $t(`button['request demo']`) }}
   </button>
 </template>
 
 <script>
+/*
+
+  variant: "header" | "panel-dark-bg" | "footer"
+
+*/
+
 export default {
   props: {
-    backgroundColor: {
+    variant: {
       type: String,
-      default: 'transparent',
-    },
-    border: {
-      type: String,
-      default: '1px solid',
-    },
-    borderGradient: {
-      type: String,
-      default: 'none',
+      default: 'default',
     },
   },
   computed: {
+    actualVariant() {
+      const { variant } = this.$props;
+
+      if (variant === 'header') return { header: true };
+
+      if (variant === 'footer') return { footer: true };
+
+      if (variant === 'panel-dark-bg') return { 'panel-dark-bg': true };
+
+      return { default: true };
+    },
     classes() {
-      return { 'border-gradient': this.$props.borderGradient !== 'none' };
-    },
-    actualBorder() {
-      const { border, backgroundColor, borderGradient } = this.$props;
-
-      if (!borderGradient || borderGradient === 'none') return { border };
-
-      return {
-        backgroundImage: `linear-gradient(${backgroundColor}, ${backgroundColor}), radial-gradient(circle at top left, ${borderGradient})`,
-      };
-    },
-    style() {
-      const { backgroundColor } = this.$props;
-
-      return {
-        backgroundColor,
-        ...this.actualBorder,
-      };
+      return { ...this.actualVariant };
     },
   },
 };
@@ -53,5 +44,27 @@ export default {
 .request-demo {
   padding: 0;
   width: 2rem;
+
+  &.default {
+    border: 1px solid;
+    background: transparent;
+  }
+
+  &.header {
+    background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+  }
+
+  &.footer {
+    border: 1px solid transparent;
+    background: $background-footer;
+    background-image: linear-gradient($background-footer, $background-footer), $button-footer-gradient;
+    // .border-gradient doesn't seem to work - hence, explicitly defining properties
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  &.panel-dark-bg {
+    background: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
+  }
 }
 </style>

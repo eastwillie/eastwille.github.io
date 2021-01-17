@@ -13,10 +13,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <request-demo
-        background-color="#1B134C"
-        border-gradient="#3B72FF 42.58%, #6C23F5 109.64%"
-      />
+      <request-demo variant="footer" />
     </div>
     <div class="footer-content grid grid-cols-4">
       <div class="footer-block">
