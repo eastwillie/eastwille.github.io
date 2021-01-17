@@ -47,6 +47,7 @@ export default {
     // NLP
     'natural language processing': 'natural language processing',
     'document classification': 'document classification',
+    'machine translation': 'Machine Translation',
     // AIU
     'automatic image understanding': 'automatic image understanding',
     // VCA

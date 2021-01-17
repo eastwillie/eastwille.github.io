@@ -23,6 +23,16 @@ export default {
       },
     },
     {
+      path: 'machine-translation',
+      component: () => import('@/views/pages/AIServices/NLP/MachineTranslation/Index.vue'),
+      meta: {
+        keepAlive: false,
+        showNav: false,
+        showSlideMenu: true,
+        navName: 'machine translation',
+      },
+    },
+    {
       path: 'introduction',
       component: () => import('@/views/pages/AIServices/NLP/Introduction/Index.vue'),
       meta: {
