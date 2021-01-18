@@ -2,6 +2,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import App from './App.vue';
 import router from './router';
+import ErrorService from './libs/error-service';
 
 // Global Variables & Functions
 import store from './store';
@@ -15,7 +16,13 @@ import i18n from './i18n/index';
 import ElementUIComponents from './libs/elementUI';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
+// Setting Vue configuration setting values
 Vue.config.productionTip = false;
+Vue.config.errorHandler = (error) => ErrorService.onError(error);
+
+// Handle error outside Vue
+ErrorService.initHandler();
+
 Vue.prototype.$axios = axios;
 Vue.prototype.$axios.defaults.timeout = 1000 * 20;
 Vue.prototype.$consts = consts;
