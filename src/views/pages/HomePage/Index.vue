@@ -28,7 +28,7 @@
       </div>
       <img
         class="illustration"
-        :src="svg.illustration"
+        src="@/assets/images/background/illustration.svg"
         alt="AI Service Illustration"
       >
     </div>
@@ -36,7 +36,7 @@
       <div class="introduction">
         <div class="introduction-heading">
           <img
-            :src="svg.quote"
+            src="@/assets/images/quote.svg"
             alt=""
           > {{ $t(`title['Introduction to Rodin']`) }}
         </div>
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="our-vision">
-        <span class="tagline">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
+        <span class="tag-line">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
         <span class="our-vision-heading">{{ $t(`title['Our Vision']`) }}</span>
         <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
         <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
@@ -53,7 +53,7 @@
       </div>
       <img
         class="our-vision-banner"
-        :src="svg.vision"
+        src="@/assets/images/background/our-vision.svg"
         alt="Our Vision Globe"
       >
     </div>
@@ -67,131 +67,140 @@
       </button>
       <img
         class="data-lines"
-        :src="svg.datalines"
+        src="@/assets/images/background/data-lines.svg"
         alt="Data Lines"
       >
     </div>
     <div class="what content panel">
       <img
         class="diagonal-box"
-        :src="svg.diagonal"
+        src="@/assets/images/background/diagonal-box.svg"
         alt="Diagonal Box"
       >
       <span class="what-heading">{{ $t(`title['What Can You Get with Rodin?']`) }}</span>
-      <div class="grid services">
-        <div class="service api">
-          <img
-            :src="svg.brain"
-            alt="API"
+      <div class="services">
+        <el-row>
+          <el-col
+            v-for="(item, index) in advantageCards"
+            :key="index"
+            :xs="24"
+            :md="12"
+            :lg="6"
           >
-          <span class="service-heading">{{ $t(`title['AI Services APIs']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
-        </div>
-        <div class="service pipeline">
-          <img
-            :src="svg.pipeline"
-            alt="Pipeline Builder"
-          >
-          <span class="service-heading">{{ $t(`title['AI Customized Pipeline Builder']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
-        </div>
-        <div class="service deployment">
-          <img
-            :src="svg.deployment"
-            alt="Deployment"
-          >
-          <span class="service-heading">{{ $t(`title['Customized Deployment']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
-        </div>
-        <div class="service marketplace">
-          <img
-            :src="svg.marketplace"
-            alt="Marketplace"
-          >
-          <span class="service-heading">{{ $t(`title['Marketplace']`) }}</span>
-          <span class="service-description">{{ $t(`longText['It is long established fact']`) }}</span>
-          <span class="service-description">{{ $t(`longText['The point of using lorem ipsum']`) }}</span>
-        </div>
+            <div
+              :class="item.className"
+              class="service"
+            >
+              <img
+                :src="item.image"
+                :alt="item.className"
+              >
+              <span class="service-heading">{{ item.headMsg }}</span>
+              <span class="service-description">{{ item.firstDescription }}</span>
+              <span class="service-description">{{ item.secondDescription }}</span>
+            </div>
+          </el-col>
+        </el-row>
       </div>
       <div class="ai-services">
         <span class="ai-services-heading">{{ $t(`title['Our AI Services']`) }}</span>
         <span class="ai-services-description">{{ $t(`description['All in One AI Platform-as-a-Service for Vast Businesses and Developers']`) }}</span>
         <div class="defined-services">
-          <service-card
-            :src="svg.NLP"
-            icon-background-color="#FC9C0D20"
-            :title="$t(`title['Natural Language Processing']`)"
-            :description="$t(`description['Empowering your advanced NLP based applications with simple API calls.']`)"
-            read-more-link="#"
-          />
-          <service-card
-            :src="svg.VCA"
-            icon-background-color="#D9CAFF53"
-            :title="$t(`title['Video Content Analysis']`)"
-            :description="$t(`description['Unlocking video content analysis capabilities based on cutting-edge deep learning models.']`)"
-            read-more-link="#"
-          />
-          <service-card
-            :src="svg.AIU"
-            icon-background-color="#DCEEFF"
-            :title="$t(`title['Automatic Image Understanding']`)"
-            :description="$t(`description['Giving the ability of processing massive images into your able hands.']`)"
-            read-more-link="#"
-          />
-          <service-card
-            :src="svg.ASA"
-            icon-background-color="#D8F8F2"
-            :title="$t(`title['Audio and Speech Analysis']`)"
-            :description="$t(`description['Enabling your application both can hear and speak, as smart as it should be.']`)"
-            read-more-link="#"
-          />
+          <el-row :gutter="20">
+            <el-col
+              v-for="(item, index) in servicesCards"
+              :key="index"
+              :xs="24"
+              :md="12"
+              :lg="12"
+              :xl="6"
+            >
+              <service-card v-bind="item" />
+            </el-col>
+          </el-row>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import quote from '@/assets/images/quote.svg';
-import brain from '@/assets/images/icons/brain-api.svg';
-import deployment from '@/assets/images/icons/deployment.svg';
-import marketplace from '@/assets/images/icons/marketplace.svg';
-import pipeline from '@/assets/images/icons/pipeline.svg';
-import AIU from '@/assets/images/icons/AIU.svg';
-import ASA from '@/assets/images/icons/ASA.svg';
-import NLP from '@/assets/images/icons/NLP.svg';
-import VCA from '@/assets/images/icons/VCA.svg';
-import illustration from '@/assets/images/background/illustration.svg';
-import vision from '@/assets/images/background/our-vision.svg';
-import datalines from '@/assets/images/background/data-lines.svg';
-import diagonal from '@/assets/images/background/diagonal-box.svg';
-
-import ServiceCard from '../../components/ServiceCard/Index.vue';
+import ImageBrain from '@/assets/images/icons/brain-api.svg';
+import ImageDeployment from '@/assets/images/icons/deployment.svg';
+import ImageMarketplace from '@/assets/images/icons/marketplace.svg';
+import ImagePipeline from '@/assets/images/icons/pipeline.svg';
+import ImageNLP from '@/assets/images/icons/NLP.svg';
+import ImageAIU from '@/assets/images/icons/AIU.svg';
+import ImageASA from '@/assets/images/icons/ASA.svg';
+import ImageVCA from '@/assets/images/icons/VCA.svg';
+import ServiceCard from './ServiceCard/Index.vue';
 
 export default {
   components: {
     ServiceCard,
   },
-  computed: {
-    svg() {
-      return {
-        quote,
-        brain,
-        deployment,
-        marketplace,
-        pipeline,
-        AIU,
-        ASA,
-        NLP,
-        VCA,
-        illustration,
-        vision,
-        datalines,
-        diagonal,
-      };
-    },
+  data() {
+    return {
+      servicesCards: [
+        {
+          src: ImageNLP,
+          className: 'card-nlp',
+          title: this.$t('title[\'Natural Language Processing\']'),
+          description: this.$t('description[\'Empowering your advanced NLP based applications with simple API calls.\']'),
+          readMoreLink: '#',
+        },
+        {
+          src: ImageVCA,
+          className: 'card-vca',
+          title: this.$t('title[\'Video Content Analysis\']'),
+          description: this.$t('description[\'Unlocking video content analysis capabilities based on cutting-edge deep learning models.\']'),
+          readMoreLink: '#',
+        },
+        {
+          src: ImageAIU,
+          className: 'card-aiu',
+          title: this.$t('title[\'Automatic Image Understanding\']'),
+          description: this.$t('description[\'Giving the ability of processing massive images into your able hands.\']'),
+          readMoreLink: '#',
+        },
+        {
+          src: ImageASA,
+          className: 'card-asa',
+          title: this.$t('title[\'Audio and Speech Analysis\']'),
+          description: this.$t('description[\'Enabling your application both can hear and speak, as smart as it should be.\']'),
+          readMoreLink: '#',
+        },
+      ],
+      advantageCards: [
+        {
+          className: 'api',
+          image: ImageBrain,
+          headMsg: this.$t('title[\'AI Services APIs\']'),
+          firstDescription: this.$t('longText[\'It is long established fact\']'),
+          secondDescription: this.$t('longText[\'The point of using lorem ipsum\']'),
+        },
+        {
+          className: 'pipeline',
+          image: ImagePipeline,
+          headMsg: this.$t('title[\'AI Customized Pipeline Builder\']'),
+          firstDescription: this.$t('longText[\'It is long established fact\']'),
+          secondDescription: this.$t('longText[\'The point of using lorem ipsum\']'),
+        },
+        {
+          className: 'deployment',
+          image: ImageDeployment,
+          headMsg: this.$t('title[\'Customized Deployment\']'),
+          firstDescription: this.$t('longText[\'It is long established fact\']'),
+          secondDescription: this.$t('longText[\'The point of using lorem ipsum\']'),
+        },
+        {
+          className: 'marketplace',
+          image: ImageMarketplace,
+          headMsg: this.$t('title[\'Marketplace\']'),
+          firstDescription: this.$t('longText[\'It is long established fact\']'),
+          secondDescription: this.$t('longText[\'The point of using lorem ipsum\']'),
+        },
+      ],
+    };
   },
 };
 </script>
@@ -199,7 +208,7 @@ export default {
 #home-page {
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   background: #F7F8FF;
   color: #3A3955;
 
@@ -314,9 +323,7 @@ export default {
     margin-top: -0.6rem;
     background-color: white;
     border-radius: 0.06rem 0.06rem 0 0;
-    padding: 0.36rem;
-    padding-bottom: 0.45rem;
-    padding-top: 0.30rem;
+    padding: 0.30rem 0.36rem 0.45rem;
     border-bottom: 1px solid #3B72FF;
 
     .introduction-heading {
@@ -345,7 +352,7 @@ export default {
       width: 60%;
       margin-top: 0.8rem;
 
-      .tagline {
+      .tag-line {
         position: relative;
         margin-right: auto;
         padding: 0.08rem 0.48rem 0.08rem 0.2rem;
@@ -459,8 +466,6 @@ export default {
     }
 
     .services {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
       margin-top: 0.6rem;
 
       .service {
@@ -468,8 +473,7 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         position: relative;
-        padding: 0.2rem;
-        padding-top: 0;
+        padding: 0 0.2rem 0.2rem;
         min-height: 2rem;
 
         .service-heading {
@@ -520,10 +524,24 @@ export default {
       }
 
       .defined-services {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.2rem;
         margin-top: 0.16rem;
+        /deep/ .ai-service {
+          margin-bottom: 0.32rem;
+          .card {
+            &-nlp {
+              background: #FC9C0D20;
+            }
+            &-vca {
+              background: #D9CAFF53;
+            }
+            &-aiu {
+              background: #DCEEFF;
+            }
+            &-asa {
+              background: #D8F8F2;
+            }
+          }
+        }
       }
     }
   }

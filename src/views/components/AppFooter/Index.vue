@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import RequestDemo from '@/views/components/RequestDemo/Index.vue';
+import RequestDemo from '@/views/components/AppFooter/RequestDemo/Index.vue';
 import phone from '@/assets/images/icons/phone-call.svg';
 import envelope from '@/assets/images/icons/envelope.svg';
 import pin from '@/assets/images/icons/pin.svg';
