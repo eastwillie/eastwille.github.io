@@ -16,13 +16,13 @@
         </div>
       </div>
     </div>
-    <div class="container cards" >
+    <div class="container cards">
       <solutions-card
         v-for="(solutionsCard, index) in solutionsCards"
-        v-bind:key="index"
+        :key="index"
         :src="solutionsCard.src"
         :icon-background-color="solutionsCard.iconBackgroundColor"
-        :iconShadowColor="solutionsCard.iconShadowColor"
+        :icon-shadow-color="solutionsCard.iconShadowColor"
         :title="solutionsCard.title"
         :description="solutionsCard.description"
         :read-more-link="solutionsCard.readMoreLink"
