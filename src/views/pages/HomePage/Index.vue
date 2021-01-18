@@ -168,7 +168,7 @@ import vision from '@/assets/images/background/our-vision.svg';
 import datalines from '@/assets/images/background/data-lines.svg';
 import diagonal from '@/assets/images/background/diagonal-box.svg';
 
-import ServiceCard from '../../components/ServiceCard/Index.vue';
+import ServiceCard from './ServiceCard/Index.vue';
 
 export default {
   components: {
