@@ -36,4 +36,4 @@ jobs:
       
       # Runs build command
       - name: Run Project Builder
-        run: NODE_ENV=production yarn run build
+        run: CI=true NODE_ENV=production yarn run build
