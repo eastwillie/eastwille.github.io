@@ -33,17 +33,23 @@ export default class ErrorService {
   }
 
   static logHTTPError(error) {
-    // TODO : Integrate remote Engine here
+    // TODO : Integrate remote log Engine here
+    /* eslint-disable no-console */ // TODO : should be removed no-console bypass once after integrating remote logger
     console.log(error);
+    /* eslint-enable no-console */ // TODO : should be removed no-console bypass once after integrating remote logger
   }
 
   static logRuntimeError(error) {
-    // TODO : Integrate remote Engine here
-    console.error(error);
+    // TODO : Integrate remote log Engine here
+    /* eslint-disable no-console */ // TODO : should be removed no-console bypass once after integrating remote logger
+    console.log(error);
+    /* eslint-enable no-console */ // TODO : should be removed no-console bypass once after integrating remote logger
   }
 
   static logWarningsAndInfo(error) {
-    // TODO : Integrate remote Engine here
-    console.warn(error);
+    // TODO : Integrate remote log Engine here
+    /* eslint-disable no-console */ // TODO : should be removed no-console bypass once after integrating remote logger
+    console.log(error);
+    /* eslint-enable no-console */ // TODO : should be removed no-console bypass once after integrating remote logger
   }
 }
