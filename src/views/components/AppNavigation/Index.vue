@@ -170,6 +170,7 @@ export default {
               max-width: 20em;
               h4 {
                 line-height: 1.4;
+                font-size: 0.16rem;
                 font-weight: 600;
               }
               p {
