@@ -56,6 +56,7 @@ export default {
 
   .form-header {
     display: flex;
+    align-items: center;
     padding: 0.16rem 0;
 
     span {
@@ -75,8 +76,15 @@ export default {
   }
 
   .btn-swap {
-    border: none;
+    display: flex;
+    border: 1px solid #D5D5D5;
+    border-radius: 6px;
+    padding: 0.08rem;
     background: none;
+
+    &:hover {
+      background: #D7D7D7;
+    }
 
     &::after {
       content: 'swap_horiz';
