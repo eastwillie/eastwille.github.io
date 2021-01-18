@@ -7,9 +7,14 @@
         boxShadow: iconShadowColor,
       }"
     >
-      <img :src="src" :alt="title" />
+      <img
+        :src="src"
+        :alt="title"
+      >
     </div>
-    <h2 class="solution-card-titile">{{ title }}</h2>
+    <h2 class="solution-card-titile">
+      {{ title }}
+    </h2>
     <span class="solution-card-description">{{ description }}</span>
     <button class="read-more">
       {{ $t(`button['Read more']`) }}
