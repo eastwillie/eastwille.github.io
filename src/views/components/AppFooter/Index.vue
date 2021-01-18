@@ -9,7 +9,7 @@
           {{ $t(`footer['try rodin']`) }}
         </h2>
         <br>
-        <p class="font-500">
+        <p class="font-500" >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
