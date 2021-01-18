@@ -87,6 +87,7 @@ export default {
     run() {
       this.loading = true;
       // Connect to API and wait response here
+      // eslint-disable-next-line no-console
       console.log({ language: this.currentLanguage, example: this.currentExample });
       setTimeout(() => {
         this.loading = false;
