@@ -75,7 +75,7 @@ import {
   // Loading,
   // MessageBox,
   // Message,
-  // Notification
+  Notification,
 } from 'element-ui';
 
 export default [
@@ -155,5 +155,5 @@ export default [
   // Loading,
   // MessageBox,
   // Message,
-  // Notification
+  Notification,
 ];
