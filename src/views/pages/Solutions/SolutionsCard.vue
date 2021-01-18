@@ -4,7 +4,10 @@
       class="solution-card-icon-background"
       :class="className"
     >
-      <img :src="src" :alt="title" />
+      <img
+        :src="src"
+        :alt="title"
+      >
     </div>
     <h2 class="solution-card-titile">
       {{ title }}

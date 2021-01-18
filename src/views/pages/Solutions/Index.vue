@@ -92,11 +92,7 @@ export default {
   .header {
     height: 80vh;
 
-    background: url('../../../assets/images/background/header-corner-top.svg')
-        top left no-repeat,
-      url('../../../assets/images/background/header-corner-bottom.svg') bottom
-        right no-repeat,
-      $background-header;
+    background: url('../../../assets/images/background/header-corner-top.svg') top left no-repeat, url('../../../assets/images/background/header-corner-bottom.svg') bottom right no-repeat, $background-header;
     color: $text-dark-bg;
 
     .divider {
