@@ -52,7 +52,6 @@ export default {
 .ai-services {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.6rem;
 
   .ai-services-heading {
     margin-top: 0.32rem;
