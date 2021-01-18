@@ -143,28 +143,28 @@ export default {
       servicesCards: [
         {
           src: ImageNLP,
-          iconBackgroundColor: '#FC9C0D20',
+          className: 'card-nlp',
           title: this.$t('title[\'Natural Language Processing\']'),
           description: this.$t('description[\'Empowering your advanced NLP based applications with simple API calls.\']'),
           readMoreLink: '#',
         },
         {
           src: ImageVCA,
-          iconBackgroundColor: '#D9CAFF53',
+          className: 'card-vca',
           title: this.$t('title[\'Video Content Analysis\']'),
           description: this.$t('description[\'Unlocking video content analysis capabilities based on cutting-edge deep learning models.\']'),
           readMoreLink: '#',
         },
         {
           src: ImageAIU,
-          iconBackgroundColor: '#DCEEFF',
+          className: 'card-aiu',
           title: this.$t('title[\'Automatic Image Understanding\']'),
           description: this.$t('description[\'Giving the ability of processing massive images into your able hands.\']'),
           readMoreLink: '#',
         },
         {
           src: ImageASA,
-          iconBackgroundColor: '#D8F8F2',
+          className: 'card-asa',
           title: this.$t('title[\'Audio and Speech Analysis\']'),
           description: this.$t('description[\'Enabling your application both can hear and speak, as smart as it should be.\']'),
           readMoreLink: '#',
@@ -527,6 +527,20 @@ export default {
         margin-top: 0.16rem;
         /deep/ .ai-service {
           margin-bottom: 0.32rem;
+          .card {
+            &-nlp {
+              background: #FC9C0D20;
+            }
+            &-vca {
+              background: #D9CAFF53;
+            }
+            &-aiu {
+              background: #DCEEFF;
+            }
+            &-asa {
+              background: #D8F8F2;
+            }
+          }
         }
       }
     }

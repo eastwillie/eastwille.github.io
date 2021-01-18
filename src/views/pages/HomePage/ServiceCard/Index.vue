@@ -3,7 +3,7 @@
     <div class="ai-service-icon-container">
       <div
         class="ai-service-icon-background"
-        :style="{'background-color': iconBackgroundColor}"
+        :class="className"
       />
       <img
         :src="src"
@@ -24,7 +24,7 @@
 <script>
 export default {
   props: {
-    iconBackgroundColor: {
+    className: {
       type: String,
       required: true,
     },
