@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import axios from 'axios';
 import App from './App.vue';
 import router from './router';
 import ErrorService from './libs/error-service';
 
 // Global Variables & Functions
+import axios from './axios';
 import store from './store';
 import consts from './libs/constants';
 import methods from './libs/methods';
@@ -24,7 +24,6 @@ Vue.config.errorHandler = (error) => ErrorService.onError(error);
 ErrorService.initHandler();
 
 Vue.prototype.$axios = axios;
-Vue.prototype.$axios.defaults.timeout = 1000 * 20;
 Vue.prototype.$consts = consts;
 Vue.prototype.$apis = apis;
 

@@ -20,6 +20,7 @@
         />
         <run-button
           :on-click="run"
+          :disabled="currentExample === null"
           :loading="loading"
         />
       </template>
@@ -29,7 +30,7 @@
           :loading="loading"
         >
           <div
-            v-if="result.length"
+            v-if="result && result.length"
             class="result"
           >
             {{ result }}
@@ -45,6 +46,7 @@ import InputLanguage from '@/views/components/Services/InputLanguage/Index.vue';
 import GeneratedResult from '@/views/components/Services/GeneratedResult/Index.vue';
 import RunButton from '@/views/components/Services/RunButton/Index.vue';
 import ExampleText from '@/views/components/Services/ExampleText/Index.vue';
+import services from '@/services';
 
 export default {
   name: 'DocumentClassification',
@@ -66,7 +68,7 @@ export default {
       'Hillary Clinton has won a narrow victory in the Nevada caucuses, the latest stage in the contest for the Democratic Party\'s presidential nomination.She took 52% per cent of the vote, with her rival, Bernie Sanders, just behind on 48%.She told her supporters in Las Vegas  this one\'s for you .Hillary Clinton on Nevada victory: \'This one\'s for you\'\n',
     ],
     currentExample: null,
-    result: '',
+    result: null,
     loading: false,
   }),
   computed: {
@@ -86,13 +88,16 @@ export default {
   methods: {
     run() {
       this.loading = true;
-      // Connect to API and wait response here
-      // eslint-disable-next-line no-console
-      console.log({ language: this.currentLanguage, example: this.currentExample });
-      setTimeout(() => {
-        this.loading = false;
-        this.result = 'I am response from API';
-      }, 2000);
+      services.NLP.getDocumentClassification({
+        lang: this.currentLanguage,
+        text: this.examples[this.currentExample],
+      })
+        .then((result) => {
+          this.result = result;
+        })
+        .finally(() => {
+          this.loading = false;
+        });
     },
   },
 };
