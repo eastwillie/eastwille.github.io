@@ -36,7 +36,4 @@ jobs:
       
       # Runs build command
       - name: Run Project Builder
-        run: yarn run build
-      # Environment Variables
-        env: 
-          NODE_ENV: 'production'
+        run: NODE_ENV=production yarn run build
