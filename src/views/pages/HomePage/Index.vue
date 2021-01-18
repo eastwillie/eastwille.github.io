@@ -28,7 +28,7 @@
       </div>
       <img
         class="illustration"
-        :src="svg.illustration"
+        src="@/assets/images/background/illustration.svg"
         alt="AI Service Illustration"
       >
     </div>
@@ -36,7 +36,7 @@
       <div class="introduction">
         <div class="introduction-heading">
           <img
-            :src="svg.quote"
+            src="@/assets/images/quote.svg"
             alt=""
           > {{ $t(`title['Introduction to Rodin']`) }}
         </div>
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="our-vision">
-        <span class="tagline">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
+        <span class="tag-line">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
         <span class="our-vision-heading">{{ $t(`title['Our Vision']`) }}</span>
         <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
         <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
@@ -53,7 +53,7 @@
       </div>
       <img
         class="our-vision-banner"
-        :src="svg.vision"
+        src="@/assets/images/background/our-vision.svg"
         alt="Our Vision Globe"
       >
     </div>
@@ -67,21 +67,21 @@
       </button>
       <img
         class="data-lines"
-        :src="svg.datalines"
+        src="@/assets/images/background/data-lines.svg"
         alt="Data Lines"
       >
     </div>
     <div class="what content panel">
       <img
         class="diagonal-box"
-        :src="svg.diagonal"
+        src="@/assets/images/background/diagonal-box.svg"
         alt="Diagonal Box"
       >
       <span class="what-heading">{{ $t(`title['What Can You Get with Rodin?']`) }}</span>
       <div class="grid services">
         <div class="service api">
           <img
-            :src="svg.brain"
+            src="@/assets/images/icons/brain-api.svg"
             alt="API"
           >
           <span class="service-heading">{{ $t(`title['AI Services APIs']`) }}</span>
@@ -90,7 +90,7 @@
         </div>
         <div class="service pipeline">
           <img
-            :src="svg.pipeline"
+            src="@/assets/images/icons/pipeline.svg"
             alt="Pipeline Builder"
           >
           <span class="service-heading">{{ $t(`title['AI Customized Pipeline Builder']`) }}</span>
@@ -99,7 +99,7 @@
         </div>
         <div class="service deployment">
           <img
-            :src="svg.deployment"
+            src="@/assets/images/icons/deployment.svg"
             alt="Deployment"
           >
           <span class="service-heading">{{ $t(`title['Customized Deployment']`) }}</span>
@@ -108,7 +108,7 @@
         </div>
         <div class="service marketplace">
           <img
-            :src="svg.marketplace"
+            src="@/assets/images/icons/marketplace.svg"
             alt="Marketplace"
           >
           <span class="service-heading">{{ $t(`title['Marketplace']`) }}</span>
@@ -121,32 +121,9 @@
         <span class="ai-services-description">{{ $t(`description['All in One AI Platform-as-a-Service for Vast Businesses and Developers']`) }}</span>
         <div class="defined-services">
           <service-card
-            :src="svg.NLP"
-            icon-background-color="#FC9C0D20"
-            :title="$t(`title['Natural Language Processing']`)"
-            :description="$t(`description['Empowering your advanced NLP based applications with simple API calls.']`)"
-            read-more-link="#"
-          />
-          <service-card
-            :src="svg.VCA"
-            icon-background-color="#D9CAFF53"
-            :title="$t(`title['Video Content Analysis']`)"
-            :description="$t(`description['Unlocking video content analysis capabilities based on cutting-edge deep learning models.']`)"
-            read-more-link="#"
-          />
-          <service-card
-            :src="svg.AIU"
-            icon-background-color="#DCEEFF"
-            :title="$t(`title['Automatic Image Understanding']`)"
-            :description="$t(`description['Giving the ability of processing massive images into your able hands.']`)"
-            read-more-link="#"
-          />
-          <service-card
-            :src="svg.ASA"
-            icon-background-color="#D8F8F2"
-            :title="$t(`title['Audio and Speech Analysis']`)"
-            :description="$t(`description['Enabling your application both can hear and speak, as smart as it should be.']`)"
-            read-more-link="#"
+            v-for="(item, index) of servicesCards"
+            :key="index"
+            v-bind="item"
           />
         </div>
       </div>
@@ -154,44 +131,50 @@
   </div>
 </template>
 <script>
-import quote from '@/assets/images/quote.svg';
-import brain from '@/assets/images/icons/brain-api.svg';
-import deployment from '@/assets/images/icons/deployment.svg';
-import marketplace from '@/assets/images/icons/marketplace.svg';
-import pipeline from '@/assets/images/icons/pipeline.svg';
+
+import NLP from '@/assets/images/icons/NLP.svg';
 import AIU from '@/assets/images/icons/AIU.svg';
 import ASA from '@/assets/images/icons/ASA.svg';
-import NLP from '@/assets/images/icons/NLP.svg';
 import VCA from '@/assets/images/icons/VCA.svg';
-import illustration from '@/assets/images/background/illustration.svg';
-import vision from '@/assets/images/background/our-vision.svg';
-import datalines from '@/assets/images/background/data-lines.svg';
-import diagonal from '@/assets/images/background/diagonal-box.svg';
-
 import ServiceCard from './ServiceCard/Index.vue';
 
 export default {
   components: {
     ServiceCard,
   },
-  computed: {
-    svg() {
-      return {
-        quote,
-        brain,
-        deployment,
-        marketplace,
-        pipeline,
-        AIU,
-        ASA,
-        NLP,
-        VCA,
-        illustration,
-        vision,
-        datalines,
-        diagonal,
-      };
-    },
+  data() {
+    return {
+      servicesCards: [
+        {
+          src: NLP,
+          iconBackgroundColor: '#FC9C0D20',
+          title: this.$t('title[\'Natural Language Processing\']'),
+          description: this.$t('description[\'Empowering your advanced NLP based applications with simple API calls.\']'),
+          readMoreLink: '#',
+        },
+        {
+          src: VCA,
+          iconBackgroundColor: '#D9CAFF53',
+          title: this.$t('title[\'Video Content Analysis\']'),
+          description: this.$t('description[\'Unlocking video content analysis capabilities based on cutting-edge deep learning models.\']'),
+          readMoreLink: '#',
+        },
+        {
+          src: AIU,
+          iconBackgroundColor: '#DCEEFF',
+          title: this.$t('title[\'Automatic Image Understanding\']'),
+          description: this.$t('description[\'Giving the ability of processing massive images into your able hands.\']'),
+          readMoreLink: '#',
+        },
+        {
+          src: ASA,
+          iconBackgroundColor: '#D8F8F2',
+          title: this.$t('title[\'Audio and Speech Analysis\']'),
+          description: this.$t('description[\'Enabling your application both can hear and speak, as smart as it should be.\']'),
+          readMoreLink: '#',
+        },
+      ],
+    };
   },
 };
 </script>
@@ -199,7 +182,7 @@ export default {
 #home-page {
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   background: #F7F8FF;
   color: #3A3955;
 
@@ -314,9 +297,7 @@ export default {
     margin-top: -0.6rem;
     background-color: white;
     border-radius: 0.06rem 0.06rem 0 0;
-    padding: 0.36rem;
-    padding-bottom: 0.45rem;
-    padding-top: 0.30rem;
+    padding: 0.30rem 0.36rem 0.45rem;
     border-bottom: 1px solid #3B72FF;
 
     .introduction-heading {
@@ -345,7 +326,7 @@ export default {
       width: 60%;
       margin-top: 0.8rem;
 
-      .tagline {
+      .tag-line {
         position: relative;
         margin-right: auto;
         padding: 0.08rem 0.48rem 0.08rem 0.2rem;
@@ -468,8 +449,7 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         position: relative;
-        padding: 0.2rem;
-        padding-top: 0;
+        padding: 0 0.2rem 0.2rem;
         min-height: 2rem;
 
         .service-heading {

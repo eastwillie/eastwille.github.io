@@ -79,7 +79,7 @@ export default {
       flex-direction: row;
       border-radius: 8px;
       background-color: white;
-      box-shadow: 0px 10px 18px rgba(235, 237, 244, 0.76);
+      box-shadow: 0 10px 18px rgba(235, 237, 244, 0.76);
 
       .ai-service-icon-container {
         position: relative;
@@ -109,8 +109,7 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.08rem;
-        padding: 0.2rem;
-        padding-bottom: 0.08rem;
+        padding: 0.2rem 0.2rem 0.08rem;
 
         .ai-service-title {
           font-size: 0.2rem;
@@ -125,7 +124,7 @@ export default {
         .read-more {
           background: none;
           border: none;
-          font-family: Montserrat;
+          font-family: 'Montserrat', sans-serif;
           color: #3A71FF;
 
           &::after {
