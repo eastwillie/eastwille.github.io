@@ -17,10 +17,15 @@
       </div>
     </div>
     <div class="container cards">
-      <SolutionsCard
-        v-for="card in cards"
-        :key="card.name"
-        :name="card.name"
+      <solutions-card
+        v-for="(solutionsCard, index) in solutionsCards"
+        :key="index"
+        :src="solutionsCard.src"
+        :icon-background-color="solutionsCard.iconBackgroundColor"
+        :icon-shadow-color="solutionsCard.iconShadowColor"
+        :title="solutionsCard.title"
+        :description="solutionsCard.description"
+        :read-more-link="solutionsCard.readMoreLink"
       />
     </div>
   </div>
@@ -28,7 +33,11 @@
 
 <script>
 import SolutionsCard from '@/views/pages/Solutions/SolutionsCard.vue';
-import Divider from '@/views/components/Divider/Index.vue';
+import Divider from '@/components/Divider/Index.vue';
+import finanacel from '@/assets/images/icons/finanacel.svg';
+import education from '@/assets/images/icons/education.svg';
+import health from '@/assets/images/icons/health.svg';
+import media from '@/assets/images/icons/media.svg';
 
 export default {
   name: 'Solutions',
@@ -37,19 +46,39 @@ export default {
     SolutionsCard,
   },
   computed: {
-    cards() {
+    solutionsCards() {
       return [
         {
-          name: this.$t('solutions["financial services"]'),
+          src: finanacel,
+          iconBackgroundColor: '#521FD1',
+          iconShadowColor: '4px 7px 17px rgba(82, 31, 209, 0.32)',
+          title: this.$t("solutions['financial services']"),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
         },
         {
-          name: this.$t('solutions["media and entertainment"]'),
+          src: media,
+          iconBackgroundColor: '#64DDEC',
+          iconShadowColor: '4px 7px 17px rgba(100, 221, 236, 0.42)',
+          title: this.$t("solutions['media and entertainment']"),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
         },
         {
-          name: this.$t('solutions["healthcare"]'),
+          src: health,
+          iconBackgroundColor: '#3A71FF',
+          iconShadowColor: '4px 7px 17px rgba(58, 113, 255, 0.42)',
+          title: this.$t('solutions.healthcare'),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
         },
         {
-          name: this.$t('solutions["education"]'),
+          src: education,
+          iconBackgroundColor: '#AC46FF',
+          iconShadowColor: '4px 7px 17px rgba(172, 70, 255, 0.42)',
+          title: this.$t('solutions.education'),
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
+          readMoreLink: '#',
         },
       ];
     },
@@ -104,6 +133,13 @@ export default {
       .cta {
         background: $background-primary;
       }
+    }
+    .cards {
+      display: grid;
+      background: $background-secondary;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding: 0.6rem .84rem 1.26rem .84rem;
+      column-gap: .24rem;
     }
   }
 </style>

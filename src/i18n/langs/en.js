@@ -19,6 +19,7 @@ export default {
     'Video Content Analysis': 'Video Content Analysis',
     'Automatic Image Understanding': 'Automatic Image Understanding',
     'Audio and Speech Analysis': 'Audio and Speech Analysis',
+    'Machine Translation': 'Machine Translation',
   },
   description: {
     'AI Services Covering': 'AI Services Covering',
@@ -58,6 +59,21 @@ export default {
     'request demo': 'Request Demo',
     'check our services': 'Check our services',
     'Read more': 'Read more',
+    // Footer
+    'help center': 'help center',
+    'Smart Nation, Group 42': 'Smart Nation, Group 42',
+  },
+  footer: {
+    copyright: 'Copyright © 2021 Group 42, Inc.',
+    'All rights reserved.': 'All rights reserved.',
+    'try rodin': 'Try Rodin',
+    'help center': 'Help Center',
+    'contact us': 'Contact us',
+    'user guide': 'User Guide',
+    pricing: 'Pricing',
+    'terms of use': 'Terms of Use',
+    'privacy policy': 'Privacy Policy',
+    'Leave your email to set up a call.': 'Leave your email to set up a call.',
   },
   industries: {
     'Financial Services': 'Financial Services',
