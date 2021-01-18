@@ -2,15 +2,9 @@
   <div class="solution-card">
     <div
       class="solution-card-icon-background"
-      :style="{
-        background: iconBackgroundColor,
-        boxShadow: iconShadowColor,
-      }"
+      :class="className"
     >
-      <img
-        :src="src"
-        :alt="title"
-      >
+      <img :src="src" :alt="title" />
     </div>
     <h2 class="solution-card-titile">
       {{ title }}
@@ -26,11 +20,7 @@
 export default {
   name: 'SolutionsCard',
   props: {
-    iconBackgroundColor: {
-      type: String,
-      required: true,
-    },
-    iconShadowColor: {
+    className: {
       type: String,
       required: true,
     },
@@ -108,8 +98,8 @@ export default {
     font-size: 0.14rem;
 
     &::after {
-      content: "arrow_forward";
-      font-family: "Material Icons", sans-serif;
+      content: 'arrow_forward';
+      font-family: 'Material Icons', sans-serif;
       margin-left: 0.1rem;
     }
   }

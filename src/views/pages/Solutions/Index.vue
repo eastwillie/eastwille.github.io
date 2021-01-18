@@ -1,5 +1,5 @@
 <template>
-  <div class="solutions">
+  <div id="solutions-page">
     <div class="header">
       <div class="container">
         <div class="content">
@@ -25,15 +25,7 @@
           :md="12"
           :lg="6"
         >
-          <solutions-card
-            :key="index"
-            :src="solutionsCard.src"
-            :icon-background-color="solutionsCard.iconBackgroundColor"
-            :icon-shadow-color="solutionsCard.iconShadowColor"
-            :title="solutionsCard.title"
-            :description="solutionsCard.description"
-            :read-more-link="solutionsCard.readMoreLink"
-          />
+          <solutions-card v-bind="solutionsCard" />
         </el-col>
       </el-row>
     </div>
@@ -43,7 +35,7 @@
 <script>
 import SolutionsCard from '@/views/pages/Solutions/SolutionsCard.vue';
 import Divider from '@/components/Divider/Index.vue';
-import finanacel from '@/assets/images/icons/finanacel.svg';
+import Financial from '@/assets/images/icons/financial.svg';
 import education from '@/assets/images/icons/education.svg';
 import health from '@/assets/images/icons/health.svg';
 import media from '@/assets/images/icons/media.svg';
@@ -58,9 +50,8 @@ export default {
     return {
       solutionsCards: [
         {
-          src: finanacel,
-          iconBackgroundColor: '#521FD1',
-          iconShadowColor: '4px 7px 17px rgba(82, 31, 209, 0.32)',
+          src: Financial,
+          className: 'card-financial',
           title: this.$t("solutions['financial services']"),
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
@@ -68,8 +59,7 @@ export default {
         },
         {
           src: media,
-          iconBackgroundColor: '#64DDEC',
-          iconShadowColor: '4px 7px 17px rgba(100, 221, 236, 0.42)',
+          className: 'card-media',
           title: this.$t("solutions['media and entertainment']"),
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
@@ -77,8 +67,7 @@ export default {
         },
         {
           src: health,
-          iconBackgroundColor: '#3A71FF',
-          iconShadowColor: '4px 7px 17px rgba(58, 113, 255, 0.42)',
+          className: 'card-health',
           title: this.$t('solutions.healthcare'),
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
@@ -86,8 +75,7 @@ export default {
         },
         {
           src: education,
-          iconBackgroundColor: '#AC46FF',
-          iconShadowColor: '4px 7px 17px rgba(172, 70, 255, 0.42)',
+          className: 'card-education',
           title: this.$t('solutions.education'),
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
@@ -100,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.solutions {
+#solutions-page {
   .header {
     height: 80vh;
 
@@ -151,8 +139,28 @@ export default {
       background: $background-primary;
     }
   }
+
   .cards {
     padding: 0.6rem 0.84rem 1.26rem 0.84rem;
+
+    /deep/ .card {
+      &-financial {
+        background-color: #521fd1;
+        box-shadow: 4px 7px 17px rgba(82, 31, 209, 0.32);
+      }
+      &-media {
+        background-color: #64ddec;
+        box-shadow: 4px 7px 17px rgba(100, 221, 236, 0.42);
+      }
+      &-health {
+        background-color: #3a71ff;
+        box-shadow: 4px 7px 17px rgba(58, 113, 255, 0.42);
+      }
+      &-education {
+        background-color: #ac46ff;
+        box-shadow: 4px 7px 17px rgba(172, 70, 255, 0.42);
+      }
+    }
   }
 }
 </style>
