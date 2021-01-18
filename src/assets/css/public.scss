@@ -22,6 +22,15 @@
   align-items: center;
 }
 
+.i-rodin-loader {
+  display: inline-flex;
+  width: 2em;
+  height: 2em;
+  background-image: url('assets/images/icons/loader.svg'); // TODO : Need to change loader icon once the gif is ready from designer end
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .border-gradient {
   border: 1px solid transparent;
   background-origin: border-box;
