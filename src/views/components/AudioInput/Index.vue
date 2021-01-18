@@ -2,11 +2,17 @@
   <button
     class="audio-input"
     :class="classes"
-    @click="isActive = !isActive"
-  />
+    @click="onClick"
+  >
+    <audio />
+  </button>
 </template>
 
 <script>
+import AudioService from '@/libs/audio';
+
+const audioService = new AudioService();
+
 export default {
   props: {
     size: {
@@ -18,6 +24,8 @@ export default {
   data() {
     return {
       isActive: false,
+      recorder: null,
+      stream: null,
     };
   },
   computed: {
@@ -26,6 +34,31 @@ export default {
       const { size } = this.$props;
 
       return { isActive, [size]: size };
+    },
+  },
+  async beforeDestroy() {
+    // clean up here
+    if (!this.isActive) return;
+
+    await audioService.disableMic();
+  },
+  methods: {
+    onClick() {
+      if (!this.isActive) return this.enableMic();
+
+      return this.disableMic();
+    },
+    async enableMic() {
+      await audioService.enableMic();
+
+      this.isActive = true;
+    },
+    async disableMic() {
+      const blobURL = await audioService.disableMic();
+
+      window.open(blobURL); // temporary - just to test the audio
+
+      this.isActive = false;
     },
   },
 };

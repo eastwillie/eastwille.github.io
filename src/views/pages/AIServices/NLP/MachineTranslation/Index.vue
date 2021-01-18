@@ -13,18 +13,23 @@
         <span>To</span>
       </div>
       <div class="form-content">
-        <textarea
-          id="from"
-          v-model="from"
-          name="from"
-          rows="10"
-        />
-        <textarea
-          id="to"
-          v-model="to"
-          name="to"
-          rows="10"
-        />
+        <div class="form-group">
+          <textarea
+            id="from"
+            v-model="from"
+            name="from"
+            rows="10"
+          />
+          <audio-input size="xl" />
+        </div>
+        <div class="form-group">
+          <textarea
+            id="to"
+            v-model="to"
+            name="to"
+            rows="10"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -32,10 +37,12 @@
 
 <script>
 import Divider from '@/views/components/Divider/Index.vue';
+import AudioInput from '@/views/components/AudioInput/Index.vue';
 
 export default {
   components: {
     Divider,
+    AudioInput,
   },
   data() {
     return { from: '', to: '' };
@@ -70,8 +77,14 @@ export default {
     display: flex;
     gap: 0.12rem;
 
-    > textarea {
+    > .form-group {
+      display: flex;
       flex-grow: 1;
+      flex-direction: column;
+
+      > textarea {
+        width: 100%;
+      }
     }
   }
 
