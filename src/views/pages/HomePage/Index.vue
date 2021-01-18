@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="our-vision">
-        <span class="tag-line">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
+        <span class="tagline">{{ $t(`title["World's First All-Stake One-Stop AI Service Platform"]`) }}</span>
         <span class="our-vision-heading">{{ $t(`title['Our Vision']`) }}</span>
         <span class="our-vision-sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
         <span class="our-vision-description">Vivamus arcu felis bibendum ut tristique et egestas. Pellentesque nec nam aliquam sem et tortor consequat id. Porttitor rhoncus dolor purus non enim. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa.</span>
@@ -352,7 +352,7 @@ export default {
       width: 60%;
       margin-top: 0.8rem;
 
-      .tag-line {
+      .tagline {
         position: relative;
         margin-right: auto;
         padding: 0.08rem 0.48rem 0.08rem 0.2rem;
