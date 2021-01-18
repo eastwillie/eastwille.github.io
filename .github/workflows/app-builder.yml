@@ -34,6 +34,10 @@ jobs:
       # - name: Run all test suites
       #   run: yarn run test
       
+      # Runs linter
+      - name: Run Lint Configurations
+        run: yarn lint --no-fix --max-warnings=0
+
       # Runs build command
       - name: Run Project Builder
-        run: CI=true NODE_ENV=production yarn run build
+        run: yarn run build
