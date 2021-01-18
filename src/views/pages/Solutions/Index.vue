@@ -33,7 +33,7 @@
 
 <script>
 import SolutionsCard from '@/views/pages/Solutions/SolutionsCard.vue';
-import Divider from '@/views/components/Divider/Index.vue';
+import Divider from '@/components/Divider/Index.vue';
 import finanacel from '@/assets/images/icons/finanacel.svg';
 import education from '@/assets/images/icons/education.svg';
 import health from '@/assets/images/icons/health.svg';
