@@ -7,7 +7,7 @@ export default {
   meta: {
     keepAlive: false,
     showNav: true,
-    showSlideMenu: true,
+    showSidebar: true,
     icon: VCAIcon,
     navName: 'video content analysis',
     intro: 'Unlocking video content analysis capabilities based on cutting-edge deep learning models.',
@@ -20,7 +20,7 @@ export default {
       meta: {
         keepAlive: false,
         showNav: true,
-        showSlideMenu: true,
+        showSidebar: true,
         navName: 'introduction',
       },
     },

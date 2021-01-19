@@ -7,7 +7,7 @@ export default {
   meta: {
     keepAlive: false,
     showNav: true,
-    showSlideMenu: true,
+    showSidebar: true,
     icon: AIUIcon,
     navName: 'automatic image understanding',
     intro: 'Giving the ability of processing massive images into your able hands.',
@@ -20,7 +20,7 @@ export default {
       meta: {
         keepAlive: false,
         showNav: true,
-        showSlideMenu: true,
+        showSidebar: true,
         navName: 'introduction',
       },
     },

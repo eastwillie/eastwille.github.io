@@ -10,7 +10,7 @@ export default {
   meta: {
     keepAlive: false,
     showNav: true,
-    showSlideMenu: true,
+    showSidebar: true,
   },
   children: [
     NLP,

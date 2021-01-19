@@ -7,7 +7,7 @@ export default {
   meta: {
     keepAlive: false,
     showNav: true,
-    showSlideMenu: true,
+    showSidebar: true,
     icon: ASAIcon,
     navName: 'audio and speech analysis',
     intro: 'Enabling your application both can hear and speak, as smart as it should be.',
@@ -20,7 +20,7 @@ export default {
       meta: {
         keepAlive: false,
         showNav: true,
-        showSlideMenu: true,
+        showSidebar: true,
         navName: 'introduction',
       },
     },

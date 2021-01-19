@@ -1,8 +1,8 @@
 <template>
   <div id="ai-services">
-    <div v-if="$route.meta.showSlideMenu">
+    <div v-if="$route.meta.showSidebar">
       <keep-alive>
-        <slide-menu :items="AIServices.children" />
+        <sidebar :items="AIServices.children" />
       </keep-alive>
     </div>
     <div id="ai-services_view-container">
@@ -13,13 +13,12 @@
     </div>
   </div>
 </template>
-
 <script>
-import SlideMenu from '@/views/components/SlideMenu/Index.vue';
+import Sidebar from '@/views/components/Sidebar/Index.vue';
 import AIServices from '@/router/AIServices/index';
 
 export default {
-  components: { SlideMenu },
+  components: { Sidebar },
   data: () => ({
     AIServices,
   }),

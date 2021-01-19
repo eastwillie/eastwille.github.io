@@ -7,7 +7,7 @@ export default {
   meta: {
     keepAlive: false,
     showNav: true,
-    showSlideMenu: true,
+    showSidebar: true,
     icon: NLPIcon,
     navName: 'natural language processing',
     intro: 'Empowering your advanced NLP based applications with simple API calls.',
@@ -20,7 +20,7 @@ export default {
       meta: {
         keepAlive: false,
         showNav: true,
-        showSlideMenu: true,
+        showSidebar: true,
         navName: 'document classification',
       },
     },
@@ -31,7 +31,7 @@ export default {
       meta: {
         keepAlive: false,
         showNav: true,
-        showSlideMenu: true,
+        showSidebar: true,
         navName: 'introduction',
       },
     },

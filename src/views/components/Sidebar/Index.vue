@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-menu">
+  <div class="sidebar">
     <el-tree
       ref="tree"
       :data="treeData"
@@ -16,16 +16,11 @@
 
 <script>
 export default {
-  name: 'SlideMenu',
+  name: 'Sidebar',
   props: {
     items: {
       type: Array,
       required: true,
-    },
-  },
-  watch: {
-    $route() {
-      this.$refs.tree.setCheckedKeys(this.checkedKeys);
     },
   },
   computed: {
@@ -46,6 +41,11 @@ export default {
       }));
     },
   },
+  watch: {
+    $route() {
+      this.$refs.tree.setCheckedKeys(this.checkedKeys);
+    },
+  },
   methods: {
     onNodeClick(data) {
       if (data.name && this.$route.name !== data.name) {
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .slide-menu {
+  .sidebar {
     height: 100%;
     padding: 0.2rem;
     background: $background-header;
@@ -80,6 +80,5 @@ export default {
     /deep/ .el-tree-node:focus>.el-tree-node__content {
       background-color: transparent;
     }
-
   }
 </style>
