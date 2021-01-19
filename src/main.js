@@ -5,9 +5,9 @@ import ErrorService from './libs/error-service';
 
 // Global Variables & Functions
 import store from './store';
-import consts from './libs/constants';
+import { constants } from './libs/constants';
 import methods from './libs/methods';
-import apis from './apis/index';
+import { api } from './service/api';
 
 // i18n
 import i18n from './i18n/index';
@@ -22,8 +22,8 @@ Vue.config.errorHandler = (error) => ErrorService.onError(error);
 // Handle error outside Vue
 ErrorService.initHandler();
 
-Vue.prototype.$consts = consts;
-Vue.prototype.$apis = apis;
+Vue.prototype.$consts = constants;
+Vue.prototype.$api = api;
 
 ElementUIComponents.forEach((item) => {
   Vue.use(item);
