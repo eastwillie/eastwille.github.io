@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import AudioService from '@/libs/audio';
+import AudioService from '@/services/audio';
 
 const audioService = new AudioService();
 
