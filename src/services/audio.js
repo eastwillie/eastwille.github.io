@@ -6,7 +6,7 @@ const recorder = new WeakMap();
 export default class AudioService {
   async enableMic({
     streamListener,
-    desiredSampRate,
+    desiredSampleRate: desiredSampRate,
     timeSlice = 1000,
     audioBitsPerSecond = 128000,
   } = {}) {

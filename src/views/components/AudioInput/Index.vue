@@ -10,8 +10,7 @@
 
 <script>
 import AudioService from '@/services/audio';
-
-const audioService = new AudioService();
+import AutomaticSpeechRecognition, { languages } from '@/services/NLP/ASR';
 
 export default {
   props: {
@@ -24,7 +23,9 @@ export default {
   data() {
     return {
       isActive: false,
-      audioService: new AudioService(),
+      audioService: null,
+      asr: new AudioService(),
+      speech: '',
     };
   },
   computed: {
@@ -39,7 +40,15 @@ export default {
     // clean up here
     if (!this.isActive) return;
 
-    await audioService.disableMic();
+    await this.audioService.disableMic();
+  },
+  mounted() {
+    const { onResponse, cleanup } = this;
+    const options = { onResponse, onConnectionClose: cleanup };
+    const asr = new AutomaticSpeechRecognition(options);
+    asr.setConfig({ lang: languages.en });
+
+    this.asr = asr;
   },
   methods: {
     onClick() {
@@ -48,16 +57,29 @@ export default {
       return this.disableMic();
     },
     async enableMic() {
-      await audioService.enableMic();
+      const { asr } = this;
+
+      if (!asr) throw new Error('Automatic Speech Recognition has not been instantiated');
+
+      const options = { streamListener: this.asr.sendAudioData, desiredSampleRate: asr.sampleRate };
+
+      await this.audioService.enableMic(options);
 
       this.isActive = true;
     },
     async disableMic() {
-      const blobURL = await audioService.disableMic();
+      const blobURL = await this.audioService.disableMic();
 
       window.open(blobURL); // temporary - just to test the audio
 
       this.isActive = false;
+    },
+    onResponse(data) {
+      // do something
+      this.speech = JSON.stringify(data);
+    },
+    cleanup() {
+
     },
   },
 };
