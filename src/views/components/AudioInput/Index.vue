@@ -23,8 +23,8 @@ export default {
   data() {
     return {
       isActive: false,
-      audioService: null,
-      asr: new AudioService(),
+      audioService: new AudioService(),
+      asr: null,
       speech: '',
     };
   },
@@ -42,44 +42,44 @@ export default {
 
     await this.audioService.disableMic();
   },
-  mounted() {
-    const { onResponse, cleanup } = this;
-    const options = { onResponse, onConnectionClose: cleanup };
-    const asr = new AutomaticSpeechRecognition(options);
-    asr.setConfig({ lang: languages.en });
-
-    this.asr = asr;
-  },
   methods: {
     onClick() {
       if (!this.isActive) return this.enableMic();
 
       return this.disableMic();
     },
+    initializeASR(onOpen) {
+      const { onResponse, onConnectionClose } = this;
+      const asrOptions = { onOpen, onResponse, onConnectionClose };
+      const asr = new AutomaticSpeechRecognition(asrOptions);
+      asr.setConfig({ lang: languages.en });
+    },
     async enableMic() {
-      const { asr } = this;
+      if (this.isActive) return;
 
-      if (!asr) throw new Error('Automatic Speech Recognition has not been instantiated');
+      this.initializeASR(async (asr) => {
+        const audioServiceOptions = { streamListener: asr.sendAudioData, desiredSampleRate: asr.sampleRate, timeSlice: 100 };
 
-      const options = { streamListener: this.asr.sendAudioData, desiredSampleRate: asr.sampleRate };
+        await this.audioService.enableMic(audioServiceOptions);
 
-      await this.audioService.enableMic(options);
-
-      this.isActive = true;
+        this.asr = asr;
+        this.isActive = true;
+      });
     },
     async disableMic() {
       const blobURL = await this.audioService.disableMic();
 
       window.open(blobURL); // temporary - just to test the audio
 
+      this.asr = null;
       this.isActive = false;
     },
     onResponse(data) {
       // do something
       this.speech = JSON.stringify(data);
     },
-    cleanup() {
-
+    onConnectionClose() {
+      if (this.isActive) this.disableMic();
     },
   },
 };
