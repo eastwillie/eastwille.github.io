@@ -1,6 +1,12 @@
 <template>
   <div id="ai-services_nlp_document-classification">
-    <service-template>
+    <service-template
+      :run="run"
+      :run-success="runSuccess"
+      :run-error="runError"
+      :run-disabled="runDisabled"
+      :loading="loading"
+    >
       <template v-slot:header>
         {{ $t('services.documentClassification.header') }}
       </template>
@@ -16,11 +22,6 @@
         <example-text
           :items="textExamples"
           :current-example.sync="currentExample"
-          :loading="loading"
-        />
-        <run-button
-          :on-click="run"
-          :disabled="currentExample === null"
           :loading="loading"
         />
       </template>
@@ -44,7 +45,6 @@
 import ServiceTemplate from '@/views/components/Services/ServiceTemplate/Index.vue';
 import InputLanguage from '@/views/components/Services/InputLanguage/Index.vue';
 import GeneratedResult from '@/views/components/Services/GeneratedResult/Index.vue';
-import RunButton from '@/views/components/Services/RunButton/Index.vue';
 import ExampleText from '@/views/components/Services/ExampleText/Index.vue';
 import services from '@/services';
 
@@ -52,7 +52,6 @@ export default {
   name: 'DocumentClassification',
   components: {
     ExampleText,
-    RunButton,
     GeneratedResult,
     InputLanguage,
     ServiceTemplate,
@@ -84,14 +83,23 @@ export default {
         value: el,
       }));
     },
+    runDisabled() {
+      return this.currentExample === null || !this.currentLanguage;
+    },
   },
   methods: {
     async run() {
       this.loading = true;
-      this.result = await services.NLP.getDocumentClassification({
+      return services.NLP.getDocumentClassification({
         language: this.currentLanguage,
         text: this.examples[this.currentExample],
       });
+    },
+    runSuccess(result) {
+      this.loading = false;
+      this.result = result;
+    },
+    runError() {
       this.loading = false;
     },
   },

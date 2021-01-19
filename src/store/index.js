@@ -7,19 +7,26 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    errors: [],
   },
+  getters: {},
   mutations: {
-    STORE_ERRORS: (state, error) => {
+    SET_ERRORS(state, errors) {
+      state.errors = errors;
+    },
+  },
+  actions: {
+    STORE_ERRORS: ({
+      state,
+      commit,
+    }, error) => {
       ErrorService.onError(error); // Calling Error Service
 
       // Store error to state
       if (error.response) {
-        state.errors = error.response;
+        commit('SET_ERRORS', [...state.errors, error.response]);
       }
     },
   },
-  actions: {
-  },
-  modules: {
-  },
+  modules: {},
 });
