@@ -2,6 +2,7 @@
   <el-button
     class="run-button"
     :loading="loading"
+    :disabled="disabled"
     @click="onClick"
   >
     {{ $t('button.run') }}
@@ -17,6 +18,10 @@ export default {
       required: true,
     },
     loading: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },

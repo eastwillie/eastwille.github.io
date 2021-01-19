@@ -11,6 +11,10 @@
     <div class="table">
       <div class="column">
         <slot name="left" />
+        <run-button
+          :on-click="onClick"
+          :disabled="loading || runDisabled"
+        />
       </div>
       <div class="column">
         <slot name="right" />
@@ -20,8 +24,47 @@
 </template>
 
 <script>
+import RunButton from '@/views/components/Services/RunButton/Index.vue';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'ServiceTemplate',
+  components: { RunButton },
+  props: {
+    run: {
+      type: Function,
+      required: true,
+    },
+    runSuccess: {
+      type: Function,
+      default: () => {},
+    },
+    runError: {
+      type: Function,
+      default: () => {},
+    },
+    runDisabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    ...mapActions({
+      storeErrors: 'STORE_ERRORS',
+    }),
+    async onClick() {
+      try {
+        await this.runSuccess(await this.run());
+      } catch (e) {
+        this.storeErrors(e);
+        this.runError();
+      }
+    },
+  },
 };
 </script>
 

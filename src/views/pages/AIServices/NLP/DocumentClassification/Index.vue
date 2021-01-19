@@ -1,6 +1,12 @@
 <template>
   <div id="ai-services_nlp_document-classification">
-    <service-template>
+    <service-template
+      :run="run"
+      :run-success="runSuccess"
+      :run-error="runError"
+      :run-disabled="runDisabled"
+      :loading="loading"
+    >
       <template v-slot:header>
         {{ $t('services.documentClassification.header') }}
       </template>
@@ -18,10 +24,6 @@
           :current-example.sync="currentExample"
           :loading="loading"
         />
-        <run-button
-          :on-click="run"
-          :loading="loading"
-        />
       </template>
       <template v-slot:right>
         <generated-result
@@ -29,7 +31,7 @@
           :loading="loading"
         >
           <div
-            v-if="result.length"
+            v-if="result && result.length"
             class="result"
           >
             {{ result }}
@@ -43,14 +45,13 @@
 import ServiceTemplate from '@/views/components/Services/ServiceTemplate/Index.vue';
 import InputLanguage from '@/views/components/Services/InputLanguage/Index.vue';
 import GeneratedResult from '@/views/components/Services/GeneratedResult/Index.vue';
-import RunButton from '@/views/components/Services/RunButton/Index.vue';
 import ExampleText from '@/views/components/Services/ExampleText/Index.vue';
+import services from '@/services';
 
 export default {
   name: 'DocumentClassification',
   components: {
     ExampleText,
-    RunButton,
     GeneratedResult,
     InputLanguage,
     ServiceTemplate,
@@ -66,7 +67,7 @@ export default {
       'Hillary Clinton has won a narrow victory in the Nevada caucuses, the latest stage in the contest for the Democratic Party\'s presidential nomination.She took 52% per cent of the vote, with her rival, Bernie Sanders, just behind on 48%.She told her supporters in Las Vegas  this one\'s for you .Hillary Clinton on Nevada victory: \'This one\'s for you\'\n',
     ],
     currentExample: null,
-    result: '',
+    result: null,
     loading: false,
   }),
   computed: {
@@ -82,17 +83,24 @@ export default {
         value: el,
       }));
     },
+    runDisabled() {
+      return this.currentExample === null || !this.currentLanguage;
+    },
   },
   methods: {
-    run() {
+    async run() {
       this.loading = true;
-      // Connect to API and wait response here
-      // eslint-disable-next-line no-console
-      console.log({ language: this.currentLanguage, example: this.currentExample });
-      setTimeout(() => {
-        this.loading = false;
-        this.result = 'I am response from API';
-      }, 2000);
+      return services.NLP.getDocumentClassification({
+        language: this.currentLanguage,
+        text: this.examples[this.currentExample],
+      });
+    },
+    runSuccess(result) {
+      this.loading = false;
+      this.result = result;
+    },
+    runError() {
+      this.loading = false;
     },
   },
 };
