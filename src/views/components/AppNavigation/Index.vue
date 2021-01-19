@@ -195,6 +195,7 @@ export default {
               p {
                 line-height: 1.4;
                 font-size: 0.12rem;
+                font-weight: 400;
                 color: #3A3955;
                 white-space: normal;
                 text-transform: none;
