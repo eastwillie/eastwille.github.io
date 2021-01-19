@@ -36,7 +36,7 @@ export default class AudioService {
 
     if (!tracks || tracks.length === 0) return Promise.reject(new Error('No Media Track to stop!'));
 
-    tracks.foreach((track) => track.stop());
+    tracks.forEach((track) => track.stop());
 
     return recorder.get(this).stopRecording();
   }
