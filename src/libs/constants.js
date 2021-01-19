@@ -1,8 +1,12 @@
 const {
   NODE_ENV,
   BASE_URL,
-  DEV_ID,
-  DEV_KEY,
+  ASR_DEV_ID: DEV_ID,
+  ASR_DEV_KEY: DEV_KEY,
+  ASR_SAMPLE_RATE: SAMPLE_RATE,
+  ASR_AUE: AUE,
+  ASR_URL: URL,
+  ASR_STOP_COMMAND: STOP_COMMAND,
 } = process.env;
 
 const isDevelopment = NODE_ENV === 'development';
@@ -12,6 +16,10 @@ const config = {
   ASR: {
     DEV_ID,
     DEV_KEY,
+    SAMPLE_RATE,
+    AUE,
+    URL,
+    STOP_COMMAND,
   },
 };
 
