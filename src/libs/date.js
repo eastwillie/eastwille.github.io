@@ -1,7 +1,7 @@
 /**
  * @param  {} {format: 'seconds' | 'minutes' | 'hours'}
  */
-export const getTimestamp = ({ format }) => {
+export const getTimestamp = ({ format } = {}) => {
   const timestamp = new Date().getTime();
 
   if (['seconds', 'minutes', 'hours'].indexOf(format) === -1) return timestamp;
