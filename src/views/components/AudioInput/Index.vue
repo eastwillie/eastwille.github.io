@@ -24,8 +24,7 @@ export default {
   data() {
     return {
       isActive: false,
-      recorder: null,
-      stream: null,
+      audioService: new AudioService(),
     };
   },
   computed: {
