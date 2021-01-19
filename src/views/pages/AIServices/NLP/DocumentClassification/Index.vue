@@ -86,18 +86,13 @@ export default {
     },
   },
   methods: {
-    run() {
+    async run() {
       this.loading = true;
-      services.NLP.getDocumentClassification({
-        lang: this.currentLanguage,
+      this.result = await services.NLP.getDocumentClassification({
+        language: this.currentLanguage,
         text: this.examples[this.currentExample],
-      })
-        .then((result) => {
-          this.result = result;
-        })
-        .finally(() => {
-          this.loading = false;
-        });
+      });
+      this.loading = false;
     },
   },
 };
