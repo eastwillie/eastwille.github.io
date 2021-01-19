@@ -2,6 +2,7 @@ $text-primary: #3A3955;
 $text-secondary: #8C8B9F;
 $text-dark-bg: #ffffff;
 $text-blue: #3A71FF;
+$text-dimmed: #D8DDED;
 
 $background-header: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
 $background-primary: linear-gradient(100.62deg, #3A71FF 48.27%, rgba(121, 58, 255, 0) 203.77%);
@@ -11,4 +12,5 @@ $background-footer: #1B134C;
 
 $button-footer-gradient: radial-gradient(circle at top left, #3B72FF 42.58%, #6C23F5 109.64%);
 
-$border-primary: 1px solid $text-primary;
+$border-color: #E5EAFA;
+$border-primary: 1px solid $border-color;

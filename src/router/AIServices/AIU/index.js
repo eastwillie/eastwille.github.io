@@ -1,4 +1,5 @@
 import AIUIcon from '@/assets/images/icons/nav/AIU.svg';
+import AIUIconCompact from '@/assets/images/icons/nav/AIU_compact.svg';
 
 export default {
   path: 'aiu',
@@ -9,6 +10,7 @@ export default {
     showNav: true,
     showSidebar: true,
     icon: AIUIcon,
+    iconCompact: AIUIconCompact,
     navName: 'automatic image understanding',
     intro: 'Giving the ability of processing massive images into your able hands.',
   },

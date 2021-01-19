@@ -1,4 +1,5 @@
 import VCAIcon from '@/assets/images/icons/nav/VCA.svg';
+import VCAIconCompact from '@/assets/images/icons/nav/VCA_compact.svg';
 
 export default {
   path: 'vca',
@@ -9,6 +10,7 @@ export default {
     showNav: true,
     showSidebar: true,
     icon: VCAIcon,
+    iconCompact: VCAIconCompact,
     navName: 'video content analysis',
     intro: 'Unlocking video content analysis capabilities based on cutting-edge deep learning models.',
   },

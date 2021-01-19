@@ -1,4 +1,5 @@
 import NLPIcon from '@/assets/images/icons/nav/NLP.svg';
+import NLPIconCompact from '@/assets/images/icons/nav/NLP_compact.svg';
 
 export default {
   path: 'nlp',
@@ -9,6 +10,7 @@ export default {
     showNav: true,
     showSidebar: true,
     icon: NLPIcon,
+    iconCompact: NLPIconCompact,
     navName: 'natural language processing',
     intro: 'Empowering your advanced NLP based applications with simple API calls.',
   },

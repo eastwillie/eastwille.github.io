@@ -1,16 +1,45 @@
 <template>
   <div class="sidebar">
-    <el-tree
-      ref="tree"
-      :data="treeData"
-      :default-expanded-keys="expandedKeys"
-      :default-checked-keys="checkedKeys"
-      node-key="name"
-      check-strictly
-      accordion
-      class="tree"
-      @node-click="onNodeClick"
-    />
+    <el-menu
+      router
+      unique-opened
+      class="menu"
+      :collapse="collapse"
+      :collapse-transition="false"
+      :default-active="$route.path"
+    >
+      <el-submenu
+        v-for="item in menuData"
+        :key="item.index"
+        :index="item.index"
+        :class="item.classname"
+        class="submenu"
+      >
+        <template slot="title">
+          <img
+            :src="item.icon"
+            :alt="item.label"
+            class="icon"
+          >
+          <span class="label">{{ item.label }}</span>
+        </template>
+        <el-menu-item
+          v-for="child in item.children"
+          :key="child.index"
+          :index="child.index"
+          class="menu-item"
+        >
+          {{ child.label }}
+        </el-menu-item>
+      </el-submenu>
+    </el-menu>
+    <button
+      class="toggle"
+      :class="{ collapse }"
+      @click="toggleClick"
+    >
+      <i class="el-icon-arrow-right icon" />
+    </button>
   </div>
 </template>
 
@@ -18,67 +47,165 @@
 export default {
   name: 'Sidebar',
   props: {
-    items: {
-      type: Array,
+    route: {
+      type: Object,
       required: true,
     },
   },
+  data: () => ({
+    collapse: false,
+  }),
   computed: {
-    expandedKeys() {
-      return this.$route.matched.map((el) => el.name);
-    },
-    checkedKeys() {
-      return [this.$route.matched[this.$route.matched.length - 1].name];
-    },
-    treeData() {
-      return this.items.map((route) => ({
+    menuData() {
+      const parentPath = this.route.path;
+      return this.route.children.map((route) => ({
         label: route.meta.navName,
-        name: route.name,
+        index: `${parentPath}/${route.path}`,
+        icon: route.meta.iconCompact,
+        classname: route.path,
         children: route.children.map((child) => ({
           label: child.meta.navName,
-          name: child.name,
+          index: `${parentPath}/${route.path}/${child.path}`,
         })),
       }));
     },
   },
-  watch: {
-    $route() {
-      this.$refs.tree.setCheckedKeys(this.checkedKeys);
-    },
-  },
   methods: {
-    onNodeClick(data) {
-      if (data.name && this.$route.name !== data.name) {
-        this.$router.push({ name: data.name });
-      }
-      this.$refs.tree.setCheckedNodes(this.checkedKeys);
+    toggleClick() {
+      this.collapse = !this.collapse;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+  $colors: (
+    nlp: #FC9C0D,
+    vca: #521FD1,
+    aiu: #4791FF,
+    asa: #14D4B2,
+  );
+  $toggle-bg: #D9CAFF;
+  $toggle-color: #521FD1;
+  $menu-width: 2.36rem;
+
   .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
-    padding: 0.2rem;
-    background: $background-header;
+    padding-top: 0.37rem;
+    border-right: $border-primary;
 
-    .tree {
-      background: $background-header;
+    .menu {
+      max-width: $menu-width;
+      border-right: none;
+
+      .submenu {
+        /deep/ .el-submenu__title {
+          position: relative;
+          display: flex;
+          align-items: center;
+          min-height: 0.6rem;
+          padding: 0.11rem 0.2rem;
+          white-space: initial;
+
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -1px;
+            bottom: 0;
+
+            width: 3px;
+            height: 100%;
+          }
+        }
+
+        .icon {
+          margin-right: 0.13rem;
+        }
+
+        .label {
+          opacity: 0.6;
+          font-weight: 600;
+          font-size: 0.14rem;
+          line-height: 0.19rem;
+          text-transform: capitalize;
+        }
+
+        &.is-opened .label {
+          opacity: 1;
+        }
+
+        /deep/ .el-submenu__icon-arrow {
+          display: none;
+        }
+
+        .menu-item {
+          position: relative;
+          height: 0.42rem;
+          padding-right: 0.14rem;
+          line-height: 0.42rem;
+          font-size: 0.12rem;
+          text-transform: capitalize;
+          color: $text-primary;
+          min-width: $menu-width;
+
+          &.is-active {
+            font-weight: 600;
+          }
+
+          &:before {
+            position: absolute;
+            content: 'east';
+            left: 0.14rem;
+            color: $text-dimmed;
+            font-family: 'Material Icons', sans-serif;
+            text-transform: none;
+          }
+        }
+
+        @each $name, $color in $colors {
+          &.#{$name} {
+            &.is-opened /deep/ .el-submenu__title {
+              background: linear-gradient(90deg, rgba($color, 0.1) 1.87%, rgba(white, 0) 132.92%);
+
+              &:after {
+                background: $color;
+              }
+            }
+
+            .menu-item.is-active {
+              color: $color;
+
+              &:before {
+                color: $color;
+              }
+            }
+          }
+        }
+      }
     }
 
-    /deep/ .el-tree-node.is-checked >.el-tree-node__content > .el-tree-node__label {
-      font-weight: 700;
-      color: $text-dark-bg;
-    }
+    .toggle {
+      display: flex;
+      justify-content: flex-end;
+      height: 0.6rem;
+      width: 100%;
+      color: $toggle-color;
+      border: none;
+      background: linear-gradient(90deg, rgba($toggle-bg, 0.37) -27.11%, rgba(white, 0) 97.39%);;
+      font-size: 0.18rem;
+      padding: 0.2rem;
 
-    /deep/ .el-tree-node__content:hover {
-      background-color: transparent;
-      color: $text-dark-bg;
-    }
-
-    /deep/ .el-tree-node:focus>.el-tree-node__content {
-      background-color: transparent;
+      &.collapse {
+        .icon {
+          margin: 0 auto;
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 </style>

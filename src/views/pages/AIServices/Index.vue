@@ -2,7 +2,7 @@
   <div id="ai-services">
     <div v-if="$route.meta.showSidebar">
       <keep-alive>
-        <sidebar :items="AIServices.children" />
+        <sidebar :route="AIServices" />
       </keep-alive>
     </div>
     <div id="ai-services_view-container">
@@ -28,5 +28,9 @@ export default {
 <style lang="scss" scoped>
   #ai-services {
     display: flex;
+
+    #ai-services_view-container {
+      width: 100%;
+    }
   }
 </style>
