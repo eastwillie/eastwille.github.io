@@ -1,6 +1,6 @@
 <template>
   <div id="ai-services">
-    <div v-if="$route.meta.showSlideMenu">
+    <div v-if="!$route.meta.hideSlideMenu">
       Slide Menu
     </div>
     <div id="ai-services_view-container">

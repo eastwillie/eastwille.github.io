@@ -16,20 +16,12 @@ const routes = [
   {
     path: '/home',
     component: () => import('@/views/pages/HomePage/Index.vue'),
-    meta: {
-      keepAlive: false,
-      showNav: true,
-    },
   },
   AIServices,
   ...Solutions,
   {
     path: '*',
     component: () => import('@/views/pages/PageNotFound/Index.vue'),
-    meta: {
-      keepAlive: false,
-      showNav: false,
-    },
   },
 ];
 

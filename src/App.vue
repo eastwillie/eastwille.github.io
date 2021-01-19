@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <app-navigation v-if="$route.meta.showNav" />
+    <app-navigation :class-name="navClassName" />
     <div id="view-container">
       <keep-alive>
         <router-view v-if="$route.meta.keepAlive" />
@@ -18,6 +18,11 @@ export default {
   components: {
     AppNavigation,
     AppFooter,
+  },
+  computed: {
+    navClassName() {
+      return this.$route.matched.map((item) => item.meta.navClassName).filter((item) => item !== undefined).join('-');
+    },
   },
 };
 </script>

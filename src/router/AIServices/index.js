@@ -7,8 +7,7 @@ export default {
   path: '/services',
   component: () => import('@/views/pages/AIServices/Index.vue'),
   meta: {
-    keepAlive: false,
-    showNav: true,
+    navClassName: 'services',
   },
   children: [
     NLP,

@@ -228,8 +228,8 @@ export default {
   .rodin {
     position: relative;
     flex-direction: row;
-    height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
-    min-height: calc(100vh - 61px); // had to use px - due to Element UI's component used px
+    height: 100vh;
+    min-height: 100vh;
     padding-top: 2.4rem;
     background: linear-gradient(339.91deg, #33029B -2.33%, #1A124B 98.52%);
     color: white;

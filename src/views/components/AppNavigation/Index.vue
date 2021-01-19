@@ -1,9 +1,9 @@
 <template>
-  <div id="app-nav">
-    <img
-      src="../../../assets/images/icons/Logo.svg"
-      alt="logo"
-    >
+  <div
+    id="app-nav"
+    :class="className || ''"
+  >
+    <div class="logo" />
     <el-menu
       mode="horizontal"
       router
@@ -114,6 +114,12 @@
 import AIServices from '@/router/AIServices/index';
 
 export default {
+  props: {
+    className: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
     return {
       AIServices,
@@ -123,6 +129,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   $app-nav_font-color: #FFF;
+  $app-nav-services_font-color: #200F5C;
   @mixin active {
     font-weight: 600;
     i {
@@ -137,12 +144,24 @@ export default {
   }
 
   #app-nav {
+    position: absolute;
+    z-index: $z-index-navigation;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     text-transform: capitalize;
-    background: #1A124B;
+
+    .logo {
+      margin-left: 0.2rem;
+      width: 10%;
+      height: 0.6rem;
+      background: url('../../../assets/images/icons/nav/Logo.svg') center no-repeat;
+      background-size: contain;
+    }
 
     /deep/ .services {
       & > .el-menu {
@@ -240,8 +259,8 @@ export default {
     .console-button {
       text-transform: capitalize;
       @include font-style;
-      color: #FFF;
-      background: rgba(255, 255, 255, 0.2);
+      color: $app-nav_font-color;
+      background: rgba(234, 229, 253, 0.2);
       border: none;
     }
 
@@ -268,6 +287,10 @@ export default {
       }
 
       .el-submenu {
+        .el-menu--popup {
+          border-radius: 0.08rem;
+        }
+
         .el-submenu__title {
           @include font-style;
           color: $app-nav_font-color;
@@ -287,6 +310,10 @@ export default {
             border: none;
           }
         }
+
+        &:hover {
+          border-radius: 0.08rem;
+        }
       }
 
       .el-icon-arrow-down {
@@ -297,6 +324,43 @@ export default {
           font-family: 'Material Icons', sans-serif;
           font-size: 2em;
         }
+      }
+    }
+  }
+
+  #app-nav.services {
+    position: relative;
+    box-shadow: 0 0.12rem 0.13rem rgba(26, 18, 75, 0.03);
+    .logo {
+      background: url('../../../assets/images/icons/nav/LogoV2.svg') center no-repeat;
+    }
+
+    .console-button {
+      color: $app-nav-services_font-color;
+      background: rgba(217, 202, 255, 0.5);
+    }
+
+    /deep/ .el-menu--horizontal {
+      border: none;
+      background: none;
+
+      & > .el-menu-item {
+        color: $app-nav-services_font-color;
+
+        &.is-active {
+          color: $app-nav-services_font-color;
+        }
+      }
+
+      .el-submenu {
+        .el-submenu__title {
+          color: $app-nav-services_font-color;
+
+          i {
+            color: $app-nav-services_font-color;
+          }
+        }
+
       }
     }
   }
