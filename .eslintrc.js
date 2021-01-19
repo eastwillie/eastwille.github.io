@@ -19,5 +19,6 @@ module.exports = {
     'vue/html-indent': ['error', 2],
     'prefer-destructuring': ['error', { object: true, array: false }],
     'linebreak-style': 0,
+    'import/prefer-default-export': 'off'
   },
 };
