@@ -1,5 +1,6 @@
 import CONSTS from '@/libs/constants';
 import { getTimestamp } from '@/libs/date';
+import { parseJSON, isObject } from '@/libs/object';
 import { generateSignatureSHA256 } from '@/libs/hash';
 
 const ASR_CONFIG = CONSTS.config.ASR;
@@ -21,6 +22,17 @@ const generateConfig = ({
     lang,
   },
 });
+
+const deconstructReponse = (response) => {
+  try {
+    const keyString = response.substring(0, response.indexOf(':'));
+    const dataString = response.substring(response.indexOf(':') + 1).trim();
+
+    return { [keyString]: JSON.parse(dataString) };
+  } catch (ex) {
+    return response;
+  }
+};
 
 const generateWebSocketURL = (devId, timestamp, signature) => `${ASR_CONFIG.URL}/${devId}/${timestamp}/${signature}`;
 
@@ -44,13 +56,13 @@ class AutomaticSpeechRecognition {
   }
 
   // TODO:: check the documentation if it is required to close the connections first before changing languages.
-  setConfig({ lang, aue, sampleRate } = {}) {
+  setConfig = ({ lang, aue, sampleRate } = {}) => {
     if (!lang) return;
 
     config.set(this, generateConfig({ lang, aue, sampleRate }));
   }
 
-  cleanSession() {
+  cleanSession = () => {
     const socket = ws.get(this);
 
     if (!socket) return;
@@ -64,7 +76,7 @@ class AutomaticSpeechRecognition {
     onClose();
   }
 
-  sendAudioData(blob) {
+  sendAudioData = (blob) => {
     const socket = ws.get(this);
 
     if (!socket) return;
@@ -72,14 +84,24 @@ class AutomaticSpeechRecognition {
     socket.send(blob);
   }
 
-  onResponse(message) {
+  onResponse = (response) => {
+    let data = parseJSON(response.data);
+
+    if (!isObject(data)) data = deconstructReponse(data);
+
+    if (!isObject(data)) return null;
+
+    const onClose = callback.get(this);
+
+    if (data.CANCELLED) return onClose && onClose();
+
     const onResponse = listener.get(this);
 
-    if (!onResponse) return;
-
-    const data = JSON.parse(message.data);
+    if (!onResponse) return null;
 
     onResponse(data);
+
+    return null;
   }
 
   get sampleRate() {
