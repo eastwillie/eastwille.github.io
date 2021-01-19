@@ -46,7 +46,6 @@ import ServiceTemplate from '@/views/components/Services/ServiceTemplate/Index.v
 import InputLanguage from '@/views/components/Services/InputLanguage/Index.vue';
 import GeneratedResult from '@/views/components/Services/GeneratedResult/Index.vue';
 import ExampleText from '@/views/components/Services/ExampleText/Index.vue';
-import services from '@/services';
 
 export default {
   name: 'DocumentClassification',
@@ -90,7 +89,7 @@ export default {
   methods: {
     async run() {
       this.loading = true;
-      return services.NLP.getDocumentClassification({
+      return this.$api.nlp.getDocumentClassification({
         language: this.currentLanguage,
         text: this.examples[this.currentExample],
       });
