@@ -8,11 +8,16 @@ const {
 const isDevelopment = NODE_ENV === 'development';
 const API = isDevelopment ? '/dev' : '';
 const publicPath = BASE_URL;
+const config = {
+  ASR: {
+    DEV_ID,
+    DEV_KEY,
+  },
+};
 
 export default {
   isDevelopment,
   API,
   publicPath,
-  DEV_ID,
-  DEV_KEY,
+  config,
 };
