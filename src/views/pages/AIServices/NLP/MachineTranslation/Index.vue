@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import Divider from '@/views/components/Divider/Index.vue';
+import Divider from '@/components/Divider/Index.vue';
 import AudioInput from '@/views/components/AudioInput/Index.vue';
 
 export default {

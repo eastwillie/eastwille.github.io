@@ -9,7 +9,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/dev': {
-        target: 'http://example.com',
+        target: 'https://rodin.g42.ai',
         changeOrigin: true,
         ws: true,
         pathRewrite: {

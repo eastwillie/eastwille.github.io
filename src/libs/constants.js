@@ -10,7 +10,7 @@ const {
 } = process.env;
 
 const isDevelopment = NODE_ENV === 'development';
-const API = isDevelopment ? '/dev' : '';
+const API = isDevelopment ? '/dev' : 'https://rodin.g42.ai';
 const publicPath = BASE_URL;
 const config = {
   ASR: {

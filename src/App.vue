@@ -33,4 +33,8 @@ export default {
     -webkit-font-smoothing: antialiased;
     color: $text-primary;
   }
+
+  #view-container {
+    overflow-x: hidden;
+  }
 </style>

@@ -6,7 +6,7 @@ export default {
     'all-stack ai service platform': 'all-stack ai service platform',
     'empowering intelligent apps with our customizable AI technology': 'empowering intelligent apps with our customizable AI technology',
     'Introduction to Rodin': 'Introduction to Rodin',
-    "World's First All-Stake One-Stop AI Service Platform": "World's First All-Stake One-Stop AI Service Platform",
+    'World\'s First All-Stake One-Stop AI Service Platform': 'World\'s First All-Stake One-Stop AI Service Platform',
     'Our Vision': 'Our Vision',
     'Why choose us?': 'Why choose us?',
     'What Can You Get with Rodin?': 'What Can You Get with Rodin?',
@@ -63,6 +63,7 @@ export default {
     // Footer
     'help center': 'help center',
     'Smart Nation, Group 42': 'Smart Nation, Group 42',
+    run: 'Run',
   },
   footer: {
     copyright: 'Copyright © 2021 Group 42, Inc.',
@@ -91,9 +92,31 @@ export default {
     title: 'Industry Solutions',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..',
   },
+  services: {
+    documentClassification: {
+      header: 'Document classification',
+      subheader: 'Empowering your advanced NLP based applications with simple API calls.',
+    },
+    inputLanguage: {
+      title: 'Choose Input Language',
+    },
+    exampleText: {
+      title: 'Try With Example Text',
+      subtitle: 'Select one of the following examples',
+    },
+    generatedResult: {
+      title: 'Generated Results',
+      subtitle: 'Results of the {0}',
+      placeholder: 'Result will appear here',
+    },
+  },
   longText: {
     'It is long established fact': 'It is long established fact that a reader will be distracted by the readable content of page when looking at its layout.',
     'The point of using lorem ipsum': 'The point of using lorem ipsum is that it has a more -or-less normal distribution of letters, as opposed to using “Content here, content here”, making it look like readable English.',
+  },
+  languages: {
+    en: 'English',
+    ar: 'Arabic',
   },
   ...enLocale,
 };
