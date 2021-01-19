@@ -4,7 +4,6 @@ import router from './router';
 import ErrorService from './libs/error-service';
 
 // Global Variables & Functions
-import http from './http';
 import store from './store';
 import consts from './libs/constants';
 import methods from './libs/methods';
@@ -23,7 +22,6 @@ Vue.config.errorHandler = (error) => ErrorService.onError(error);
 // Handle error outside Vue
 ErrorService.initHandler();
 
-Vue.prototype.$http = http;
 Vue.prototype.$consts = consts;
 Vue.prototype.$apis = apis;
 
