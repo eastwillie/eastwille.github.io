@@ -82,9 +82,16 @@ class AutomaticSpeechRecognition {
   sendAudioData = (blob) => {
     const socket = ws.get(this);
 
-    if (!socket) return;
+    if (!socket) return null;
 
+    const onClose = callback.get(this);
+
+    if (socket.readyState > 1) return onClose && onClose();
+
+    // TODO: reopen connection if closed - or else take another speech
     socket.send(blob);
+
+    return null;
   }
 
   onOpen = () => {
