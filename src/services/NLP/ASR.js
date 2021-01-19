@@ -40,17 +40,20 @@ const ws = new WeakMap();
 const config = new WeakMap();
 const callback = new WeakMap();
 const listener = new WeakMap();
+const open = new WeakMap();
 
 class AutomaticSpeechRecognition {
-  constructor({ onResponse, onConnectionClose } = {}) {
+  constructor({ onOpen, onResponse, onConnectionClose } = {}) {
     const timestamp = getTimestamp({ format: 'seconds' });
     const toHash = `${ASR_CONFIG.DEV_ID}${timestamp}`;
     const sha256signature = generateSignatureSHA256(ASR_CONFIG.DEV_KEY, toHash);
     const connection = generateWebSocketURL(ASR_CONFIG.DEV_ID, timestamp, sha256signature);
     const socket = new WebSocket(connection);
     socket.onmessage = this.onResponse;
+    socket.onopen = this.onOpen;
 
     ws.set(this, socket);
+    open.set(this, onOpen);
     listener.set(this, onResponse);
     callback.set(this, onConnectionClose);
   }
@@ -82,6 +85,14 @@ class AutomaticSpeechRecognition {
     if (!socket) return;
 
     socket.send(blob);
+  }
+
+  onOpen = () => {
+    const onOpen = open.get(this);
+
+    if (!onOpen) return;
+
+    onOpen(this);
   }
 
   onResponse = (response) => {
