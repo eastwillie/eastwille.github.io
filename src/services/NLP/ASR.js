@@ -16,19 +16,25 @@ const generateConfig = ({
   },
 });
 
+const generateWebSocketURL = (devId, timestamp, signature) => `${CONSTS.ASR.URL}/${devId}/${timestamp}/${signature}`;
+
 const ws = new WeakMap();
 const config = new WeakMap();
-const signature = new WeakMap();
+const callback = new WeakMap();
+const listener = new WeakMap();
 
-class ASRService {
-  constructor() {
-    ws.set(this, new WebSocket());
-
+class AutomaticSpeechRecognition {
+  constructor({ onResponse, onConnectionClose } = {}) {
     const timestamp = getTimestamp({ format: 'seconds' });
     const toHash = `${CONSTS.ASR.DEV_ID}${timestamp}`;
     const sha256signature = generateSignatureSHA256(CONSTS.ASR.DEV_KEY, toHash);
+    const connection = generateWebSocketURL(CONSTS.ASR.DEV_ID, timestamp, sha256signature);
+    const socket = new WebSocket(connection);
+    socket.onmessage = this.onResponse;
 
-    signature.set(this, sha256signature);
+    ws.set(this, socket);
+    listener.set(this, onResponse);
+    callback.set(this, onConnectionClose);
   }
 
   setConfig({ lang, aue, sampleRate } = {}) {
@@ -38,8 +44,36 @@ class ASRService {
   }
 
   cleanSession() {
-    ws.get(this).send(CONSTS.ASR.STOP_COMMAND);
+    const socket = ws.get(this);
+
+    if (!socket) return;
+
+    socket.send(CONSTS.ASR.STOP_COMMAND);
+
+    const onClose = callback.get(this);
+
+    if (!onClose) return;
+
+    onClose();
+  }
+
+  sendAudioData(blob) {
+    const socket = ws.get(this);
+
+    if (!socket) return;
+
+    socket.send(blob);
+  }
+
+  onResponse(message) {
+    const onResponse = listener.get(this);
+
+    if (!onResponse) return;
+
+    const data = JSON.parse(message.data);
+
+    onResponse(data);
   }
 }
 
-export default ASRService;
+export default AutomaticSpeechRecognition;
