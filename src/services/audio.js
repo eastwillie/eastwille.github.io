@@ -28,7 +28,15 @@ export default class AudioService {
   }
 
   disableMic() {
-    stream.get(this).getTracks()[0].stop();
+    const mediaStream = stream.get(this);
+
+    if (!mediaStream) return Promise.reject(new Error('Audio Listener is not enabled!'));
+
+    const tracks = mediaStream.getTracks();
+
+    if (!tracks || tracks.length === 0) return Promise.reject(new Error('No Media Track to stop!'));
+
+    tracks.foreach((track) => track.stop());
 
     return recorder.get(this).stopRecording();
   }
